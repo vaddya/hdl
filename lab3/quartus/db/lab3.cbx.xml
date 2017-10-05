@@ -1,6 +1,0 @@
-<?xml version="1.0" ?>
-<LOG_ROOT>
-	<PROJECT NAME="lab3">
-		<CBX_INST_ENTRY INSTANCE_NAME="|lab3|lpm_counter0:inst|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_i7j.tdf"/>
-	</PROJECT>
-</LOG_ROOT>

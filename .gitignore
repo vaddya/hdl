@@ -1,0 +1,10 @@
+*.toc
+*.aux
+*.log
+*.out
+*.pdf
+*.gz
+db
+incremental_db/
+output_files/
+simulation/
