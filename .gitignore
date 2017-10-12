@@ -4,6 +4,8 @@
 *.out
 *.pdf
 *.gz
+*.lof
+*.lol
 db
 incremental_db/
 output_files/

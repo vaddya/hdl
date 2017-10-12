@@ -4,15 +4,104 @@
 
 \include{titlepage}
 
+\tableofcontents
+\listoffigures
+\lstlistoflistings
+\newpage
+
 \section{Задачи работы}
 
 \begin{enumerate}
+\setlength\itemsep{0em}
 \item Задание требований к тактовой частоте проекта.
 \item Работа с приложением TimeQuest.
 \item Анализ полученных результатов для максимальной тактовой частоты работы устройства.
 \end{enumerate}
 
-\section{Синтез комбинационной схемы}
+\section{Синтез счетчика}
+
+\subsection{Результаты синтеза}
+
+На рис. \ref{fig:counter} изображена синтезированная схема 4-разрядного счетчика.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\textwidth]{counter}
+	\caption{Синтезированная схема}
+	\label{fig:counter}
+\end{center}
+\end{figure}
+
+\subsection{Результаты моделирования}
+
+На рис. \ref{fig:func-modeling} изображен результат функционального моделирования, полученный с помощью встроенной системы моделирования – University Program VWF.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=0.9]{modeling}
+	\caption{Результаты моделирования}
+	\label{fig:func-modeling}
+\end{center}
+\end{figure}
+
+%TODO Проведите анализ временной диаграммы и объясните почему:
+%TODO Данные записываемые в счетчик появляются на выходе с задержкой 2 такта?
+%TODO В самом начале моделирования значение 0 присутствует на выходе 2 такта?
+
+\subsection{Временной анализ}
+
+\subsubsection{Создание SDC файла}
+
+В листинге \ref{code:sdc} приведена сформированная SDC команда, создающая ограничения для тактового сигнала.
+
+\begin{lstlisting}[caption=Synopsys Design Constraints (SDC) файл, label=code:sdc]
+create_clock -name input_clk -period 20.000 [get_ports {clk}]
+\end{lstlisting}
+
+В отчете компиляции в разделе \textbf{TimeQuest Timing Analyzer} указана максимальная тактовая частота работы проекта: Fmax = $465.55$ MHz, Restricted Fmax = $250$ MHz.
+
+В таблице \textbf{Multicorner Timing Analysis Summary} приведены следующие значения задержек для худшего случая:
+\begin{itemize}
+\setlength\itemsep{0em}
+\item Setup Slack = $17.852$ нс.
+\item Hold Slack = $0.197$ нс.
+\item Slack для Minimum Pulse Width = $9.436$ нс.
+\end{itemize}
+
+\subsubsection{Изменение периода тактового сигнала}
+
+При изменении ограничения с 20 нс до 1 нс (то есть частота работы $10$0 MHz), максимальная тактовая частота стала следующей: Fmax = $489.24$ MHz, Restricted Fmax = $250$ MHz. Из результатов видно, что значение Fmax увеличилось.
+
+В таблице \textbf{Multicorner Timing Analysis Summary} значения задержек стали равны:
+\begin{itemize}
+\setlength\itemsep{0em}
+\item Setup Slack = $-1.044$ нс.
+\item Hold Slack = $0.256$ нс.
+\item Slack для Minimum Pulse Width = $-3.000$ нс.
+\end{itemize}
+%TODO Объясните с какими параметрами возникли проблемы
+
+\subsubsection{Анализ временных диаграмм}
+
+На рис. \ref{fig:waveform} изображена временная диаграмма распространения данных и тактового сигнала.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=0.9]{waveform_setup}
+	\caption{Временная диаграмма Setup анализа}
+	\label{fig:waveform}
+\end{center}
+\end{figure}
+%TODO Найдите на ней параметры, использованные в лекции для анализа зазора Setup Slack.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=0.9]{waveform_hold}
+	\caption{Временная диаграмма Hold анализа}
+	\label{fig:waveform}
+\end{center}
+\end{figure}
+%TODO Найдите на ней параметры, использованные в лекции для анализа зазоров Slack Hold
 
 \section{Выводы}
 
