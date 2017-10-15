@@ -18,7 +18,7 @@
 \item Анализ полученных результатов для максимальной тактовой частоты работы устройства.
 \end{enumerate}
 
-\section{Синтез счетчика}
+\section{Синтез 4-разрядного счетчика}
 
 \subsection{Результаты синтеза}
 
@@ -32,10 +32,12 @@
 \end{center}
 \end{figure}
 
+\vspace{-0.5cm}
 \subsection{Результаты моделирования}
 
 На рис. \ref{fig:func-modeling} изображен результат функционального моделирования, полученный с помощью встроенной системы моделирования – University Program VWF.
 
+\vspace{-0.5cm}
 \begin{figure}[H]
 \begin{center}
 	\includegraphics[scale=0.9]{modeling}
@@ -83,25 +85,47 @@ create_clock -name input_clk -period 20.000 [get_ports {clk}]
 
 \subsubsection{Анализ временных диаграмм}
 
-На рис. \ref{fig:waveform} изображена временная диаграмма распространения данных и тактового сигнала.
+На рис. \ref{fig:waveform_setup} и \ref{fig:waveform_hold} изображены временные диаграммы распространения данных и тактового сигнала для анализа Setup Slask и Hold Slack соответственно.
 
 \begin{figure}[H]
 \begin{center}
 	\includegraphics[scale=0.9]{waveform_setup}
 	\caption{Временная диаграмма Setup анализа}
-	\label{fig:waveform}
+	\label{fig:waveform_setup}
 \end{center}
 \end{figure}
 %TODO Найдите на ней параметры, использованные в лекции для анализа зазора Setup Slack.
-
+\vspace{-1.5cm}
 \begin{figure}[H]
 \begin{center}
 	\includegraphics[scale=0.9]{waveform_hold}
 	\caption{Временная диаграмма Hold анализа}
-	\label{fig:waveform}
+	\label{fig:waveform_hold}
 \end{center}
 \end{figure}
 %TODO Найдите на ней параметры, использованные в лекции для анализа зазоров Slack Hold
+
+\section{Синтез 128-разрядного счетчика}
+
+\subsection{Временной анализ}
+
+\subsubsection{Максимальная частота}
+
+В отчете компиляции в разделе \textbf{TimeQuest Timing Analyzer} указана максимальная тактовая частота работы проекта: Fmax = $180.21$ MHz, Restricted Fmax = $180.21$ MHz. Следовательно требование к максимальной тактовой частоте выполнено.  
+%TODO Какая максимально допустимая тактовая частота работы проекта?
+
+\subsubsection{Критический путь}
+
+Setup Slack для критического пути (пути для которого максимальный отрицательный Slack) оказался равен $-1.549$ нс.
+%TODO Сколько критических путей – путей ограничивающих тактовую частоту? 2?
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=0.75]{chip_planner}
+	\caption{Путь между двумя триггерами, определяющими критический путь, в редакторе Chip Planner}
+	\label{fig:chip_planner}
+\end{center}
+\end{figure}
 
 \section{Выводы}
 
