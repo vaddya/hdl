@@ -1,0 +1,132 @@
+\include{settings}
+
+\begin{document}
+
+\include{titlepage}
+
+\tableofcontents
+\listoffigures
+\lstlistoflistings
+\newpage
+
+\section{Задачи работы}
+
+\begin{enumerate}
+	\setlength\itemsep{0em}
+	\item Задание требований к тактовой частоте проекта.
+	\item Работа с приложением TimeQuest.
+	\item Анализ полученных результатов для максимальной тактовой частоты работы устройства.
+\end{enumerate}
+
+\section{Синтез схемы из 2 каскадно-соединенных счетчиков}
+
+\subsection{Результаты синтеза}
+
+На рис. \ref{fig:counter} изображена синтезированная схема, состоящая из 2 каскадно-соединенных счетчиков.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\textwidth]{counter}
+	\caption{Синтезированная схема}
+	\label{fig:counter}
+\end{center}
+\end{figure}
+
+\subsection{Результаты компиляции}
+
+В результате компиляции были получены следующие предупреждения от Design Assistant:
+\begin{enumerate}
+	\setlength\itemsep{0em}
+	\item (High) \textbf{Rule C102}: Logic cell should not be used to generate an inverted clock signal.
+	\item (High) \textbf{Rule D101}: Data bits are not synchronized when transferred between asynchronous clock domains.
+	\item (Medium) \textbf{Rule C103}: Gated clock does not feed at least a pre-defined number of clock ports to effectively save power.
+	\item (Medium) \textbf{Rule C104}: Clock signal source should drive only clock input ports.
+	\item (Medium) \textbf{Rule R102}: External reset signals should be synchronized using two cascaded registers. 
+	\item (Information) \textbf{Rule T102}: Top nodes with the highest number of fan-outs.
+\end{enumerate}
+
+\subsection{Результаты синтеза исправленной схемы}
+
+На рис. \ref{fig:counter_right} изображена исправленная схема.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\textwidth]{counter_right}
+	\caption{Исправленная схема}
+	\label{fig:counter_right}
+\end{center}
+\end{figure}
+
+\subsection{Результаты компиляции исправленной схемы}
+
+В результате компиляции схемы, изображенной на рис. \ref{fig:counter_right}, было получено только информационное предупреждение \textbf{Rule T102}: Top nodes with the highest number of fan-outs. 
+
+\subsection{Результаты моделирования}
+
+На рис. \ref{fig:modeling} изображен результат функционального моделирования. Из временной диаграммы видно, что схема из 2 каскадно-соединенных счетчиков синтезирована верно.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\textwidth]{modeling}
+	\caption{Результаты моделирования}
+	\label{fig:modeling}
+\end{center}
+\end{figure}
+
+%TODO На выходе qa новое значение счетчика (1) появляется только на 4 такте после того, как сигнал асинхронного сброса был снят?
+%TODO В самом начале моделирования значение 0 присутствует на выходе 4 такта?
+
+\subsection{Создание SDC файла}
+
+В листинге \ref{code:sdc} приведена сформированная SDC команда, создающая ограничения для тактового сигнала.
+
+\begin{lstlisting}[caption=Synopsys Design Constraints (SDC) файл, label=code:sdc]
+create_clock -name input_clk -period 20.000 [get_ports {clk}]
+derive_clock_uncertainty
+\end{lstlisting}
+
+\subsection{Результаты временного анализа}
+
+В отчете компиляции в разделе \textbf{TimeQuest Timing Analyzer} указана максимальная тактовая частота работы проекта: Fmax = $335.68$ MHz, Restricted Fmax = $250.0$ MHz. Следовательно требование к максимальной тактовой частоте выполнено. При этом максимальная частота работы проекта равна $335.68$ MHz.
+
+\newpage
+
+\section{Синтез схемы из 3 каскадно-соединенных счетчиков}
+
+\subsection{Результаты синтеза}
+
+На рис. \ref{fig:counter_three} изображена синтезированная схема, состоящая из 3 каскадно-соединенных счетчиков.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\textwidth]{counter_three}
+	\caption{Синтезированная схема}
+	\label{fig:counter_three}
+\end{center}
+\end{figure}
+
+\subsection{Результаты компиляции}
+
+В результате компиляции данной схемы было получено только информационное предупреждение \textbf{Rule T102}: Top nodes with the highest number of fan-outs.
+
+\subsection{Результаты моделирования}
+
+На рис. \ref{fig:counter_three_modeling} изображен результат функционального моделирования. Из временной диаграммы видно, что схема из 3 каскадно-соединенных счетчиков синтезирована верно.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\textwidth]{counter_three_modeling}
+	\caption{Результаты моделирования}
+	\label{fig:counter_three_modeling}
+\end{center}
+\end{figure}
+
+\subsection{Результаты временного анализа}
+
+В отчете компиляции в разделе \textbf{TimeQuest Timing Analyzer} указана максимальная тактовая частота работы проекта: Fmax = $200.48$ MHz, Restricted Fmax = $200.48$ MHz. Следовательно требование к максимальной тактовой частоте выполнено. При этом максимальная частота работы проекта равна $200.48$ MHz.
+
+\section{Выводы}
+
+%TODO вывод
+
+\end{document}

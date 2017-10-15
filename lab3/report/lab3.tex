@@ -50,7 +50,7 @@
 %TODO Данные записываемые в счетчик появляются на выходе с задержкой 2 такта?
 %TODO В самом начале моделирования значение 0 присутствует на выходе 2 такта?
 
-\subsection{Временной анализ}
+\subsection{Результаты временного анализа}
 
 \subsubsection{Создание SDC файла}
 
@@ -94,7 +94,7 @@ create_clock -name input_clk -period 20.000 [get_ports {clk}]
 	\label{fig:waveform_setup}
 \end{center}
 \end{figure}
-%TODO Найдите на ней параметры, использованные в лекции для анализа зазора Setup Slack.
+
 \vspace{-1.5cm}
 \begin{figure}[H]
 \begin{center}
@@ -103,16 +103,14 @@ create_clock -name input_clk -period 20.000 [get_ports {clk}]
 	\label{fig:waveform_hold}
 \end{center}
 \end{figure}
-%TODO Найдите на ней параметры, использованные в лекции для анализа зазоров Slack Hold
 
 \section{Синтез 128-разрядного счетчика}
 
-\subsection{Временной анализ}
+\subsection{Результаты временного анализа}
 
 \subsubsection{Максимальная частота}
 
-В отчете компиляции в разделе \textbf{TimeQuest Timing Analyzer} указана максимальная тактовая частота работы проекта: Fmax = $180.21$ MHz, Restricted Fmax = $180.21$ MHz. Следовательно требование к максимальной тактовой частоте выполнено.  
-%TODO Какая максимально допустимая тактовая частота работы проекта?
+В отчете компиляции в разделе \textbf{TimeQuest Timing Analyzer} указана максимальная тактовая частота работы проекта: Fmax = $180.21$ MHz, Restricted Fmax = $180.21$ MHz. Следовательно требование к максимальной тактовой частоте выполнено. Максимальная тактовая частота работы проекта при этом равна $180.21$ MHz. 
 
 \subsubsection{Критический путь}
 
