@@ -1,4 +1,4 @@
-// В описании можно использовать операторы Bitwise, Logical, Reduction, Replicator, Concatenate.
+// Multiplexer
 module lab1_2(sw, led, pba);
 input [7:0] sw;
 input pba;
