@@ -5,7 +5,7 @@
 \include{titlepage}
 
 \tableofcontents
-%\newpage
+\newpage
 \listoffigures
 \lstlistoflistings
 \newpage
@@ -18,7 +18,7 @@
 \begin{itemize}
 	\item Управление включением светодиодов \verb|led[7:0]| от соответствующих переключателей (\verb|sw[7:0]|).
 	\item При нажатии на кнопку \verb|pba|, сигнал, передаваемый с переключателей к светодиодам, инвертируется.
-	\item При нажатии на кнопку \verb|pbb| все светодиоды должны быть включены (независимо от положения переключателей \verb|sw[7:0]| и кнопки \verb|pba|).
+	\item При нажатии на кнопку \verb|p	bb| все светодиоды должны быть включены (независимо от положения переключателей \verb|sw[7:0]| и кнопки \verb|pba|).
 \end{itemize}
 
 В описании можно использовать операторы Bitwise, Logical, Reduction. Тип данных - wire.
@@ -28,6 +28,8 @@
 В листинге \ref{code:1} приведен код программы на языке Verilog.
 
 \lstinputlisting[caption=lab1\_1.v, label=code:1]{lab1_1/lab1_1.v}
+
+\newpage
 
 \subsection{Результаты синтеза}
 
@@ -99,13 +101,15 @@
 
 \lstinputlisting[caption=lab1\_2.v, label=code:2]{lab1_2/lab1_2.v}
 
+\newpage
+
 \subsection{Результаты синтеза}
 
 На рис. \ref{fig:lab1_2_rtl} приведено изображение синтезированной схемы в RLT Viewer.
 
 \begin{figure}[H]
 \begin{center}
-	\includegraphics[scale=0.6]{lab1_2_rtl}
+	\includegraphics[scale=0.65]{lab1_2_rtl}
 	\caption{Результат синтеза в RLT Viewer}
 	\label{fig:lab1_2_rtl}
 \end{center}
@@ -165,13 +169,15 @@
 
 \lstinputlisting[caption=lab1\_3.v, label=code:3]{lab1_3/lab1_3.v}
 
+\newpage
+
 \subsection{Результаты синтеза}
 
 На рис. \ref{fig:lab1_3_rtl} приведено изображение синтезированной схемы в RLT Viewer.
 
 \begin{figure}[H]
 \begin{center}
-	\includegraphics[scale=0.8]{lab1_3_rtl}
+	\includegraphics[scale=0.9]{lab1_3_rtl}
 	\caption{Результат синтеза в RLT Viewer}
 	\label{fig:lab1_3_rtl}
 \end{center}
@@ -234,7 +240,7 @@
 
 \begin{figure}[H]
 \begin{center}
-	\includegraphics[scale=0.5]{lab1_4_rtl}
+	\includegraphics[scale=0.55]{lab1_4_rtl}
 	\caption{Результат синтеза в RLT Viewer}
 	\label{fig:lab1_4_rtl}
 \end{center}
@@ -243,7 +249,7 @@
 \subsection{Результаты моделирования}
 \label{sec:lab1_4_modeling}
 
-На рис. \ref{fig:lab1_4_modeling} изображена временная диаграмма работы синтезированного устройства. На вход устройству поочередно подаются всевозможные комбинации четырехразрядного позиционного кода.
+На рис. \ref{fig:lab1_4_modeling} изображена временная диаграмма работы синтезированного устройства. На вход устройству поочередно подаются всевозможные комбинации четырехразрядного позиционного кода \code{sw[3:0]}.
 \begin{figure}[H]
 \begin{center}
 	\includegraphics[width=\textwidth]{lab1_4_modeling}
@@ -306,7 +312,7 @@
 \subsection{Результаты моделирования}
 \label{sec:lab1_5_modeling}
 
-На рис. \ref{fig:lab1_5_modeling} изображена временная диаграмма работы синтезированного устройства. На вход устройству поочередно подаются всевозможные комбинации четырехразрядного позиционного кода.
+На рис. \ref{fig:lab1_5_modeling} изображена временная диаграмма работы синтезированного устройства. На вход устройству поочередно подаются всевозможные комбинации 2-разрядного двоичного кода \code{sw[1:0]}.
 \begin{figure}[H]
 \begin{center}
 	\includegraphics[width=\textwidth]{lab1_5_modeling}
@@ -334,5 +340,207 @@
 \subsection{Выводы}
 
 Разработан преобразователь двоичного кода в позиционный. В описании использовались такие операторы, как Bitwise, Concatenate. Результаты моделирования и тестирования на плате показали, что разработанное устройство работает верно.
+
+\newpage
+
+\section{elab1\_1}
+
+\subsection{Задание}
+
+На языке Verilog опишите одноразрядный полусумматор:
+\begin{itemize}
+	\item Входы данных переключатели \code{sw[1:0]}.
+	\item Выходы – светодиоды \code{led[1:0]}.
+\end{itemize}
+В описании можно использовать операторы Bitwise, Logical, Reduction, Replicator, Concatenate.
+
+\subsection{Код на языке Verilog}
+
+В листинге \ref{code:6} приведен код программы на языке Verilog.
+
+\lstinputlisting[caption=elab1\_1.v, label=code:6]{elab1_1/elab1_1.v}
+
+\subsection{Результаты синтеза}
+
+На рис. \ref{fig:elab1_1_rtl} приведено изображение синтезированной схемы в RLT Viewer.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=0.7]{elab1_1_rtl}
+	\caption{Результат синтеза в RLT Viewer}
+	\label{fig:elab1_1_rtl}
+\end{center}
+\end{figure}
+
+\subsection{Результаты моделирования}
+\label{sec:elab1_1_modeling}
+
+На рис. \ref{fig:elab1_1_modeling} изображена временная диаграмма работы синтезированного устройства. На вход устройству поочередно подаются всевозможные комбинации значений \code{sw}.
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\textwidth]{elab1_1_modeling}
+	\caption{Результаты моделирования}
+	\label{fig:elab1_1_modeling}
+\end{center}
+\end{figure}
+
+\subsection{Назначение выводов СБИС}
+
+На рис. \ref{fig:elab1_1_pins} приведены назначения выводов СБИС в Pin Planner.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics{elab1_1_pins}
+	\caption{Таблица назначений в Pin Planer}
+	\label{fig:elab1_1_pins}
+\end{center}
+\end{figure}
+
+\subsection{Результаты проверки на плате}
+
+Для тестирования проекта на плате были использованы тесты, описанные в пункте \ref{sec:elab1_1_modeling}. Результаты тестирования совпадают с ожидаемыми, следовательно, устройство работает верно.
+
+\subsection{Выводы}
+
+Разработан одноразрядный полусумматор. В описании использовались такие операторы, как Bitwise, Concatenate. Результаты моделирования и тестирования на плате показали, что разработанное устройство работает верно.
+
+\newpage
+
+\section{elab1\_2}
+
+\subsection{Задание}
+
+На языке Verilog описать полный одноразрядный сумматор:
+\begin{itemize}
+	\item Входы:
+	\begin{itemize}
+		\item Данных - переключатели \code{sw[1:0]}.
+		\item Переноса – кнопка \code{pba}.
+	\end{itemize}
+	\item Выходы – светодиоды \code{led[1:0]}.
+\end{itemize}
+В описании можно использовать операторы Bitwise, Logical, Reduction, Reduction, Replicator, Concatenate.
+
+\subsection{Код на языке Verilog}
+
+В листинге \ref{code:7} приведен код программы на языке Verilog.
+
+\lstinputlisting[caption=elab1\_2.v, label=code:7]{elab1_2/elab1_2.v}
+
+\subsection{Результаты синтеза}
+
+На рис. \ref{fig:elab1_2_rtl} приведено изображение синтезированной схемы в RLT Viewer.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=0.6]{elab1_2_rtl}
+	\caption{Результат синтеза в RLT Viewer}
+	\label{fig:elab1_2_rtl}
+\end{center}
+\end{figure}
+
+\subsection{Результаты моделирования}
+\label{sec:elab1_2_modeling}
+
+На рис. \ref{fig:elab1_2_modeling} изображена временная диаграмма работы синтезированного устройства. На вход устройству поочередно подаются всевозможные комбинации значений \code{pba} (активный уровень 0) и \code{sw}.
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\textwidth]{elab1_2_modeling}
+	\caption{Результаты моделирования}
+	\label{fig:elab1_2_modeling}
+\end{center}
+\end{figure}
+
+\subsection{Назначение выводов СБИС}
+
+На рис. \ref{fig:elab1_2_pins} приведены назначения выводов СБИС в Pin Planner.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics{elab1_2_pins}
+	\caption{Таблица назначений в Pin Planer}
+	\label{fig:elab1_2_pins}
+\end{center}
+\end{figure}
+
+\subsection{Результаты проверки на плате}
+
+Для тестирования проекта на плате были использованы тесты, описанные в пункте \ref{sec:elab1_2_modeling}. Результаты тестирования совпадают с ожидаемыми, следовательно, устройство работает верно.
+
+\subsection{Выводы}
+
+Разработан полный одноразрядный сумматор. В описании использовались такие операторы, как Bitwise, Concatenate. Результаты моделирования и тестирования на плате показали, что разработанное устройство работает верно.
+
+\newpage
+
+\section{elab1\_3}
+
+\subsection{Задание}
+
+На языке Verilog опишите полный 2-х разрядный сумматор с последовательным переносом:
+\begin{itemize}
+	\item Входы:
+	\begin{itemize}
+		\item Данных - переключатели \code{sw[3:2]} и \code{sw[1:0]} соответственно.
+		\item Переноса – кнопка \code{pba}.
+	\end{itemize}
+	\item Выходы – светодиоды \code{led[2:0]}.
+\end{itemize}
+В описании можно использовать операторы Bitwise, Logical, Reduction, Reduction, Replicator, Concatenate.
+
+\subsection{Код на языке Verilog}
+
+В листинге \ref{code:8} приведен код программы на языке Verilog.
+
+\lstinputlisting[caption=elab1\_3.v, label=code:8]{elab1_3/elab1_3.v}
+
+\subsection{Результаты синтеза}
+
+На рис. \ref{fig:elab1_3_rtl} приведено изображение синтезированной схемы в RLT Viewer.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=0.8]{elab1_3_rtl}
+	\caption{Результат синтеза в RLT Viewer}
+	\label{fig:elab1_3_rtl}
+\end{center}
+\end{figure}
+
+\subsection{Результаты моделирования}
+\label{sec:elab1_3_modeling}
+
+На рис. \ref{fig:elab1_3_modeling} изображены временные диаграммы работы синтезированного устройства. На вход устройству поочередно подаются всевозможные комбинации значений \code{sw} при \code{pba = 1} (неактивный уровень) и при \code{pba = 0} (активный уровень) соответственно.
+\begin{figure}[H]
+\begin{center}
+	\begin{subfigure}[b]{\textwidth}
+		\includegraphics[width=\textwidth]{elab1_3_modeling_1}
+	\end{subfigure}
+	\begin{subfigure}[b]{\textwidth}
+		\includegraphics[width=\textwidth]{elab1_3_modeling_2}
+	\end{subfigure}
+	\caption{Результаты моделирования}
+	\label{fig:elab1_3_modeling}
+\end{center}
+\end{figure}
+
+\subsection{Назначение выводов СБИС}
+
+На рис. \ref{fig:elab1_3_pins} приведены назначения выводов СБИС в Pin Planner.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics{elab1_3_pins}
+	\caption{Таблица назначений в Pin Planer}
+	\label{fig:elab1_3_pins}
+\end{center}
+\end{figure}
+
+\subsection{Результаты проверки на плате}
+
+Для тестирования проекта на плате были использованы тесты, описанные в пункте \ref{sec:elab1_3_modeling}. Результаты тестирования совпадают с ожидаемыми, следовательно, устройство работает верно.
+
+\subsection{Выводы}
+
+Разработан полный 2-х разрядный сумматор с последовательным переносом. В описании использовались такие операторы, как Bitwise, Concatenate. Результаты моделирования и тестирования на плате показали, что разработанное устройство работает верно.
 
 \end{document}
