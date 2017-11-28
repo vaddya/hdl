@@ -1,0 +1,297 @@
+\include{settings}
+
+\begin{document}
+
+\include{titlepage}
+
+\tableofcontents
+\newpage
+\listoffigures
+\lstlistoflistings
+\newpage
+
+\section{lab4\_1}
+
+\subsection{Задание}
+
+На языке Verilog опишите устройство, включающее:
+\begin{itemize}
+	\item Счетчик-делитель, обеспечивающий счет по модулю \code{25 000 000} и формирующий синхронный сигнал переноса (активный уровень сигнала \code{= 1}, длительность один такт тактовой частоты) по достижению счетчиком значения \code{25 000 000 - 1}.
+	\item Двоичный, 4-разрядный, счетчик, алгоритм работы, которого задан приведенной ниже таблицей.
+\vspace{-0.5cm}
+\begin{table}[H]
+\begin{center}
+	\def\tabcolsep{13pt}
+	\caption{Алгоритм работы счетчика}
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+	\hline	
+	\code{aset} & \code{ena} & \code{sclr} & \code{load} & \code{dir} & \code{din} & \code{q} \\ 
+	\hline
+	\code{0} & \code{X} & \code{X} & \code{X} & \code{X} & \code{X} & Асинхронная установка \\
+	\hline
+	\code{1} & \code{0} & \code{X} & \code{X} & \code{X} & \code{X} & Хранение \\
+	\hline
+	\code{1} & \code{1} & \code{0} & \code{X} & \code{X} & \code{X} & Синхронный сброс в \code{0} \\
+	\hline
+	\code{1} & \code{1} & \code{1} & \code{1} & \code{X} & \code{din} & Запись \code{din} \\
+	\hline
+	\code{1} & \code{1} & \code{1} & \code{0} & \code{1} & \code{X} & Счет \code{+} \\
+	\hline
+	\code{1} & \code{1} & \code{1} & \code{0} & \code{0} & \code{X} & Счет \code{-} \\
+	\hline
+	\end{tabular}
+\end{center}
+\end{table}	
+\vspace{-0.5cm}
+	\item Входы:
+		\begin{itemize}
+			\item Кнопка \code{pba} -- асинхронная установка (установка при нажатии на кнопку). Соединена с входом \code{aset} 4-разрядного счетчика.
+			\item Кнопка \code{pbb} -- синхронный сброс (сброс при нажатии на кнопку). Соединена с входом \code{sclr} 4-разрядного счетчика.
+			\item Переключатель \code{sw[1]} -- управление загрузкой счетчика. Соединен с входом \code{load} 4-разрядного счетчика.
+			\item Переключатель \code{sw[0]} -- управление направлением счета. Соединен с входом \code{dir} 4-разрядного счетчика.
+			\item Переключатели \code{sw[7:4]} -- загружаемые данные. Соединены с входом \code{din} 4-разрядного счетчика.
+			\item Тактовый сигнал (\code{clk}) подается от тактового генератора (см. описание стенда). Частота тактового сигнала – 25МГц.
+		\end{itemize}
+	\item Выходы: светодиоды \code{led[7:4]} (двоичного 4-разрядного счетчика).
+\end{itemize}
+
+В описании можно использовать любые операторы.
+
+\subsection{Код на языке Verilog}
+
+В листинге \ref{code:1} приведен код программы на языке Verilog.
+
+%\lstinputlisting[caption=lab4\_1.v, label=code:1]{lab4_1/lab4_1.v}
+
+\subsection{Результаты синтеза}
+
+На рис. \ref{fig:lab4_1_rtl} приведено изображение синтезированной схемы в RLT Viewer.
+
+\begin{figure}[H]
+\begin{center}
+	%\includegraphics[scale=0.9]{lab4_1_rtl}
+	\caption{Результат синтеза в RLT Viewer}
+	\label{fig:lab4_1_rtl}
+\end{center}
+\end{figure}
+
+\subsection{Результаты моделирования}
+\label{sec:lab4_1_modeling}
+
+На рис. \ref{fig:lab4_1_modeling} изображена временная диаграмма работы синтезированного устройства.
+
+\begin{figure}[H]
+\begin{center}
+	%\includegraphics[width=\textwidth]{lab4_1_modeling}
+	\caption{Результаты моделирования}
+	\label{fig:lab4_1_modeling}
+\end{center}
+\end{figure}
+
+\subsection{Назначение выводов СБИС}
+
+На рис. \ref{fig:lab4_1_pins} приведены назначения выводов СБИС в Pin Planner.
+
+\begin{figure}[H]
+\begin{center}
+	%\includegraphics{lab4_1_pins}
+	\caption{Таблица назначений в Pin Planer}
+	\label{fig:lab4_1_pins}
+\end{center}
+\end{figure}
+
+\subsection{Результаты проверки на плате}
+
+Для тестирования проекта на плате были использованы тесты, описанные в пункте \ref{sec:lab4_1_modeling}. Результаты тестирования совпадают с ожидаемыми, следовательно, устройство работает верно.
+
+\subsection{Выводы}
+
+Реализовано устройство. В описании использовались операторы Concatenate и case. Результаты моделирования и тестирования на плате показали, что разработанное устройство работает верно.
+
+\newpage
+
+\section{lab4\_2}
+
+\subsection{Задание}
+
+На языке Verilog опишите устройство, включающее:
+\begin{itemize}
+	\item Счетчик-делитель, обеспечивающий счет по модулю \code{25 000 000} и формирующий синхронный сигнал переноса (активный уровень сигнала -- \code{1}, длительность один такт тактовой частоты) по достижению счетчиком значения \code{25 000 000 - 1}.
+	\item Регистр сдвига с линейной обратной связью, конфигурация Фибоначчи:
+		\begin{itemize}
+			\item На вход разрешения работы (\code{ena}) регистра подать сигнал переноса счетчика-делителя.
+			\item Полином $x^4 + x^3 + 1$.
+		\end{itemize}
+
+	\item Входы:
+		\begin{itemize}
+			\item Кнопка \code{pba} - асинхронная установка регистра (установка при нажатии на кнопку): один (любой) разряд регистра \code{= 1}, остальные разряды \code{= 0}. 	
+			\item Тактовый сигнал (\code{clk}) подается от тактового генератора (см. описание стенда). Частота тактового сигнала – 25МГц.
+		\end{itemize}		
+	\item Выходы: светодиоды \code{led[3:0]} -- выходы регистра сдвига.
+\end{itemize}
+
+Дополнительные требования:
+\begin{itemize}
+	\item[$\circ$] Счетчик и регистр описываются в отдельных процедурных блоках.
+	\item[$\circ$] При моделировании устройства, с целью сокращения времени моделирования, для счетчика-делителя установите коэффициент деления частоты равным \code{3} (а не \code{25 000 000}).
+	\item[$\circ$] На результатах моделирования должны отображаться, кроме всех входных сигналов: значение счетчика-делителя, сигнал переноса, значение регистра сдвига.
+	\item[$\circ$] По временной диаграмме определите период регистра сдвига
+\end{itemize}
+
+В описании можно использовать любые операторы.
+
+\subsection{Код на языке Verilog}
+
+В листинге \ref{code:2} приведен код программы на языке Verilog.
+
+%\lstinputlisting[caption=lab4\_2.v, label=code:2]{lab4_2/lab4_2.v}
+
+\subsection{Результаты синтеза}
+
+На рис. \ref{fig:lab4_2_rtl} приведено изображение синтезированной схемы в RLT Viewer.
+
+\begin{figure}[H]
+\begin{center}
+	%\includegraphics[scale=0.7]{lab4_2_rtl}
+	\caption{Результат синтеза в RLT Viewer}
+	\label{fig:lab4_2_rtl}
+\end{center}
+\end{figure}
+
+\subsection{Результаты моделирования}
+\label{sec:lab4_2_modeling}
+
+На рис. \ref{fig:lab4_2_modeling} изображена временная диаграмма работы синтезированного устройства.
+
+\begin{figure}[H]
+\begin{center}
+	%\includegraphics[width=\textwidth]{lab4_2_modeling}
+	\caption{Результаты моделирования}
+	\label{fig:lab4_2_modeling}
+\end{center}
+\end{figure}
+
+\subsection{Назначение выводов СБИС}
+
+На рис. \ref{fig:lab4_2_pins} приведены назначения выводов СБИС в Pin Planner.
+
+\begin{figure}[H]
+\begin{center}
+	%\includegraphics{lab4_2_pins}
+	\caption{Таблица назначений в Pin Planer}
+	\label{fig:lab4_2_pins}
+\end{center}
+\end{figure}
+
+\subsection{Результаты проверки на плате}
+
+Для тестирования проекта на плате были использованы тесты, описанные в пункте \ref{sec:lab4_2_modeling}. Результаты тестирования совпадают с ожидаемыми, следовательно, устройство работает верно.
+
+\subsection{Выводы}
+
+Реализовано устройство. Результаты моделирования и тестирования на плате показали, что разработанное устройство работает верно.
+
+\newpage
+
+\section{elab4\_1}
+
+\subsection{Задание}
+
+На языке Verilog опишите устройство, включающее:
+\begin{itemize}
+	\item Счетчик-делитель, обеспечивающий счет по модулю \code{25 000 000} и формирующий синхронный сигнал переноса (активный уровень сигнала \code{= 1}, длительность один такт тактовой частоты) по достижению счетчиком значения \code{25 000 000 - 1}.
+	\item 8-разрядный реверсивный счетчик с динамически изменяемым модулем счета. Вход модуля счета счетчика \code{[7:0] mod} -- соединен с входами \code{[7:0]sw} устройства. Сигналы управления счетчиком заданы приведенной ниже таблицей.
+\vspace{-0.5cm}
+\begin{table}[H]
+\begin{center}
+	\def\tabcolsep{13pt}
+	\caption{Алгоритм работы счетчика}
+	\begin{tabular}{|c|c|c|c|c|}
+	\hline	
+	\code{ena} & \code{load} & \code{dir} & \code{q} \\ 
+	\hline
+	\code{0} & \code{X} & \code{X} & Хранение \\
+	\hline
+	\code{1} & \code{1} & \code{X} & Синхронная загрузка \\
+	\hline
+	\code{1} & \code{0} & \code{1} & Счет \code{+} \\
+	\hline
+	\code{1} & \code{0} & \code{0} & Счет \code{-} \\
+	\hline
+	\end{tabular}
+\end{center}
+\end{table}	
+\vspace{-0.5cm}
+	\item Модуль формирования сигнала \code{load} для 8-разрядного реверсивного счетчика -- сигнал \code{load = 1} длительностью \code{1} период тактового сигнала \code{clk} формируется при изменении значения модуля счета, заданного на входах \code{[7:0]sw} устройства.
+
+	\item Входы:
+		\begin{itemize}
+			\item Переключатели \code{sw[7:0]} -- модуль счета счетчика.
+			\item Кнопка \code{pbb} -- кнопка выбора направления счета (если \code{pbb} нажата, то счет на вычитание).
+			\item Тактовый сигнал (\code{clk}) подается от тактового генератора (см. описание стенда). Частота тактового сигнала – 25МГц.
+		\end{itemize}
+	\item Выходы: светодиоды \code{led[7:0]} (выходы двоичного 8-разрядного счетчика).
+\end{itemize}
+
+Дополнительные требования:
+\begin{itemize}
+	\item[$\circ$] Счетчик-делитель, 8-разрядный реверсивный счетчик и модуль формирования сигнала \code{load} описываются в отдельных процедурных блоках.
+	\item[$\circ$] При моделировании устройства, с целью сокращения времени моделирования, для счетчика-делителя установите коэффициент деления частоты равным \code{3} (а не \code{25 000 000}).
+	\item[$\circ$] На результатах моделирования должны отображаться, кроме всех входных сигналов: значение счетчика-делителя, сигнал переноса, значение 8-разрядного реверсивного счетчика, сигнал \code{load}.
+\end{itemize}
+
+В описании можно использовать любые операторы.
+
+\subsection{Код на языке Verilog}
+
+В листинге \ref{code:5} приведен код программы на языке Verilog.
+
+%\lstinputlisting[caption=elab4\_1.v, label=code:5]{elab4_1/elab4_1.v}
+
+\subsection{Результаты синтеза}
+
+На рис. \ref{fig:elab4_1_rtl} приведено изображение синтезированной схемы в RLT Viewer.
+
+\begin{figure}[H]
+\begin{center}
+	%\includegraphics[scale=0.8]{elab4_1_rtl}
+	\caption{Результат синтеза в RLT Viewer}
+	\label{fig:elab4_1_rtl}
+\end{center}
+\end{figure}
+
+\subsection{Результаты моделирования}
+\label{sec:elab4_1_modeling}
+
+На рис. \ref{fig:elab4_1_modeling} изображена временная диаграмма работы синтезированного устройства. 
+
+\begin{figure}[H]
+\begin{center}
+	%\includegraphics[width=\textwidth]{elab4_1_modeling}
+	\caption{Результаты моделирования}
+	\label{fig:elab4_1_modeling}
+\end{center}
+\end{figure}
+
+\subsection{Назначение выводов СБИС}
+
+На рис. \ref{fig:elab4_1_pins} приведены назначения выводов СБИС в Pin Planner.
+
+\begin{figure}[H]
+\begin{center}
+	%\includegraphics{elab4_1_pins}
+	\caption{Таблица назначений в Pin Planer}
+	\label{fig:elab4_1_pins}
+\end{center}
+\end{figure}
+
+\subsection{Результаты проверки на плате}
+
+Для тестирования проекта на плате были использованы тесты, описанные в пункте \ref{sec:elab4_1_modeling}. Результаты тестирования совпадают с ожидаемыми, следовательно, устройство работает верно.
+
+\subsection{Выводы}
+
+Реализовано устройство. Результаты моделирования и тестирования на плате показали, что разработанное устройство работает верно.
+
+\end{document}
