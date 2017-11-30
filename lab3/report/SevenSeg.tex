@@ -1,0 +1,225 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc} 
+\usepackage{tikz,xifthen}
+
+\usepackage{SevenSeg}
+
+\usepackage[a4paper,body={19cm,24cm},
+                    head=1cm,
+                    footskip=2cm]{geometry}
+                    
+\title{7 segment displayer with PGF/TIKZ}                     
+\author{Germain Gondor}                                  
+
+\date{\today}
+
+\makeindex
+
+\begin{document}
+
+\maketitle
+
+\section{Outlook}
+
+This package has been built to draw seven segment displayer with PGF/TIKZ. Segments are directly displayed in the right color to show the  hexadécimal number $(0,\ldots,9,A,\ldots,F)$ or decimal $(0,\ldots,15)$.\\
+
+Unzip the package to your local folder.\\
+
+Put on top of your file \verb"\usepackage{SevenSeg}" just below \verb"\documentclass{\ldots}".
+
+\section{Commandes}
+
+\subsection{Segment letters}
+\vspace{1em}
+\begin{minipage}{0.47\textwidth}
+To name each segment of the displayer, use the command \verb"\SSGLeg[size]{position}":
+\begin{itemize}
+	\item \verb"size". This defines the size. Default is 3em
+	\item \verb"position" refers to an existing point. To select the point $(0,0)$ just write $\left\{\right\}$\end{itemize}
+\end{minipage}\hfill\begin{minipage}{0.25\textwidth}
+\begin{tikzpicture}
+\coordinate(A) at(5em,0);
+\SSGLeg{}
+\SSGLeg[2em]{A}
+\end{tikzpicture}\\
+\end{minipage}\begin{minipage}{0.25\textwidth}
+\begin{verbatim}
+\begin{tikzpicture}
+\coordinate(A) at(5em,0);
+\SSGLeg{}
+\SSGLeg[2em]{A}
+\end{tikzpicture}
+\end{verbatim}
+\end{minipage}
+	
+\subsection{Seven segment displayer}
+
+\begin{minipage}{0.7\textwidth}
+The command \verb"\SSGNb[size]{position}{number}" display the cell with the right lighted segments. Arguments allow to change:
+\begin{itemize}
+	\item the \verb"size" . PDefault is 3em
+	\item the \verb"position". Position refers to an existing point. To select the point $(0,0)$, just write $\left\{\right\}$
+	\item the \verb"number". Number should be in $0$ and $15$ or $A$ et $F$
+\end{itemize}
+
+\end{minipage}\hfill\begin{minipage}{0.28\textwidth}
+\begin{tikzpicture}
+\SSGNb[1cm]{}{B}
+\coordinate(A)at(5em,0);
+\SSGNb[2em]{A}{11}
+\end{tikzpicture}\\
+%\end{minipage}\hfill\begin{minipage}{0.28\textwidth}
+\begin{verbatim}
+\begin{tikzpicture}
+\SSGNb[2cm]{}{B}
+\coordinate(A)at(5em,0);
+\SSGNb[2em]{A}{11}
+\end{tikzpicture}
+\end{verbatim}
+\end{minipage}\\
+
+
+\subsection{Logical cell}
+
+To put a box arround the cell, just use the command  \verb"SSGBox[Style]{position}" with 
+\begin{itemize}
+	\item \verb"Style" to change the style. Default is \verb"line width=2pt"
+	\item  \verb"position" refers to an existing point. To select the point $(0,0)$, just write $\left\{\right\}$\end{itemize}
+
+To change the cell into a seven segment display with binary connections, use  \verb"SSGDCB[Style]{position}".\\
+To connect the cell,  \verb"positionBit0", \verb"positionBit1", \verb"positionBit2" and  \verb"positionBit3" refers to the connecting points.\\
+ 
+\begin{minipage}{0.28\textwidth}
+\begin{tikzpicture}
+\coordinate(A)at(6em,1cm);
+\SSGNb{A}{F}
+\SSGBox{A}
+\def\taille{1.5cm}
+\SSGNb[\taille]{}{5}
+\SSGDCB[line width=2pt, blue]{}
+\foreach \x in {0,...,3}{\node at(Bit\x)[below]{$B_\x$};}
+\end{tikzpicture}
+\end{minipage}\hfill\begin{minipage}{0.38\textwidth}
+\begin{verbatim}
+\begin{tikzpicture}
+\coordinate(A)at(6em,1cm);
+\SSGNb{A}{F}
+\SSGBox{A}
+\def\taille{1.5cm}
+\SSGNb[\taille]{}{5}
+\SSGDCB[line width=2pt, blue]{}
+\foreach \x in {0,...,3}
+{\node at(Bit\x)[below]{$B_\x$};}
+\end{tikzpicture}\end{verbatim}
+\end{minipage}\\
+
+\section{Options}
+
+\subsection{Slanted cell}
+
+\begin{minipage}{0.4\textwidth}
+To slant the cell, use the  \verb"xslant" option of PGF/TIKZ, or use a \verb"scope" environement  \verb"\tikzpicture":
+\end{minipage}\hfill\begin{minipage}{0.18\textwidth}
+\begin{tikzpicture}[xslant=0.1]
+\SSGNb[2em]{}{5}
+\SSGDCB{}
+\end{tikzpicture}
+\end{minipage}\hfill\begin{minipage}{0.38\textwidth}
+\begin{verbatim}
+\begin{tikzpicture}[xslant=0.1]
+\SSGNb{}{5}
+\SSGDCB{}
+\end{tikzpicture}
+\end{verbatim}
+\end{minipage}\\
+
+\subsection{Styles}
+
+The style is given by \textit{SSGSty}. The style of on (off) segments is \textit{SSGOn} (resp. \textit{SSGOff}).\\
+
+\begin{verbatim}
+\tikzstyle SSGSty=[line cap=round]
+\tikzstyle SSGOn=[green,line width=3pt]
+\tikzstyle SSGOff=[gray!20!white,line width=3pt]
+\end{verbatim}
+
+\section{Examples}
+
+\begin{minipage}{0.48\textwidth}
+\begin{tikzpicture}[scale=0.75]
+\foreach \x in{0,...,3}
+{\coordinate (L\x) at({(\x-0)*2.5} ,-3*1);
+\SSGNb{L\x}{\x}}
+\foreach \x in{4,...,7}
+{\coordinate (L\x) at({(\x-4)*2.5} ,-3*2);
+\SSGNb{L\x}{\x}}
+\begin{scope}[xslant=0.1]
+\foreach \x in{8,...,11}
+{\coordinate(L\x) at({(\x-8)*2.5} ,-3*3);
+\SSGNb{L\x}{\x}}
+\end{scope}
+\foreach \x in{12,...,15}
+{\coordinate (L\x) at({(\x-12)*2.5} ,-3*4);
+\SSGNb{L\x}{\x}}
+\end{tikzpicture}\end{minipage}\hfill\begin{minipage}{0.48\textwidth}
+\begin{verbatim}
+\begin{tikzpicture}[scale=0.8]
+\foreach \x in{0,...,3}
+{\coordinate (L\x) at({(\x-0)*2.5} ,-3*1);
+\SSGNb{L\x}{\x}}
+\foreach \x in{4,...,7}
+{\coordinate (L\x) at({(\x-4)*2.5} ,-3*2);
+\SSGNb{L\x}{\x}}
+\begin{scope}[xslant=0.1]
+\foreach \x in{8,...,11}
+{\coordinate(L\x) at({(\x-8)*2.5} ,-3*3);
+\SSGNb{L\x}{\x}}
+\end{scope}
+\foreach \x in{12,...,15}
+{\coordinate (L\x) at({(\x-12)*2.5} ,-3*4);
+\SSGNb{L\x}{\x}}
+\end{tikzpicture}
+\end{verbatim}
+\end{minipage}\\
+
+
+ \begin{verbatim}
+\begin{tikzpicture}
+\coordinate(A)at(-6em,0);
+\SSGLeg{A}
+\begin{scope}[xslant=0.1]
+\SSGNb{}{3}
+\SSGDCB{}
+\end{scope}
+\foreach \x in{0,...,1}
+{\fill[purple](-7em,-7em-\x*1em)circle(3pt)coordinate(B\x);
+\draw[purple,very thick](B\x)node[left]{$B_\x$}--++(14em,0)-|(Bit\x);
+\fill[purple](Bit\x|-B\x)circle(3pt);}
+\foreach \x in{2,...,3}
+{\fill(-7em,-7em-\x*1em)circle(3pt)coordinate(B\x);
+\draw[very thick](B\x)node[left]{$B_\x$}--++(14em,0)-|(Bit\x);
+\fill(Bit\x|-B\x)circle(3pt);}
+\end{tikzpicture}
+\end{verbatim}
+
+
+\begin{tikzpicture}[scale=0.8]
+\coordinate(A)at(-6em,0);
+\SSGLeg{A}
+\begin{scope}[xslant=0.1]
+\SSGNb{}{3}
+\SSGDCB{}
+\end{scope}
+\foreach \x in{0,...,1}
+{\fill[purple](-7em,-7em-\x*1em)circle(3pt)coordinate(B\x);
+\draw[purple,very thick](B\x)node[left]{$B_\x$}--++(14em,0)-|(Bit\x);
+\fill[purple](Bit\x|-B\x)circle(3pt);}
+\foreach \x in{2,...,3}
+{\fill(-7em,-7em-\x*1em)circle(3pt)coordinate(B\x);
+\draw[very thick](B\x)node[left]{$B_\x$}--++(14em,0)-|(Bit\x);
+\fill(Bit\x|-B\x)circle(3pt);}
+\end{tikzpicture}
+
+
+
+\end{document}
