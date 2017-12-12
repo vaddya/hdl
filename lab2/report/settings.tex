@@ -1,30 +1,52 @@
 \documentclass[a4paper,14pt]{extarticle}
 
+%\usepackage[utf8x]{inputenc}
+%\usepackage[T1,T2A]{fontenc}
+%\usepackage[russian]{babel}
+%\usepackage{hyperref}
+%\usepackage{indentfirst}
+%\usepackage{here}
+%\usepackage{array}
+%\usepackage{caption}
+%\usepackage{subcaption}
+%\usepackage{chngcntr}
+%\usepackage{amsmath}
+%\usepackage{amssymb}
+%\usepackage{pgfplots}
+%\usepackage{pgfplotstable}
+%\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+%\usepackage{multicol}
+%\usepackage{askmaps}
+%\usepackage{titlesec}
+%\usepackage{listings}
+%\usepackage{color}
+%\usepackage{courier}
+%\usepackage{enumitem}
+
 \usepackage[utf8x]{inputenc}
-\usepackage[T1,T2A]{fontenc}
+\usepackage[T2A]{fontenc}
 \usepackage[russian]{babel}
+\usepackage{mmap}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
 \usepackage{hyperref}
 \usepackage{indentfirst}
 \usepackage{here}
-\usepackage{array}
-\usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{chngcntr}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{pgfplots}
-\usepackage{pgfplotstable}
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
-\usepackage{multicol}
 \usepackage{askmaps}
+\usepackage{pgfplots}
+\usepackage{multicol}
 \usepackage{titlesec}
 \usepackage{listings}
 \usepackage{color}
-\usepackage{courier}
 \usepackage{enumitem}
+\usepackage{accsupp}
 
 \setitemize{itemsep=0em}
+\setenumerate{itemsep=0em}
 
 \definecolor{green}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -37,12 +59,13 @@
 	basicstyle=\small\ttfamily,
 	commentstyle=\color{green},
 	keywordstyle=\color{blue},	
-	numberstyle=\tiny\color{black},
+	numberstyle=\tiny\color{black}\noncopynumber,
 	stringstyle=\color{purple},
 	breakatwhitespace=false,
 	breaklines=true,
-	captionpos=b,
 	keepspaces=true,
+	columns=flexible,
+	captionpos=b,
 	numbers=left,
 	numbersep=5pt,
 	showspaces=false,
@@ -52,10 +75,7 @@
 	frame=single,
 	moredelim=*[s][\colorIndex]{[}{]},
 	inputpath={../quartus/},
-	breakatwhitespace,
-	literate=%
-				{~}{$\sim$}{1}%
-				{^}{$\textasciicircum$}{1}%
+	literate={~}{$\sim$}{1}%
 }
 
 \makeatletter
@@ -63,24 +83,14 @@
 \newcommand*\@rbracket{]}
 \newcommand*\@colon{:}
 \newcommand*\colorIndex{%
-\edef\@temp{\the\lst@token}%
-\ifx\@temp\@lbracket \color{black}%
-\else\ifx\@temp\@rbracket \color{black}%
-\else\ifx\@temp\@colon \color{black}%
-\else \color{orange}%
-\fi\fi\fi
-}
+	\edef\@temp{\the\lst@token}%
+	\ifx\@temp\@lbracket \color{black}%
+	\else\ifx\@temp\@rbracket \color{black}%
+	\else\ifx\@temp\@colon \color{black}%
+	\else \color{orange}%
+	\fi\fi\fi
+	}
 \makeatother
-
-\renewcommand{\le}{\ensuremath{\leqslant}}
-\renewcommand{\leq}{\ensuremath{\leqslant}}
-\renewcommand{\ge}{\ensuremath{\geqslant}}
-\renewcommand{\geq}{\ensuremath{\geqslant}}
-\renewcommand{\epsilon}{\ensuremath{\varepsilon}}
-\renewcommand{\phi}{\ensuremath{\varphi}}
-\renewcommand{\thefigure}{\arabic{figure}} 	
-\renewcommand*\not[1]{\overline{#1}}
-\newcommand*\code[1]{\lstinline{#1}}
 
 \titleformat*{\section}{\large\bfseries} 
 \titleformat*{\subsection}{\normalsize\bfseries} 
@@ -97,3 +107,14 @@
 \def\arraystretch{1.3}
 \setlength\parindent{5ex}
 \titlelabel{\thetitle.\quad}
+
+\renewcommand{\le}{\ensuremath{\leqslant}}
+\renewcommand{\leq}{\ensuremath{\leqslant}}
+\renewcommand{\ge}{\ensuremath{\geqslant}}
+\renewcommand{\geq}{\ensuremath{\geqslant}}
+\renewcommand{\epsilon}{\ensuremath{\varepsilon}}
+\renewcommand{\phi}{\ensuremath{\varphi}}
+\renewcommand{\thefigure}{\arabic{figure}} 	
+\newcommand{\no}[1]{\overline{#1}}
+\newcommand{\noncopynumber}[1]{\BeginAccSupp{method=escape,ActualText={}}#1\EndAccSupp{}}
+\newcommand{\code}[1]{\lstinline{#1}}

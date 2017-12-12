@@ -55,13 +55,17 @@
 	\item Выходы: светодиоды \code{led[7:4]} (двоичного 4-разрядного счетчика).
 \end{itemize}
 
-В описании можно использовать любые операторы.
+Дополнительные требования:
+\begin{itemize}
+	\item[$\circ$] Счетчик–делитель и 4-разрядный счетчик описывается в отдельных процедурных блоках.
+	\item[$\circ$] При моделировании устройства, с целью сокращения времени моделирования, для счетчика-делителя установите коэффициент деления частоты равным 3 (а не 25 000 000).
+\end{itemize}
 
 \subsection{Код на языке Verilog}
 
 В листинге \ref{code:1} приведен код программы на языке Verilog.
 
-%\lstinputlisting[caption=lab4\_1.v, label=code:1]{lab4_1/lab4_1.v}
+\lstinputlisting[caption=lab4\_1.v, label=code:1]{lab4_1/lab4_1.v}
 
 \subsection{Результаты синтеза}
 
@@ -69,7 +73,7 @@
 
 \begin{figure}[H]
 \begin{center}
-	%\includegraphics[scale=0.9]{lab4_1_rtl}
+	\includegraphics[width=\textwidth]{lab4_1_rtl}
 	\caption{Результат синтеза в RLT Viewer}
 	\label{fig:lab4_1_rtl}
 \end{center}
@@ -82,11 +86,13 @@
 
 \begin{figure}[H]
 \begin{center}
-	%\includegraphics[width=\textwidth]{lab4_1_modeling}
+	\includegraphics[width=\textwidth]{lab4_1_modeling}
 	\caption{Результаты моделирования}
 	\label{fig:lab4_1_modeling}
 \end{center}
 \end{figure}
+
+\newpage
 
 \subsection{Назначение выводов СБИС}
 
@@ -94,7 +100,7 @@
 
 \begin{figure}[H]
 \begin{center}
-	%\includegraphics{lab4_1_pins}
+	\includegraphics{lab4_1_pins}
 	\caption{Таблица назначений в Pin Planer}
 	\label{fig:lab4_1_pins}
 \end{center}
@@ -106,7 +112,7 @@
 
 \subsection{Выводы}
 
-Реализовано устройство. В описании использовались операторы Concatenate и case. Результаты моделирования и тестирования на плате показали, что разработанное устройство работает верно.
+Реализовано устройство, содержащее счетчик-делитель и двоичный 4-разрядный счетчик с заданным алгоритмом работы. В описании использовались операторы Concatenate и case. Результаты моделирования и тестирования на плате показали, что разработанное устройство работает верно.
 
 \newpage
 
@@ -141,11 +147,14 @@
 
 В описании можно использовать любые операторы.
 
+\newpage
+
 \subsection{Код на языке Verilog}
 
 В листинге \ref{code:2} приведен код программы на языке Verilog.
 
-%\lstinputlisting[caption=lab4\_2.v, label=code:2]{lab4_2/lab4_2.v}
+\lstinputlisting[caption=lab4\_2.v, label=code:2]{lab4_2/lab4_2.v}
+\vspace{-0.5cm}
 
 \subsection{Результаты синтеза}
 
@@ -153,7 +162,7 @@
 
 \begin{figure}[H]
 \begin{center}
-	%\includegraphics[scale=0.7]{lab4_2_rtl}
+	\includegraphics[width=\textwidth]{lab4_2_rtl}
 	\caption{Результат синтеза в RLT Viewer}
 	\label{fig:lab4_2_rtl}
 \end{center}
@@ -166,7 +175,7 @@
 
 \begin{figure}[H]
 \begin{center}
-	%\includegraphics[width=\textwidth]{lab4_2_modeling}
+	\includegraphics[width=\textwidth]{lab4_2_modeling}
 	\caption{Результаты моделирования}
 	\label{fig:lab4_2_modeling}
 \end{center}
@@ -178,7 +187,7 @@
 
 \begin{figure}[H]
 \begin{center}
-	%\includegraphics{lab4_2_pins}
+	\includegraphics{lab4_2_pins}
 	\caption{Таблица назначений в Pin Planer}
 	\label{fig:lab4_2_pins}
 \end{center}
@@ -190,7 +199,7 @@
 
 \subsection{Выводы}
 
-Реализовано устройство. Результаты моделирования и тестирования на плате показали, что разработанное устройство работает верно.
+Реализовано устройство, содержащее счетчик-делитель и регистр сдвига с линейной обратной связью. Результаты моделирования и тестирования на плате показали, что разработанное устройство работает верно.
 
 \newpage
 
@@ -201,7 +210,7 @@
 На языке Verilog опишите устройство, включающее:
 \begin{itemize}
 	\item Счетчик-делитель, обеспечивающий счет по модулю \code{25 000 000} и формирующий синхронный сигнал переноса (активный уровень сигнала \code{= 1}, длительность один такт тактовой частоты) по достижению счетчиком значения \code{25 000 000 - 1}.
-	\item 8-разрядный реверсивный счетчик с динамически изменяемым модулем счета. Вход модуля счета счетчика \code{[7:0] mod} -- соединен с входами \code{[7:0]sw} устройства. Сигналы управления счетчиком заданы приведенной ниже таблицей.
+	\item 8-разрядный реверсивный счетчик с динамически изменяемым модулем счета. Вход модуля счета счетчика \code{mod[7:0]} -- соединен с входами \code{sw[7:0]} устройства. Сигналы управления счетчиком заданы приведенной ниже таблицей.
 \vspace{-0.5cm}
 \begin{table}[H]
 \begin{center}
@@ -223,7 +232,7 @@
 \end{center}
 \end{table}	
 \vspace{-0.5cm}
-	\item Модуль формирования сигнала \code{load} для 8-разрядного реверсивного счетчика -- сигнал \code{load = 1} длительностью \code{1} период тактового сигнала \code{clk} формируется при изменении значения модуля счета, заданного на входах \code{[7:0]sw} устройства.
+	\item Модуль формирования сигнала \code{load} для 8-разрядного реверсивного счетчика -- сигнал \code{load = 1} длительностью \code{1} период тактового сигнала \code{clk} формируется при изменении значения модуля счета, заданного на входах \code{sw[7:0]} устройства.
 
 	\item Входы:
 		\begin{itemize}
@@ -247,7 +256,7 @@
 
 В листинге \ref{code:5} приведен код программы на языке Verilog.
 
-%\lstinputlisting[caption=elab4\_1.v, label=code:5]{elab4_1/elab4_1.v}
+\lstinputlisting[caption=elab4\_1.v, label=code:5]{elab4_1/elab4_1.v}
 
 \subsection{Результаты синтеза}
 
@@ -255,7 +264,7 @@
 
 \begin{figure}[H]
 \begin{center}
-	%\includegraphics[scale=0.8]{elab4_1_rtl}
+	\includegraphics[width=\textwidth]{elab4_1_rtl}
 	\caption{Результат синтеза в RLT Viewer}
 	\label{fig:elab4_1_rtl}
 \end{center}
@@ -268,7 +277,7 @@
 
 \begin{figure}[H]
 \begin{center}
-	%\includegraphics[width=\textwidth]{elab4_1_modeling}
+	\includegraphics[width=\textwidth]{elab4_1_modeling}
 	\caption{Результаты моделирования}
 	\label{fig:elab4_1_modeling}
 \end{center}
@@ -280,7 +289,7 @@
 
 \begin{figure}[H]
 \begin{center}
-	%\includegraphics{elab4_1_pins}
+	\includegraphics{elab4_1_pins}
 	\caption{Таблица назначений в Pin Planer}
 	\label{fig:elab4_1_pins}
 \end{center}
@@ -292,6 +301,6 @@
 
 \subsection{Выводы}
 
-Реализовано устройство. Результаты моделирования и тестирования на плате показали, что разработанное устройство работает верно.
+Реализовано устройство, содержащее счетчик-делитель и 8-разрядный реверсивный счетчик с динамически изменяемым модулем счета. Результаты моделирования и тестирования на плате показали, что разработанное устройство работает верно.
 
 \end{document}
