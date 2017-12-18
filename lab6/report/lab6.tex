@@ -14,7 +14,7 @@
 
 \subsection{Задание}
 
-На языке Verilog на структурном уровне опишите мультиплексор 2 (4-разрядных входа) $\rightarrow$ 1 (4-разрядный выход), используя мультиплексор \code{mux2_1} (2 (1-разрядных входа) $\rightarrow$ 1 (1-разрядный выход) как компонент структурного описания:
+На языке Verilog на структурном уровне опишите мультиплексор 2 (4-разрядных входа) $\rightarrow$ 1 (4-разрядный выход), используя мультиплексор \code{mux2_1} 2 (1-разрядных входа) $\rightarrow$ 1 (1-разрядный выход) как компонент структурного описания:
 \begin{itemize}
 	\item Мультиплексор \code{mux2_1} опишите на структурном уровне с использованием Gate-Level примитивов языка Verilog.
 	\item Входы:
@@ -32,11 +32,15 @@
 \end{itemize}
 В описании можно использовать Gate-Level примитивы языка Verilog и созданные компоненты.
 
+\newpage
+
 \subsection{Код на языке Verilog}
 
 В листинге \ref{code:1} приведен код программы на языке Verilog.
 
-%\lstinputlisting[caption=lab6\_1.v, label=code:1]{lab6_1/lab6_1.v}
+\lstinputlisting[caption=lab6\_1.v, label=code:1]{lab6_1/lab6_1.v}
+
+\newpage
 
 \subsection{Результаты синтеза}
 
@@ -44,7 +48,7 @@
 
 \begin{figure}[H]
 \begin{center}
-	%\includegraphics[width=0.7\textwidth]{lab6_1_rtl}
+	\includegraphics[width=0.7\textwidth]{lab6_1_rtl}
 	\caption{Результат синтеза в RLT Viewer}
 	\label{fig:lab6_1_rtl}
 \end{center}
@@ -53,11 +57,11 @@
 \subsection{Результаты моделирования}
 \label{sec:lab6_1_modeling}
 
-На рис. \ref{fig:lab6_1_modeling} изображена временная диаграмма работы синтезированного устройства.
+На рис. \ref{fig:lab6_1_modeling} изображена временная диаграмма работы синтезированного устройства. На вход подаются случайные значения \code{ina[3:0]} и \code{inb[3:0]} сначала при \code{ctrl = 0}, а затем при \code{ctrl = 1}.
 \vspace{-0.2cm}
 \begin{figure}[H]
 \begin{center}
-	%\includegraphics[width=\textwidth]{lab6_1_modeling_1}
+	\includegraphics[width=\textwidth]{lab6_1_modeling}
 	\caption{Результаты моделирования}
 	\label{fig:lab6_1_modeling}
 \end{center}
@@ -69,7 +73,7 @@
 
 \begin{figure}[H]
 \begin{center}
-	%\includegraphics{lab6_1_pins}
+	\includegraphics{lab6_1_pins}
 	\caption{Таблица назначений в Pin Planer}
 	\label{fig:lab6_1_pins}
 \end{center}
@@ -77,7 +81,7 @@
 
 \subsection{Результаты проверки на плате}
 
-Для тестирования проекта на плате были использованы значения  \code{N = 4}, \code{LOGIC_TYPE} -- все возможные значения, \code{IN_A_NOT = 0}, \code{IN_B_NOT = 1} и \code{OUT_NOT = 1}. Результаты тестирования совпадают с ожидаемыми, следовательно, устройство работает верно.
+Для тестирования проекта на плате были использованы тесты, описанные в пункте \ref{sec:lab6_1_modeling}. Результаты тестирования совпадают с ожидаемыми, следовательно, устройство работает верно.
 
 \subsection{Выводы}
 
@@ -90,7 +94,7 @@
 \subsection{Задание}
 
 
-На основе 8-разрядного последовательного умножителя, осуществляющего умножение младшими разрядами вперед со сдвигом множимого создайте на языке Verilog параметризированное описание N-разрядного последовательного умножителя, осуществляющего умножение младшими разрядами вперед со сдвигом множимого, в котором:
+На основе 8-разрядного последовательного умножителя, осуществляющего умножение младшими разрядами вперед со сдвигом множимого, создайте на языке Verilog параметризированное описание N-разрядного последовательного умножителя, осуществляющего умножение младшими разрядами вперед со сдвигом множимого, в котором:
 \begin{itemize}
 	\item Параметр \code{N} -- разрядность входных данных (по умолчанию задайте его равным \code{8}) -- операндов.
 	\item Параметр \code{INV} --  инверсия выходных данных умножителя ($=1$ выходные данные инвертируются; $=0$ выходные данные не инвертируются).
@@ -121,16 +125,18 @@
 
 В листинге \ref{code:2} приведен код программы на языке Verilog.
 
-%\lstinputlisting[caption=lab6\_2.v, label=code:2]{lab6_2/lab6_2.v}
+\lstinputlisting[caption=lab6\_2.v, label=code:2]{lab6_2/lab6_2.v}
 \vspace{-0.5cm}
+
+\newpage
 
 \subsection{Результаты синтеза}
 
-На рис. \ref{fig:lab6_2_rtl} приведено изображение синтезированной схемы в RLT Viewer.
+На рис. \ref{fig:lab6_2_rtl} приведено изображение синтезированной схемы в RLT Viewer при \code{N = 2; INV = 0}.
 
 \begin{figure}[H]
 \begin{center}
-	%\includegraphics[width=\textwidth]{lab6_2_rtl}
+	\includegraphics[width=\textwidth]{lab6_2_rtl}
 	\caption{Результат синтеза в RLT Viewer}
 	\label{fig:lab6_2_rtl}
 \end{center}
@@ -139,15 +145,16 @@
 \subsection{Результаты моделирования}
 \label{sec:lab6_2_modeling}
 
-На рис. \ref{fig:lab6_2_modeling} изображена временная диаграмма работы синтезированного устройства при \code{N = 8; INV = 0}.
-
+На рис. \ref{fig:lab6_2_modeling} изображена временная диаграмма работы синтезированного устройства при \code{N = 8; INV = 0}. На вход подаются случайные значения множимого \code{inb[7:0]} и множителя \code{ina[7:0]}, а результат записывается в \code{led[15:0]}.
 \begin{figure}[H]
 \begin{center}
-	%\includegraphics[width=\textwidth]{lab6_2_modeling}
+	\includegraphics[width=\textwidth]{lab6_2_modeling}
 	\caption{Результаты моделирования}
 	\label{fig:lab6_2_modeling}
 \end{center}
 \end{figure}
+
+\newpage
 
 \subsection{Назначение выводов СБИС}
 
@@ -155,7 +162,7 @@
 
 \begin{figure}[H]
 \begin{center}
-	%\includegraphics{lab6_2_pins}
+	\includegraphics{lab6_2_pins}
 	\caption{Таблица назначений в Pin Planer}
 	\label{fig:lab6_2_pins}
 \end{center}
@@ -207,15 +214,15 @@
 
 В листинге \ref{code:5} приведен код программы на языке Verilog.
 
-%\lstinputlisting[caption=elab6\_1.v, label=code:5]{elab6_1/elab6_1.v}
+\lstinputlisting[caption=elab6\_1.v, label=code:5]{elab6_1/elab6_1.v}
 
 \subsection{Результаты синтеза}
 
-На рис. \ref{fig:elab6_1_rtl} приведено изображение синтезированной схемы в RLT Viewer.
+На рис. \ref{fig:elab6_1_rtl} приведено изображение синтезированной схемы в RLT Viewer при \code{N = 2; INV = 0}.
 
 \begin{figure}[H]
 \begin{center}
-	%\includegraphics[width=\textwidth]{elab6_1_rtl}
+	\includegraphics[width=\textwidth]{elab6_1_rtl}
 	\caption{Результат синтеза в RLT Viewer}
 	\label{fig:elab6_1_rtl}
 \end{center}
@@ -224,15 +231,17 @@
 \subsection{Результаты моделирования}
 \label{sec:elab6_1_modeling}
 
-На рис. \ref{fig:elab6_1_modeling} изображена временная диаграмма работы синтезированного устройства при \code{N = 8; INV = 0}.
+На рис. \ref{fig:elab6_1_modeling} изображена временная диаграмма работы синтезированного устройства при \code{N = 8; INV = 0}. На вход подаются случайные значения множимого \code{inb[7:0]} и множителя \code{ina[7:0]}, а результат записывается в \code{led[15:0]}.
 
 \begin{figure}[H]
 \begin{center}
-	%\includegraphics[width=\textwidth]{elab6_1_modeling}
+	\includegraphics[width=\textwidth]{elab6_1_modeling}
 	\caption{Результаты моделирования}
 	\label{fig:elab6_1_modeling}
 \end{center}
 \end{figure}
+
+\newpage
 
 \subsection{Назначение выводов СБИС}
 
@@ -240,7 +249,7 @@
 
 \begin{figure}[H]
 \begin{center}
-	%\includegraphics{elab6_1_pins}
+	\includegraphics{elab6_1_pins}
 	\caption{Таблица назначений в Pin Planer}
 	\label{fig:elab6_1_pins}
 \end{center}
