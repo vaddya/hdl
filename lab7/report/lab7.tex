@@ -51,28 +51,30 @@
 
 В листинге \ref{code:1} приведен код программы на языке Verilog.
 
-%\lstinputlisting[caption=lab7\_1.v, label=code:1]{lab7_1/lab7_1.v}
+\lstinputlisting[caption=lab7\_1.v, label=code:1]{lab7_1/lab7_1.v}
+
+\newpage
 
 \subsection{Результаты синтеза}
 
 На рис. \ref{fig:lab7_1_rtl} приведено изображение синтезированной схемы в RLT Viewer.
-
 \begin{figure}[H]
 \begin{center}
-	%\includegraphics[width=0.7\textwidth]{lab7_1_rtl}
+	\includegraphics[width=\textwidth]{lab7_1_rtl}
 	\caption{Результат синтеза в RLT Viewer}
 	\label{fig:lab7_1_rtl}
 \end{center}
 \end{figure}
+\vspace{-1cm}
 
 \subsection{Результаты моделирования}
 \label{sec:lab7_1_modeling}
 
-На рис. \ref{fig:lab7_1_modeling} изображена временная диаграмма работы синтезированного устройства  при \code{INV = 0}.
+На рис. \ref{fig:lab7_1_modeling} изображена временная диаграмма работы синтезированного устройства при \code{INV = 0}. На вход подаются четыре случайных значения, которые сортируются и записываются в порядке убывания значения.
 
 \begin{figure}[H]
 \begin{center}
-	%\includegraphics[width=\textwidth]{lab7_1_modeling_1}
+	\includegraphics[width=\textwidth]{lab7_1_modeling}
 	\caption{Результаты моделирования}
 	\label{fig:lab7_1_modeling}
 \end{center}
@@ -84,7 +86,7 @@
 
 \begin{figure}[H]
 \begin{center}
-	%\includegraphics{lab7_1_pins}
+	\includegraphics{lab7_1_pins}
 	\caption{Таблица назначений в Pin Planer}
 	\label{fig:lab7_1_pins}
 \end{center}
@@ -111,7 +113,7 @@
 	\item Вход синхронной загрузки данных в регистр -- \code{load}.
 \end{itemize}
 
-%\lstinputlisting[caption=lab7\_2_src.v, label=code:2]{lab7_2/lab7_2_src.v}
+\lstinputlisting[caption=latch\_ff\_n.v, label=code:2]{lab7_2/latch_ff_n.v}
 
 \begin{itemize}
 	\item Запустите полную компиляцию модуля.
@@ -123,59 +125,68 @@
 	\item Убедитесь, что нет сообщений о триггерах-защелках.
 	\item Убедитесь, что нет триггеров-защелок в RTL Viewer (привести в отчете).
 	\item Зафиксируйте аппаратные затраты на реализацию модуля -- число логических элементов (привести в отчете).
-	\item Осуществите моделирование при \code{N = 8}.
+	\item Осуществите моделирование при \code{N = 4}.
 \end{itemize}
 
-\subsection{Код на языке Verilog}
+\subsection{Результаты компиляции}
 
-В листинге \ref{code:2} приведен код программы на языке Verilog.
+В результате компиляции исходного проекта были получены следующие предупреждения о триггерах-защелках:
+\begin{itemize}
+	\item \textbf{Warning (13004)}: Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+	\item \textbf{Warning (13012)}: Latch temp[0] has unsafe behavior.
+	\item \textbf{Warning (13012)}: Latch temp[1] has unsafe behavior.
+	\item \textbf{Warning (13012)}: Latch temp[2] has unsafe behavior.
+	\item \textbf{Warning (13012)}: Latch temp[3] has unsafe behavior.
+	\item \textbf{Warning (335093)}: TimeQuest Timing Analyzer is analyzing 8 combinational loops as latches.
+\end{itemize}
 
-%\lstinputlisting[caption=lab7\_2.v, label=code:2]{lab7_2/lab7_2.v}
+На рис. \ref{fig:lab7_2_rtl_1} приведено изображение синтезированной схемы в RLT Viewer. Красным цветом на схеме отмечены триггеры-защелки. Аппаратурные затраты составили 20 ЛЭ, включая 2 регистра.
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=0.95\textwidth]{lab7_2_rtl_1}
+	\caption{Результат синтеза в RLT Viewer}
+	\label{fig:lab7_2_rtl_1}
+\end{center}
+\end{figure}
+
+\subsection{Исправленное описание на языке Verilog}
+
+В листинге \ref{code:2} приведен код программы на языке Verilog, не порождающий ни одного триггера-защелки.
+
+\lstinputlisting[caption=lab7\_2.v, label=code:2]{lab7_2/lab7_2.v}
+
+\newpage
 
 \subsection{Результаты синтеза}
 
-На рис. \ref{fig:lab7_2_rtl} приведено изображение синтезированной схемы в RLT Viewer.
+На рис. \ref{fig:lab7_2_rtl} приведено изображение синтезированной схемы в RLT Viewer. Видно, что триггеров-защелок не появилось. Аппаратурные затраты составили 20 ЛЭ, включая 4 регистра.
 
 \begin{figure}[H]
 \begin{center}
-	%\includegraphics[width=\textwidth]{lab7_2_rtl}
+	\includegraphics[width=0.9\textwidth]{lab7_2_rtl_2}
 	\caption{Результат синтеза в RLT Viewer}
 	\label{fig:lab7_2_rtl}
 \end{center}
 \end{figure}
 
+\newpage
+
 \subsection{Результаты моделирования}
 \label{sec:lab7_2_modeling}
 
-На рис. \ref{fig:lab7_2_modeling} изображена временная диаграмма работы синтезированного устройства при \code{N = 8}.
+На рис. \ref{fig:lab7_2_modeling} изображена временная диаграмма работы синтезированного устройства при \code{N = 4}.
 
 \begin{figure}[H]
 \begin{center}
-	%\includegraphics[width=\textwidth]{lab7_2_modeling}
+	\includegraphics[width=\textwidth]{lab7_2_modeling}
 	\caption{Результаты моделирования}
 	\label{fig:lab7_2_modeling}
 \end{center}
 \end{figure}
 
-\subsection{Назначение выводов СБИС}
-
-На рис. \ref{fig:lab7_2_pins} приведены назначения выводов СБИС в Pin Planner.
-
-\begin{figure}[H]
-\begin{center}
-	%\includegraphics{lab7_2_pins}
-	\caption{Таблица назначений в Pin Planer}
-	\label{fig:lab7_2_pins}
-\end{center}
-\end{figure}
-
-\subsection{Результаты проверки на плате}
-
-Для тестирования проекта на плате были использованы тесты, описанные в пункте \ref{sec:lab7_2_modeling}. Результаты тестирования совпадают с ожидаемыми, следовательно, устройство работает верно.
-
 \subsection{Выводы}
 
-Реализовано описание кольцевого сдвигающего регистра, не порождающего триггеров-защелок. Результаты моделирования и тестирования на плате показали, что разработанное устройство работает верно.
+Реализовано описание кольцевого сдвигающего регистра, не порождающего триггеров-защелок. Результаты моделирования показали, что разработанное устройство работает верно.
 
 \newpage
 
@@ -188,7 +199,7 @@
 \begin{figure}[H]
 \begin{center}
 	\includegraphics[width=\textwidth]{elab7_1_0}
-	\caption{Таблица назначений в Pin Planer}
+	\caption{Параметризированное устройство}
 	\label{fig:elab7_1_0}
 \end{center}
 \end{figure}
@@ -224,36 +235,100 @@
 \end{itemize}
 В описании можно использовать любые операторы.
 
+\newpage
+
 \subsection{Код на языке Verilog}
 
 В листинге \ref{code:5} приведен код программы на языке Verilog.
 
-%\lstinputlisting[caption=elab7\_1.v, label=code:5]{elab7_1/elab7_1.v}
+\lstinputlisting[caption=elab7\_1.v, label=code:5]{elab7_1/elab7_1.v}
+
+\newpage
+
+\lstinputlisting[caption=cnt\_d.v, label=code:6]{elab7_1/cnt_d.v}
+
+\lstinputlisting[caption=cnt\_N.v, label=code:6]{elab7_1/cnt_N.v}
+
+\newpage
+
+\lstinputlisting[caption=RAM.v, label=code:6]{elab7_1/RAM.v}
+
+\newpage
 
 \subsection{Результаты синтеза}
 
-На рис. \ref{fig:elab7_1_rtl} приведено изображение синтезированной схемы в RLT Viewer.
+На рис. \ref{fig:elab7_1_rtl} -- \ref{fig:elab7_1_rtl_3} приведены изображения синтезированного устройства и каждого модуля по отдельности в RLT Viewer.
 
 \begin{figure}[H]
 \begin{center}
-	%\includegraphics[width=\textwidth]{elab7_1_rtl}
-	\caption{Результат синтеза в RLT Viewer}
+	\includegraphics[width=\textwidth]{elab7_1_rtl}
+	\caption{Результат синтеза устройства в RLT Viewer}
 	\label{fig:elab7_1_rtl}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\textwidth]{elab7_1_rtl_1}
+	\caption{Результат синтеза \code{cnt_div} в RLT Viewer}
+	\label{fig:elab7_1_rtl_1}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=0.7\textwidth]{elab7_1_rtl_2}
+	\caption{Результат синтеза \code{cnt_adr} в RLT Viewer}
+	\label{fig:elab7_1_rtl_2}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=0.7\textwidth]{elab7_1_rtl_3}
+	\caption{Результат синтеза \code{cnt_data} в RLT Viewer}
+	\label{fig:elab7_1_rtl_3}
 \end{center}
 \end{figure}
 
 \subsection{Результаты моделирования}
 \label{sec:elab7_1_modeling}
 
-На рис. \ref{fig:elab7_1_modeling} изображена временная диаграмма работы синтезированного устройства при \code{DIV = 3}, \code{N = 4}, \code{word_num = 16}, \code{data_W = 4}, \code{INV = 0}.
+На рис. \ref{fig:elab7_1_modeling_1} -- \ref{fig:elab7_1_modeling} изображены временные диаграммы работы каждого модуля по отдельности и всего синтезированного устройства при \code{DIV = 3},\\ \code{N = 4}, \code{word_num = 16}, \code{data_W = 4}, \code{INV = 0}.
 
 \begin{figure}[H]
 \begin{center}
-	%\includegraphics[width=\textwidth]{elab7_1_modeling}
-	\caption{Результаты моделирования}
+	\includegraphics[width=\textwidth]{elab7_1_modeling_1}
+	\caption{Результаты моделирования модуля \code{cnt_d}}
+	\label{fig:elab7_1_modeling_1}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\textwidth]{elab7_1_modeling_2}
+	\caption{Результаты моделирования модуля \code{cnt_N}}
+	\label{fig:elab7_1_modeling_2}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\textwidth]{elab7_1_modeling_3}
+	\caption{Результаты моделирования модуля \code{RAM}}
+	\label{fig:elab7_1_modeling_3}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\textwidth]{elab7_1_modeling}
+	\caption{Результаты моделирования устройства}
 	\label{fig:elab7_1_modeling}
 \end{center}
 \end{figure}
+
+При моделировании устройства при активном уровне \code{pba} происходит запись в память, а при активном уровне \code{pbb} происходит асинхронный сброс. Сначала происходит чтение начальных данных, затем запись в память, после чего происходит асинхронный сброс и чтение записанных ранее данных.
 
 \subsection{Назначение выводов СБИС}
 
@@ -261,7 +336,7 @@
 
 \begin{figure}[H]
 \begin{center}
-	%\includegraphics{elab7_1_pins}
+	\includegraphics{elab7_1_pins}
 	\caption{Таблица назначений в Pin Planer}
 	\label{fig:elab7_1_pins}
 \end{center}
