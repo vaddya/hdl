@@ -1,0 +1,202 @@
+\include{settings}
+
+\begin{document}
+
+\include{titlepage}
+
+\tableofcontents
+\listoffigures
+\lstlistoflistings
+\newpage
+
+\section{Задачи работы}
+
+\begin{enumerate}
+\setlength\itemsep{0em}
+\item Задание требований к тактовой частоте проекта.
+\item Работа с приложением TimeQuest.
+\item Анализ полученных результатов для максимальной тактовой частоты работы устройства.
+\end{enumerate}
+
+\section{Синтез 4-разрядного счетчика}
+
+\subsection{Результаты синтеза}
+
+На рис. \ref{fig:counter} изображена синтезированная схема 4-разрядного счетчика.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\textwidth]{counter}
+	\caption{Синтезированная схема}
+	\label{fig:counter}
+\end{center}
+\end{figure}
+
+\vspace{-0.5cm}
+\subsection{Результаты моделирования}
+
+На рис. \ref{fig:func-modeling} изображен результат функционального моделирования, полученный с помощью встроенной системы моделирования – University Program VWF.
+
+\vspace{-0.5cm}
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=0.9]{modeling}
+	\caption{Результаты моделирования}
+	\label{fig:func-modeling}
+\end{center}
+\end{figure}
+
+%TODO Проведите анализ временной диаграммы и объясните почему:
+%TODO Данные записываемые в счетчик появляются на выходе с задержкой 2 такта?
+%TODO В самом начале моделирования значение 0 присутствует на выходе 2 такта?
+
+\subsection{Результаты временного анализа}
+
+\subsubsection{Создание SDC файла}
+
+В листинге \ref{code:sdc} приведена сформированная SDC команда, создающая ограничения для тактового сигнала.
+
+\begin{lstlisting}[caption=Synopsys Design Constraints (SDC) файл, label=code:sdc]
+create_clock -name input_clk -period 20.000 [get_ports {clk}]
+\end{lstlisting}
+
+В отчете компиляции в разделе \textbf{TimeQuest Timing Analyzer} указана максимальная тактовая частота работы проекта: Fmax = $465.55$ MHz, Restricted Fmax = $250$ MHz.
+
+В таблице \textbf{Multicorner Timing Analysis Summary} приведены следующие значения задержек для худшего случая:
+\begin{itemize}
+\setlength\itemsep{0em}
+\item Setup Slack = $17.852$ нс.
+\item Hold Slack = $0.197$ нс.
+\item Slack для Minimum Pulse Width = $9.436$ нс.
+\end{itemize}
+
+\subsubsection{Изменение периода тактового сигнала}
+
+При изменении ограничения с 20 нс до 1 нс (то есть частота работы $100$ GHz), максимальная тактовая частота стала следующей: Fmax = $489.24$ MHz, Restricted Fmax = $250$ MHz. Из результатов видно, что значение Fmax увеличилось.
+
+В таблице \textbf{Multicorner Timing Analysis Summary} значения задержек стали равны:
+\begin{itemize}
+\setlength\itemsep{0em}
+\item Setup Slack = $-1.044$ нс.
+\item Hold Slack = $0.256$ нс.
+\item Slack для Minimum Pulse Width = $-3.000$ нс.
+\end{itemize}
+
+Отрицательные значения временных показателей говорят о том, что за время между импульсами устройство не успевает переключиться.
+
+\subsubsection{Анализ временных диаграмм}
+
+На рис. \ref{fig:waveform_setup} и \ref{fig:waveform_hold} изображены временные диаграммы распространения данных и тактового сигнала для анализа Setup Slask и Hold Slack соответственно, построенные с помощью Report Timing.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=0.9]{waveform_setup}
+	\caption{Временная диаграмма Setup анализа}
+	\label{fig:waveform_setup}
+\end{center}
+\end{figure}
+
+\vspace{-1.5cm}
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=0.9]{waveform_hold}
+	\caption{Временная диаграмма Hold анализа}
+	\label{fig:waveform_hold}
+\end{center}
+\end{figure}
+
+\section{Синтез 128-разрядного счетчика}
+
+\subsection{Результаты временного анализа}
+
+\subsubsection{Максимальная частота}
+
+В отчете компиляции в разделе \textbf{TimeQuest Timing Analyzer} указана максимальная тактовая частота работы проекта: Fmax = $180.21$ MHz, Restricted Fmax = $180.21$ MHz. Следовательно требование к максимальной тактовой частоте выполнено. Максимальная тактовая частота работы проекта при этом равна $180.21$ MHz. 
+
+\subsubsection{Критические пути}
+
+Было найдено 2 критических пути:
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=1]{critical_paths}
+	\caption{Список критических путей}
+	\label{fig:critical_paths}
+\end{center}
+\end{figure}
+\vspace{-0.7cm}
+
+На рис. \ref{fig:waveform_setup_128} и \ref{fig:waveform_setup_128_2} изображены временные диаграмма Setup анализа для критических путей.
+
+\vspace{-0.8cm}
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=0.85]{waveform_setup_128}
+	\caption{Временная диаграмма Setup анализа для критического пути 1}
+	\label{fig:waveform_setup_128}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=0.85]{waveform_setup_128_2}
+	\caption{Временная диаграмма Setup анализа для критического пути 2}
+	\label{fig:waveform_setup_128_2}
+\end{center}
+\end{figure}
+
+Setup Slack для критических путей (пути для которого максимальный отрицательный Slack) оказались равны $-1.549$ нс и $-0.184$ нс соответственно. 
+
+Критические пути на синтезированной схеме изображены на рис. \ref{fig:counter_128}.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\textwidth]{counter_128}
+	\caption{Критические пути на синтезированной схеме}
+	\label{fig:counter_128}
+\end{center}
+\end{figure}
+
+\newpage
+
+На рис. \ref{fig:chip_planner} критический путь изображен в редакторе Chip Planner. Можно заметить, что по непонятным причинам Quartus разместил триггеры далеко друг от друга, что и привело к снижению частоты работы проекта.
+
+\begin{figure}[H]
+\begin{center}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{chip_planner_1}
+		\caption{Путь 1}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=0.99\textwidth]{chip_planner_2}
+		\caption{Путь 2}
+	\end{subfigure}
+	\caption{Критические пути в Chip Planner}
+	\label{fig:chip_planner}
+\end{center}
+\end{figure}
+
+\newpage
+
+На рис. \ref{fig:tmv} критические пути изображены в редакторе Technology Map Viwer. Можно заметить, что критическими оказались внешние пути счетчика (от триггера к счетчику, от счетчика к триггеру).
+
+\begin{figure}[H]
+\begin{center}
+	\begin{subfigure}[b]{\textwidth}
+		\includegraphics[width=\textwidth]{tmv1}
+		\caption{Путь 1}
+	\end{subfigure}
+	\begin{subfigure}[b]{\textwidth}
+		\includegraphics[width=\textwidth]{tmv2}
+		\caption{Путь 2}
+	\end{subfigure}
+	\caption{Критические пути в Technology Map Viwer}
+	\label{fig:tmv}
+\end{center}
+\end{figure}
+
+\section{Выводы}
+
+В процессе выполнения работы были синтезированы 4-разрядный и 128-разрядный счетчики; проведен временной анализ с помощью приложения TimeQuest Timing Analyzer; проанализированы полученные результаты для максимальной тактовой частоты работы устройства; найдено 2 критических пути.
+
+\end{document}
