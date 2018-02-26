@@ -10,10 +10,124 @@
 %\lstlistoflistings
 \newpage
 
-\section{lab7\_ms}
+\section{Задание}
 
-\subsection{Задание}
+\begin{itemize}
+	\item Понимание причин возникновения сбоев, вызванных метастабильностью, и способов привязки асинхронных сигналов в Quartus Prime;
+	\item Получение навыков анализа метастабильности с использованием TimeQuest Timing Analyzer.
+\end{itemize}
 
-\subsection{Выводы}
+\section{Выполнение работы}
+
+\subsection{Компиляция и анализ проекта, задание временных требований}
+
+В подготовленном заранее проекте \code{Metastabil}, приведенном на рис. \ref{fig:source}, не выполняются требования к времени установки.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=\textwidth]{source}
+		\caption{Исходный проект}
+		\label{fig:source}
+	\end{center}
+\end{figure}
+
+Зададим временные ограничения и режим анализа цепей синхронизации как \code{Forced If Asynchronous}. В листинге \ref{code:sdc} приведен SDC-файл.
+
+\vspace{0.5cm}
+\lstinputlisting[caption=SDC1.sdc, label=code:sdc]{SDC1.sdc}
+
+\subsection{Компиляция и анализ проекта с заданными временными требованиями и анализ результатов}
+
+После компиляции можно заметить, что в проекте используется один заданный базовый тактовый сигнал с частотой 100 МГц. и два порожденных тактовых сигнала с заданными при настройке PLL частотами.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=\textwidth]{clocks_1}
+		\caption{Тактовые сигналы}
+		\label{fig:clocks_1}
+	\end{center}
+\end{figure}
+
+В разделе Slow 1200mV 85C Model Setup Summary, приведенном на рис. \ref{fig:timing_1}, видно, что временные требования не выполняются. Однако для остальных моделей ошибок нет, следовательно может оцениваться метастабильность.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.95]{timing_1}
+		\caption{Slow 1200mV 85C Model Setup Summary}
+		\label{fig:timing_1}
+	\end{center}
+\end{figure}
+
+На рис. \ref{fig:paths_1} приведен отчет Report Exceptions в TimeQuest Timing Analyzer. Видно, что заданные пути исключены из анализа. 
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=\textwidth]{paths_1}
+		\caption{Slow 1200mV 85C Model Setup Summary}
+		\label{fig:paths_1}
+	\end{center}
+\end{figure}
+
+На рис. \ref{fig:waveform_1} изображена временная диаграмма для регистровой передачи \code{From Node RG_in To Node RG_out}. Тактовым сигналом, запускающим данные в данной регистровой передаче является сигнал с вывода \code{clk[0] PLL_CLK} (Launch Clock), а захватывающим - сигнал с вывода \code{clk[1] PLL_CLK} (Latch Clock). Временной интервал между ними соответствует фазовому сдвигу, заданному при настройке \code{PLL_CLK}.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=\textwidth]{waveform_1}
+		\caption{Slow 1200mV 85C Model Setup Summary}
+		\label{fig:waveform_1}
+	\end{center}
+\end{figure}
+
+Для обеспечения работоспособности цепи увеличим фазовый сдвиг на время отрицательного допуска Setup, равное 58 пс. Из отчета компиляции, приведенного на рис. \ref{fig:timing_2}, видно, что теперь временные требования выполнены. 
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.95]{timing_2}
+		\caption{Slow 1200mV 85C Model Setup Summary}
+		\label{fig:timing_2}
+	\end{center}
+\end{figure}
+
+Полученный проект не содержит временных ошибок и для него может проводиться анализ метастабильности для всех моделей задержек. Установлен минимальный положительный допуск Setup, для которого интенсивность сбоев, вызванных метастабильностью, будет максимальной.
+
+\subsection{Анализ интенсивности сбоев, вызванных метастабильностью}
+
+На рис. \ref{fig:assignments_1} приведена заданная активность переключений в Assignment Editor, равная 20 МГц.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.95]{assignments_1}
+		\caption{Активность переключений в Assignment Editor}
+		\label{fig:assignments_1}
+	\end{center}
+\end{figure}
+
+На рис. \ref{fig:timing_2} приведен Metastability Report для модели Slow 1200mV 85C Model Setup. Из отчета видно, что частота переключений Data Toggle Rate, используемая для вычисления Mean Time Before Faille (MTBF), соответствует заданной.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.95]{timing_3}
+		\caption{Metastability Report для Slow 1200mV 85C Model}
+		\label{fig:timing_2}
+	\end{center}
+\end{figure}
+
+В таблице \ref{tab:research} приведены результаты исследования для разных моделей и значений сдвига фазы \code{clk[1]}.
+
+\begin{table}[H]
+	\centering
+	\caption{Исследование метастабильности}
+	\label{tab:research}
+	\begin{tabular}{|c|p{0.2\linewidth}|p{0.1\linewidth}|p{0.1\linewidth}|p{0.1\linewidth}|p{0.1\linewidth}|p{0.1\linewidth}|p{0.1\linewidth}|}
+		\hline
+		\multirow{2}{*}{\makecell{\\ \\ №}} & \multirow{2}{*}{\makecell{\\ \\ Сдвиг фазы / \\ Output slack, нс}} & \multicolumn{2}{l|}{\makecell{\centering Slow 85C}} & \multicolumn{2}{l|}{\makecell{\centering Slow 0C}} & \multicolumn{2}{l|}{\makecell{\centering Fast 0C}} \\ \cline{3-8} 
+		&  & Available Setting Time, нс & Typical MTBF, лет & Available Setting Time, нс & Typical MTBF, лет & Available Setting Time, нс & Typical MTBF, лет \\ 
+		\hline
+		1 &  &  &  &  &  &  &  \\ 
+		\hline
+		2 &  &  &  &  &  &  &  \\ 
+		\hline
+	\end{tabular}
+\end{table}
+
+\section{Выводы}
 
 \end{document}

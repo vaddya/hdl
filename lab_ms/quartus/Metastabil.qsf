@@ -6,7 +6,7 @@
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE6E22C8
 set_global_assignment -name TOP_LEVEL_ENTITY Metastabil
-set_global_assignment -name LAST_QUARTUS_VERSION 15.1.0
+set_global_assignment -name LAST_QUARTUS_VERSION "17.1.0 Lite Edition"
 set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
 set_global_assignment -name DEVICE_FILTER_PACKAGE TQFP
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
@@ -28,7 +28,9 @@ set_location_assignment PIN_101 -to ~ALTERA_nCEO~
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
 set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to out_fail
 set_instance_assignment -name SLEW_RATE 2 -to out_fail
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name SYNCHRONIZER_IDENTIFICATION AUTO
+set_global_assignment -name SYNCHRONIZER_IDENTIFICATION "FORCED IF ASYNCHRONOUS"
 set_global_assignment -name VHDL_FILE PLL_CLK.vhd
 set_global_assignment -name BDF_FILE Metastabil.bdf
+set_global_assignment -name SDC_FILE SDC1.sdc
+set_instance_assignment -name SYNCHRONIZER_TOGGLE_RATE 20000000 -to RG_in
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

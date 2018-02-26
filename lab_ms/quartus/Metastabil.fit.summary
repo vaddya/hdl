@@ -1,0 +1,16 @@
+Fitter Status : Successful - Mon Feb 26 23:16:14 2018
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : Metastabil
+Top-level Entity Name : Metastabil
+Family : Cyclone IV E
+Device : EP4CE6E22C8
+Timing Models : Final
+Total logic elements : 2 / 6,272 ( < 1 % )
+    Total combinational functions : 0 / 6,272 ( 0 % )
+    Dedicated logic registers : 2 / 6,272 ( < 1 % )
+Total registers : 2
+Total pins : 3 / 92 ( 3 % )
+Total virtual pins : 0
+Total memory bits : 0 / 276,480 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
+Total PLLs : 1 / 2 ( 50 % )
