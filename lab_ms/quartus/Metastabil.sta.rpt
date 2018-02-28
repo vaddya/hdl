@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for Metastabil
-Mon Feb 26 23:16:19 2018
+Tue Feb 27 22:01:54 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -18,8 +18,8 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
  10. Slow 1200mV 85C Model Recovery Summary
  11. Slow 1200mV 85C Model Removal Summary
  12. Slow 1200mV 85C Model Minimum Pulse Width Summary
- 13. Slow 1200mV 85C Model Setup: 'P_clk|altpll_component|auto_generated|pll1|clk[1]'
- 14. Slow 1200mV 85C Model Hold: 'P_clk|altpll_component|auto_generated|pll1|clk[1]'
+ 13. Slow 1200mV 85C Model Setup: 'P_clk|altpll_component|auto_generated|pll1|clk[0]'
+ 14. Slow 1200mV 85C Model Hold: 'P_clk|altpll_component|auto_generated|pll1|clk[0]'
  15. Slow 1200mV 85C Model Metastability Summary
  16. Slow 1200mV 0C Model Fmax Summary
  17. Slow 1200mV 0C Model Setup Summary
@@ -27,16 +27,16 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
  19. Slow 1200mV 0C Model Recovery Summary
  20. Slow 1200mV 0C Model Removal Summary
  21. Slow 1200mV 0C Model Minimum Pulse Width Summary
- 22. Slow 1200mV 0C Model Setup: 'P_clk|altpll_component|auto_generated|pll1|clk[1]'
- 23. Slow 1200mV 0C Model Hold: 'P_clk|altpll_component|auto_generated|pll1|clk[1]'
+ 22. Slow 1200mV 0C Model Setup: 'P_clk|altpll_component|auto_generated|pll1|clk[0]'
+ 23. Slow 1200mV 0C Model Hold: 'P_clk|altpll_component|auto_generated|pll1|clk[0]'
  24. Slow 1200mV 0C Model Metastability Summary
  25. Fast 1200mV 0C Model Setup Summary
  26. Fast 1200mV 0C Model Hold Summary
  27. Fast 1200mV 0C Model Recovery Summary
  28. Fast 1200mV 0C Model Removal Summary
  29. Fast 1200mV 0C Model Minimum Pulse Width Summary
- 30. Fast 1200mV 0C Model Setup: 'P_clk|altpll_component|auto_generated|pll1|clk[1]'
- 31. Fast 1200mV 0C Model Hold: 'P_clk|altpll_component|auto_generated|pll1|clk[1]'
+ 30. Fast 1200mV 0C Model Setup: 'P_clk|altpll_component|auto_generated|pll1|clk[0]'
+ 31. Fast 1200mV 0C Model Hold: 'P_clk|altpll_component|auto_generated|pll1|clk[0]'
  32. Fast 1200mV 0C Model Metastability Summary
  33. Multicorner Timing Analysis Summary
  34. Board Trace Model Assignments
@@ -100,8 +100,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.2%      ;
-;     Processors 3-4         ;   0.2%      ;
+;     Processors 2-4         ;   0.2%      ;
 +----------------------------+-------------+
 
 
@@ -110,7 +109,7 @@ refer to the applicable agreement for further details.
 +---------------+--------+--------------------------+
 ; SDC File Path ; Status ; Read at                  ;
 +---------------+--------+--------------------------+
-; SDC1.sdc      ; OK     ; Mon Feb 26 23:16:18 2018 ;
+; SDC1.sdc      ; OK     ; Tue Feb 27 22:01:54 2018 ;
 +---------------+--------+--------------------------+
 
 
@@ -121,14 +120,17 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------+-----------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+-----------------------------------------------------+-------------------------------------------------------+
 ; clk_in                                            ; Base      ; 10.000 ; 100.0 MHz ; 0.000 ; 5.000  ;            ;           ;             ;       ;        ;           ;            ;          ;        ;                                                     ; { clk_in }                                            ;
 ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; Generated ; 40.000 ; 25.0 MHz  ; 0.000 ; 20.000 ; 50.00      ; 4         ; 1           ;       ;        ;           ;            ; false    ; clk_in ; P_clk|altpll_component|auto_generated|pll1|inclk[0] ; { P_clk|altpll_component|auto_generated|pll1|clk[0] } ;
-; P_clk|altpll_component|auto_generated|pll1|clk[1] ; Generated ; 40.000 ; 25.0 MHz  ; 1.071 ; 21.071 ; 50.00      ; 4         ; 1           ; 9.6   ;        ;           ;            ; false    ; clk_in ; P_clk|altpll_component|auto_generated|pll1|inclk[0] ; { P_clk|altpll_component|auto_generated|pll1|clk[1] } ;
 +---------------------------------------------------+-----------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+-----------------------------------------------------+-------------------------------------------------------+
 
 
---------------------------------------
-; Slow 1200mV 85C Model Fmax Summary ;
---------------------------------------
-No paths to report.
++------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                                                 ;
++-------------+-----------------+---------------------------------------------------+------------------------------------------------+
+; Fmax        ; Restricted Fmax ; Clock Name                                        ; Note                                           ;
++-------------+-----------------+---------------------------------------------------+------------------------------------------------+
+; 1037.34 MHz ; 402.09 MHz      ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; limit due to minimum period restriction (tmin) ;
++-------------+-----------------+---------------------------------------------------+------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
 ----------------------------------
@@ -137,22 +139,22 @@ No paths to report.
 HTML report is unavailable in plain text report export.
 
 
-+---------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Setup Summary                                       ;
-+---------------------------------------------------+-------+---------------+
-; Clock                                             ; Slack ; End Point TNS ;
-+---------------------------------------------------+-------+---------------+
-; P_clk|altpll_component|auto_generated|pll1|clk[1] ; 0.013 ; 0.000         ;
-+---------------------------------------------------+-------+---------------+
-
-
 +----------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Hold Summary                                         ;
+; Slow 1200mV 85C Model Setup Summary                                        ;
 +---------------------------------------------------+--------+---------------+
 ; Clock                                             ; Slack  ; End Point TNS ;
 +---------------------------------------------------+--------+---------------+
-; P_clk|altpll_component|auto_generated|pll1|clk[1] ; 39.305 ; 0.000         ;
+; P_clk|altpll_component|auto_generated|pll1|clk[0] ; 39.036 ; 0.000         ;
 +---------------------------------------------------+--------+---------------+
+
+
++---------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold Summary                                        ;
++---------------------------------------------------+-------+---------------+
+; Clock                                             ; Slack ; End Point TNS ;
++---------------------------------------------------+-------+---------------+
+; P_clk|altpll_component|auto_generated|pll1|clk[0] ; 0.500 ; 0.000         ;
++---------------------------------------------------+-------+---------------+
 
 
 ------------------------------------------
@@ -174,65 +176,70 @@ No paths to report.
 +---------------------------------------------------+--------+---------------+
 ; clk_in                                            ; 4.934  ; 0.000         ;
 ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; 19.718 ; 0.000         ;
-; P_clk|altpll_component|auto_generated|pll1|clk[1] ; 19.718 ; 0.000         ;
 +---------------------------------------------------+--------+---------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Setup: 'P_clk|altpll_component|auto_generated|pll1|clk[1]'                                                                                             ;
-+-------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
-; Slack ; From Node ; To Node ; Launch Clock                                      ; Latch Clock                                       ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
-; 0.013 ; RG_in     ; RG_out  ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; P_clk|altpll_component|auto_generated|pll1|clk[1] ; 1.071        ; -0.178     ; 0.881      ;
-+-------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
-
-
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Hold: 'P_clk|altpll_component|auto_generated|pll1|clk[1]'                                                                                               ;
+; Slow 1200mV 85C Model Setup: 'P_clk|altpll_component|auto_generated|pll1|clk[0]'                                                                                              ;
 +--------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
 ; Slack  ; From Node ; To Node ; Launch Clock                                      ; Latch Clock                                       ; Relationship ; Clock Skew ; Data Delay ;
 +--------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
-; 39.305 ; RG_in     ; RG_out  ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; P_clk|altpll_component|auto_generated|pll1|clk[1] ; -38.929      ; 0.186      ; 0.794      ;
+; 39.036 ; RG_out    ; inst    ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; 40.000       ; -0.082     ; 0.883      ;
+; 39.038 ; RG_in     ; RG_out  ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; 40.000       ; -0.082     ; 0.881      ;
 +--------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'P_clk|altpll_component|auto_generated|pll1|clk[0]'                                                                                              ;
++-------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock                                      ; Latch Clock                                       ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
+; 0.500 ; RG_in     ; RG_out  ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; 0.000        ; 0.082      ; 0.794      ;
+; 0.501 ; RG_out    ; inst    ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; 0.000        ; 0.082      ; 0.795      ;
++-------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
 
 
 -----------------------------------------------
 ; Slow 1200mV 85C Model Metastability Summary ;
 -----------------------------------------------
-Typical MTBF of Design is 0.0 years or 6.95e-05 seconds.
+Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
 Number of Synchronizer Chains Found: 1
-Shortest Synchronizer Chain: 2 Registers
+Shortest Synchronizer Chain: 3 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 0.000
-Worst Case Available Settling Time: 0.013 ns
+Worst Case Available Settling Time: 78.074 ns
 
 Typical MTBF values are calculated based on the nominal silicon characteristics, at nominal operating conditions.
   - Under typical conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 10.8
 
 
 
--------------------------------------
-; Slow 1200mV 0C Model Fmax Summary ;
--------------------------------------
-No paths to report.
-
-
-+---------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Setup Summary                                        ;
-+---------------------------------------------------+-------+---------------+
-; Clock                                             ; Slack ; End Point TNS ;
-+---------------------------------------------------+-------+---------------+
-; P_clk|altpll_component|auto_generated|pll1|clk[1] ; 0.121 ; 0.000         ;
-+---------------------------------------------------+-------+---------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                                                  ;
++-------------+-----------------+---------------------------------------------------+------------------------------------------------+
+; Fmax        ; Restricted Fmax ; Clock Name                                        ; Note                                           ;
++-------------+-----------------+---------------------------------------------------+------------------------------------------------+
+; 1152.07 MHz ; 402.09 MHz      ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; limit due to minimum period restriction (tmin) ;
++-------------+-----------------+---------------------------------------------------+------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
 +----------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Hold Summary                                          ;
+; Slow 1200mV 0C Model Setup Summary                                         ;
 +---------------------------------------------------+--------+---------------+
 ; Clock                                             ; Slack  ; End Point TNS ;
 +---------------------------------------------------+--------+---------------+
-; P_clk|altpll_component|auto_generated|pll1|clk[1] ; 39.289 ; 0.000         ;
+; P_clk|altpll_component|auto_generated|pll1|clk[0] ; 39.132 ; 0.000         ;
 +---------------------------------------------------+--------+---------------+
+
+
++---------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold Summary                                         ;
++---------------------------------------------------+-------+---------------+
+; Clock                                             ; Slack ; End Point TNS ;
++---------------------------------------------------+-------+---------------+
+; P_clk|altpll_component|auto_generated|pll1|clk[0] ; 0.470 ; 0.000         ;
++---------------------------------------------------+-------+---------------+
 
 
 -----------------------------------------
@@ -254,59 +261,60 @@ No paths to report.
 +---------------------------------------------------+--------+---------------+
 ; clk_in                                            ; 4.943  ; 0.000         ;
 ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; 19.717 ; 0.000         ;
-; P_clk|altpll_component|auto_generated|pll1|clk[1] ; 19.717 ; 0.000         ;
 +---------------------------------------------------+--------+---------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Setup: 'P_clk|altpll_component|auto_generated|pll1|clk[1]'                                                                                              ;
-+-------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
-; Slack ; From Node ; To Node ; Launch Clock                                      ; Latch Clock                                       ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
-; 0.121 ; RG_in     ; RG_out  ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; P_clk|altpll_component|auto_generated|pll1|clk[1] ; 1.071        ; -0.157     ; 0.795      ;
-+-------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
-
-
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Hold: 'P_clk|altpll_component|auto_generated|pll1|clk[1]'                                                                                                ;
+; Slow 1200mV 0C Model Setup: 'P_clk|altpll_component|auto_generated|pll1|clk[0]'                                                                                               ;
 +--------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
 ; Slack  ; From Node ; To Node ; Launch Clock                                      ; Latch Clock                                       ; Relationship ; Clock Skew ; Data Delay ;
 +--------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
-; 39.289 ; RG_in     ; RG_out  ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; P_clk|altpll_component|auto_generated|pll1|clk[1] ; -38.929      ; 0.163      ; 0.738      ;
+; 39.132 ; RG_out    ; inst    ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; 40.000       ; -0.073     ; 0.797      ;
+; 39.134 ; RG_in     ; RG_out  ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; 40.000       ; -0.073     ; 0.795      ;
 +--------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'P_clk|altpll_component|auto_generated|pll1|clk[0]'                                                                                               ;
++-------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock                                      ; Latch Clock                                       ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
+; 0.470 ; RG_in     ; RG_out  ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; 0.000        ; 0.073      ; 0.738      ;
+; 0.471 ; RG_out    ; inst    ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; 0.000        ; 0.073      ; 0.739      ;
++-------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
 
 
 ----------------------------------------------
 ; Slow 1200mV 0C Model Metastability Summary ;
 ----------------------------------------------
-Typical MTBF of Design is 0.0 years or 0.000904 seconds.
+Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
 Number of Synchronizer Chains Found: 1
-Shortest Synchronizer Chain: 2 Registers
+Shortest Synchronizer Chain: 3 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 0.000
-Worst Case Available Settling Time: 0.121 ns
+Worst Case Available Settling Time: 78.266 ns
 
 Typical MTBF values are calculated based on the nominal silicon characteristics, at nominal operating conditions.
   - Under typical conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 10.8
 
 
 
-+---------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Setup Summary                                        ;
-+---------------------------------------------------+-------+---------------+
-; Clock                                             ; Slack ; End Point TNS ;
-+---------------------------------------------------+-------+---------------+
-; P_clk|altpll_component|auto_generated|pll1|clk[1] ; 0.602 ; 0.000         ;
-+---------------------------------------------------+-------+---------------+
-
-
 +----------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Hold Summary                                          ;
+; Fast 1200mV 0C Model Setup Summary                                         ;
 +---------------------------------------------------+--------+---------------+
 ; Clock                                             ; Slack  ; End Point TNS ;
 +---------------------------------------------------+--------+---------------+
-; P_clk|altpll_component|auto_generated|pll1|clk[1] ; 39.051 ; 0.000         ;
+; P_clk|altpll_component|auto_generated|pll1|clk[0] ; 39.576 ; 0.000         ;
 +---------------------------------------------------+--------+---------------+
+
+
++---------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold Summary                                         ;
++---------------------------------------------------+-------+---------------+
+; Clock                                             ; Slack ; End Point TNS ;
++---------------------------------------------------+-------+---------------+
+; P_clk|altpll_component|auto_generated|pll1|clk[0] ; 0.193 ; 0.000         ;
++---------------------------------------------------+-------+---------------+
 
 
 -----------------------------------------
@@ -328,37 +336,38 @@ No paths to report.
 +---------------------------------------------------+--------+---------------+
 ; clk_in                                            ; 4.594  ; 0.000         ;
 ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; 19.798 ; 0.000         ;
-; P_clk|altpll_component|auto_generated|pll1|clk[1] ; 19.798 ; 0.000         ;
 +---------------------------------------------------+--------+---------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Setup: 'P_clk|altpll_component|auto_generated|pll1|clk[1]'                                                                                              ;
-+-------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
-; Slack ; From Node ; To Node ; Launch Clock                                      ; Latch Clock                                       ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
-; 0.602 ; RG_in     ; RG_out  ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; P_clk|altpll_component|auto_generated|pll1|clk[1] ; 1.071        ; -0.084     ; 0.372      ;
-+-------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
-
-
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Hold: 'P_clk|altpll_component|auto_generated|pll1|clk[1]'                                                                                                ;
+; Fast 1200mV 0C Model Setup: 'P_clk|altpll_component|auto_generated|pll1|clk[0]'                                                                                               ;
 +--------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
 ; Slack  ; From Node ; To Node ; Launch Clock                                      ; Latch Clock                                       ; Relationship ; Clock Skew ; Data Delay ;
 +--------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
-; 39.051 ; RG_in     ; RG_out  ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; P_clk|altpll_component|auto_generated|pll1|clk[1] ; -38.929      ; 0.088      ; 0.314      ;
+; 39.576 ; RG_out    ; inst    ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; 40.000       ; -0.037     ; 0.374      ;
+; 39.578 ; RG_in     ; RG_out  ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; 40.000       ; -0.037     ; 0.372      ;
 +--------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'P_clk|altpll_component|auto_generated|pll1|clk[0]'                                                                                               ;
++-------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock                                      ; Latch Clock                                       ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
+; 0.193 ; RG_in     ; RG_out  ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; 0.000        ; 0.037      ; 0.314      ;
+; 0.194 ; RG_out    ; inst    ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; 0.000        ; 0.037      ; 0.315      ;
++-------+-----------+---------+---------------------------------------------------+---------------------------------------------------+--------------+------------+------------+
 
 
 ----------------------------------------------
 ; Fast 1200mV 0C Model Metastability Summary ;
 ----------------------------------------------
-Typical MTBF of Design is 2.63e-06 years or 82.8 seconds.
+Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
 Number of Synchronizer Chains Found: 1
-Shortest Synchronizer Chain: 2 Registers
+Shortest Synchronizer Chain: 3 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 0.000
-Worst Case Available Settling Time: 0.602 ns
+Worst Case Available Settling Time: 79.154 ns
 
 Typical MTBF values are calculated based on the nominal silicon characteristics, at nominal operating conditions.
   - Under typical conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 10.8
@@ -367,18 +376,16 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 
 +----------------------------------------------------------------------------------------------------------------+
 ; Multicorner Timing Analysis Summary                                                                            ;
-+----------------------------------------------------+-------+--------+----------+---------+---------------------+
-; Clock                                              ; Setup ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
-+----------------------------------------------------+-------+--------+----------+---------+---------------------+
-; Worst-case Slack                                   ; 0.013 ; 39.051 ; N/A      ; N/A     ; 4.594               ;
-;  P_clk|altpll_component|auto_generated|pll1|clk[0] ; N/A   ; N/A    ; N/A      ; N/A     ; 19.717              ;
-;  P_clk|altpll_component|auto_generated|pll1|clk[1] ; 0.013 ; 39.051 ; N/A      ; N/A     ; 19.717              ;
-;  clk_in                                            ; N/A   ; N/A    ; N/A      ; N/A     ; 4.594               ;
-; Design-wide TNS                                    ; 0.0   ; 0.0    ; 0.0      ; 0.0     ; 0.0                 ;
-;  P_clk|altpll_component|auto_generated|pll1|clk[0] ; N/A   ; N/A    ; N/A      ; N/A     ; 0.000               ;
-;  P_clk|altpll_component|auto_generated|pll1|clk[1] ; 0.000 ; 0.000  ; N/A      ; N/A     ; 0.000               ;
-;  clk_in                                            ; N/A   ; N/A    ; N/A      ; N/A     ; 0.000               ;
-+----------------------------------------------------+-------+--------+----------+---------+---------------------+
++----------------------------------------------------+--------+-------+----------+---------+---------------------+
+; Clock                                              ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++----------------------------------------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack                                   ; 39.036 ; 0.193 ; N/A      ; N/A     ; 4.594               ;
+;  P_clk|altpll_component|auto_generated|pll1|clk[0] ; 39.036 ; 0.193 ; N/A      ; N/A     ; 19.717              ;
+;  clk_in                                            ; N/A    ; N/A   ; N/A      ; N/A     ; 4.594               ;
+; Design-wide TNS                                    ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  P_clk|altpll_component|auto_generated|pll1|clk[0] ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
+;  clk_in                                            ; N/A    ; N/A   ; N/A      ; N/A     ; 0.000               ;
++----------------------------------------------------+--------+-------+----------+---------+---------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -397,8 +404,8 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +-------------------------+--------------+-----------------+-----------------+
 ; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
 +-------------------------+--------------+-----------------+-----------------+
-; data_in                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; clk_in                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; data_in                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
@@ -443,7 +450,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------------------------------------+---------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                        ; To Clock                                          ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------------------------------------+---------------------------------------------------+----------+----------+----------+----------+
-; P_clk|altpll_component|auto_generated|pll1|clk[0] ; P_clk|altpll_component|auto_generated|pll1|clk[1] ; 1        ; 0        ; 0        ; 0        ;
+; P_clk|altpll_component|auto_generated|pll1|clk[0] ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; 2        ; 0        ; 0        ; 0        ;
 +---------------------------------------------------+---------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -453,7 +460,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------------------------------------+---------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                        ; To Clock                                          ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------------------------------------+---------------------------------------------------+----------+----------+----------+----------+
-; P_clk|altpll_component|auto_generated|pll1|clk[0] ; P_clk|altpll_component|auto_generated|pll1|clk[1] ; 1        ; 0        ; 0        ; 0        ;
+; P_clk|altpll_component|auto_generated|pll1|clk[0] ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; 2        ; 0        ; 0        ; 0        ;
 +---------------------------------------------------+---------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -490,7 +497,6 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Target                                            ; Clock                                             ; Type      ; Status      ;
 +---------------------------------------------------+---------------------------------------------------+-----------+-------------+
 ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; P_clk|altpll_component|auto_generated|pll1|clk[0] ; Generated ; Constrained ;
-; P_clk|altpll_component|auto_generated|pll1|clk[1] ; P_clk|altpll_component|auto_generated|pll1|clk[1] ; Generated ; Constrained ;
 ; clk_in                                            ; clk_in                                            ; Base      ; Constrained ;
 +---------------------------------------------------+---------------------------------------------------+-----------+-------------+
 
@@ -501,7 +507,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Mon Feb 26 23:16:17 2018
+    Info: Processing started: Tue Feb 27 22:01:52 2018
 Info: Command: quartus_sta Metastabil -c Metastabil
 Info: qsta_default_script.tcl version: #3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -511,20 +517,20 @@ Info (21077): High junction temperature is 85 degrees C
 Info (332104): Reading SDC File: 'SDC1.sdc'
 Info (332110): Deriving PLL clocks
     Info (332110): create_generated_clock -source {P_clk|altpll_component|auto_generated|pll1|inclk[0]} -divide_by 4 -duty_cycle 50.00 -name {P_clk|altpll_component|auto_generated|pll1|clk[0]} {P_clk|altpll_component|auto_generated|pll1|clk[0]}
-    Info (332110): create_generated_clock -source {P_clk|altpll_component|auto_generated|pll1|inclk[0]} -divide_by 4 -phase 9.64 -duty_cycle 50.00 -name {P_clk|altpll_component|auto_generated|pll1|clk[1]} {P_clk|altpll_component|auto_generated|pll1|clk[1]}
 Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Warning (332056): PLL cross checking found inconsistent PLL clock settings:
+    Warning (332056): Clock: P_clk|altpll_component|auto_generated|pll1|clk[0] with master clock period: 10.000 found on PLL node: P_clk|altpll_component|auto_generated|pll1|clk[0] does not match the master clock period requirement: 2.500
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
-Info (332140): No fmax paths to report
-Info (332146): Worst-case setup slack is 0.013
+Info (332146): Worst-case setup slack is 39.036
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.013               0.000 P_clk|altpll_component|auto_generated|pll1|clk[1] 
-Info (332146): Worst-case hold slack is 39.305
+    Info (332119):    39.036               0.000 P_clk|altpll_component|auto_generated|pll1|clk[0] 
+Info (332146): Worst-case hold slack is 0.500
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    39.305               0.000 P_clk|altpll_component|auto_generated|pll1|clk[1] 
+    Info (332119):     0.500               0.000 P_clk|altpll_component|auto_generated|pll1|clk[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is 4.934
@@ -532,14 +538,13 @@ Info (332146): Worst-case minimum pulse width slack is 4.934
     Info (332119): ========= =================== =====================
     Info (332119):     4.934               0.000 clk_in 
     Info (332119):    19.718               0.000 P_clk|altpll_component|auto_generated|pll1|clk[0] 
-    Info (332119):    19.718               0.000 P_clk|altpll_component|auto_generated|pll1|clk[1] 
 Info (332114): Report Metastability: Found 1 synchronizer chains.
-    Info (332114): Typical MTBF of Design is 0.0 years or 6.95e-05 seconds.
+    Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
     Info (332114): Number of Synchronizer Chains Found: 1
-    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Shortest Synchronizer Chain: 3 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.000
-    Info (332114): Worst Case Available Settling Time: 0.013 ns
+    Info (332114): Worst Case Available Settling Time: 78.074 ns
     Info (332114): 
     Info (332114): Typical MTBF values are calculated based on the nominal silicon characteristics, at nominal operating conditions.
     Info (332114):   - Under typical conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 10.8
@@ -547,15 +552,16 @@ Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info (332140): No fmax paths to report
-Info (332146): Worst-case setup slack is 0.121
+Warning (332056): PLL cross checking found inconsistent PLL clock settings:
+    Warning (332056): Clock: P_clk|altpll_component|auto_generated|pll1|clk[0] with master clock period: 10.000 found on PLL node: P_clk|altpll_component|auto_generated|pll1|clk[0] does not match the master clock period requirement: 2.500
+Info (332146): Worst-case setup slack is 39.132
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.121               0.000 P_clk|altpll_component|auto_generated|pll1|clk[1] 
-Info (332146): Worst-case hold slack is 39.289
+    Info (332119):    39.132               0.000 P_clk|altpll_component|auto_generated|pll1|clk[0] 
+Info (332146): Worst-case hold slack is 0.470
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    39.289               0.000 P_clk|altpll_component|auto_generated|pll1|clk[1] 
+    Info (332119):     0.470               0.000 P_clk|altpll_component|auto_generated|pll1|clk[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is 4.943
@@ -563,27 +569,28 @@ Info (332146): Worst-case minimum pulse width slack is 4.943
     Info (332119): ========= =================== =====================
     Info (332119):     4.943               0.000 clk_in 
     Info (332119):    19.717               0.000 P_clk|altpll_component|auto_generated|pll1|clk[0] 
-    Info (332119):    19.717               0.000 P_clk|altpll_component|auto_generated|pll1|clk[1] 
 Info (332114): Report Metastability: Found 1 synchronizer chains.
-    Info (332114): Typical MTBF of Design is 0.0 years or 0.000904 seconds.
+    Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
     Info (332114): Number of Synchronizer Chains Found: 1
-    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Shortest Synchronizer Chain: 3 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.000
-    Info (332114): Worst Case Available Settling Time: 0.121 ns
+    Info (332114): Worst Case Available Settling Time: 78.266 ns
     Info (332114): 
     Info (332114): Typical MTBF values are calculated based on the nominal silicon characteristics, at nominal operating conditions.
     Info (332114):   - Under typical conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 10.8
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info (332146): Worst-case setup slack is 0.602
+Warning (332056): PLL cross checking found inconsistent PLL clock settings:
+    Warning (332056): Clock: P_clk|altpll_component|auto_generated|pll1|clk[0] with master clock period: 10.000 found on PLL node: P_clk|altpll_component|auto_generated|pll1|clk[0] does not match the master clock period requirement: 2.500
+Info (332146): Worst-case setup slack is 39.576
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.602               0.000 P_clk|altpll_component|auto_generated|pll1|clk[1] 
-Info (332146): Worst-case hold slack is 39.051
+    Info (332119):    39.576               0.000 P_clk|altpll_component|auto_generated|pll1|clk[0] 
+Info (332146): Worst-case hold slack is 0.193
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    39.051               0.000 P_clk|altpll_component|auto_generated|pll1|clk[1] 
+    Info (332119):     0.193               0.000 P_clk|altpll_component|auto_generated|pll1|clk[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is 4.594
@@ -591,22 +598,21 @@ Info (332146): Worst-case minimum pulse width slack is 4.594
     Info (332119): ========= =================== =====================
     Info (332119):     4.594               0.000 clk_in 
     Info (332119):    19.798               0.000 P_clk|altpll_component|auto_generated|pll1|clk[0] 
-    Info (332119):    19.798               0.000 P_clk|altpll_component|auto_generated|pll1|clk[1] 
 Info (332114): Report Metastability: Found 1 synchronizer chains.
-    Info (332114): Typical MTBF of Design is 2.63e-06 years or 82.8 seconds.
+    Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
     Info (332114): Number of Synchronizer Chains Found: 1
-    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Shortest Synchronizer Chain: 3 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.000
-    Info (332114): Worst Case Available Settling Time: 0.602 ns
+    Info (332114): Worst Case Available Settling Time: 79.154 ns
     Info (332114): 
     Info (332114): Typical MTBF values are calculated based on the nominal silicon characteristics, at nominal operating conditions.
     Info (332114):   - Under typical conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 10.8
 Info (332101): Design is fully constrained for setup requirements
 Info (332101): Design is fully constrained for hold requirements
-Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 610 megabytes
-    Info: Processing ended: Mon Feb 26 23:16:19 2018
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 608 megabytes
+    Info: Processing ended: Tue Feb 27 22:01:54 2018
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

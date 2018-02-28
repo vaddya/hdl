@@ -1,5 +1,5 @@
 Fitter report for Metastabil
-Mon Feb 26 23:16:14 2018
+Tue Feb 27 22:01:49 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -66,17 +66,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Mon Feb 26 23:16:14 2018       ;
+; Fitter Status                      ; Successful - Tue Feb 27 22:01:49 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; Metastabil                                  ;
 ; Top-level Entity Name              ; Metastabil                                  ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE6E22C8                                 ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 2 / 6,272 ( < 1 % )                         ;
+; Total logic elements               ; 3 / 6,272 ( < 1 % )                         ;
 ;     Total combinational functions  ; 0 / 6,272 ( 0 % )                           ;
-;     Dedicated logic registers      ; 2 / 6,272 ( < 1 % )                         ;
-; Total registers                    ; 2                                           ;
+;     Dedicated logic registers      ; 3 / 6,272 ( < 1 % )                         ;
+; Total registers                    ; 3                                           ;
 ; Total pins                         ; 3 / 92 ( 3 % )                              ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 276,480 ( 0 % )                         ;
@@ -153,12 +153,12 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.01        ;
+; Average used               ; 1.00        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.2%      ;
+;     Processors 2-4         ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -192,8 +192,8 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 9 )      ; N/A                     ; Source File       ; N/A                 ;       ;
-; hard_block:auto_generated_inst ; 0.00 % ( 0 / 13 )     ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
+; hard_block:auto_generated_inst ; 0.00 % ( 0 / 12 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
 
@@ -208,23 +208,23 @@ The pin-out file can be found in C:/Git/hdl/lab_ms/quartus/Metastabil.pin.
 +---------------------------------------------+---------------------+
 ; Resource                                    ; Usage               ;
 +---------------------------------------------+---------------------+
-; Total logic elements                        ; 2 / 6,272 ( < 1 % ) ;
+; Total logic elements                        ; 3 / 6,272 ( < 1 % ) ;
 ;     -- Combinational with no register       ; 0                   ;
-;     -- Register only                        ; 2                   ;
+;     -- Register only                        ; 3                   ;
 ;     -- Combinational with a register        ; 0                   ;
 ;                                             ;                     ;
 ; Logic element usage by number of LUT inputs ;                     ;
 ;     -- 4 input functions                    ; 0                   ;
 ;     -- 3 input functions                    ; 0                   ;
 ;     -- <=2 input functions                  ; 0                   ;
-;     -- Register only                        ; 2                   ;
+;     -- Register only                        ; 3                   ;
 ;                                             ;                     ;
 ; Logic elements by mode                      ;                     ;
 ;     -- normal mode                          ; 0                   ;
 ;     -- arithmetic mode                      ; 0                   ;
 ;                                             ;                     ;
-; Total registers*                            ; 2 / 6,684 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 2 / 6,272 ( < 1 % ) ;
+; Total registers*                            ; 3 / 6,684 ( < 1 % ) ;
+;     -- Dedicated logic registers            ; 3 / 6,272 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 412 ( 0 % )     ;
 ;                                             ;                     ;
 ; Total LABs:  partially or completely used   ; 1 / 392 ( < 1 % )   ;
@@ -238,19 +238,19 @@ The pin-out file can be found in C:/Git/hdl/lab_ms/quartus/Metastabil.pin.
 ; Total block memory implementation bits      ; 0 / 276,480 ( 0 % ) ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 30 ( 0 % )      ;
 ; PLLs                                        ; 1 / 2 ( 50 % )      ;
-; Global signals                              ; 2                   ;
-;     -- Global clocks                        ; 2 / 10 ( 20 % )     ;
+; Global signals                              ; 1                   ;
+;     -- Global clocks                        ; 1 / 10 ( 10 % )     ;
 ; JTAGs                                       ; 0 / 1 ( 0 % )       ;
 ; CRC blocks                                  ; 0 / 1 ( 0 % )       ;
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )       ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )       ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )       ;
 ; Average interconnect usage (total/H/V)      ; 0.0% / 0.0% / 0.0%  ;
-; Peak interconnect usage (total/H/V)         ; 0.0% / 0.0% / 0.0%  ;
+; Peak interconnect usage (total/H/V)         ; 0.0% / 0.0% / 0.1%  ;
 ; Maximum fan-out                             ; 3                   ;
 ; Highest non-global fan-out                  ; 1                   ;
-; Total fan-out                               ; 19                  ;
-; Average fan-out                             ; 0.83                ;
+; Total fan-out                               ; 21                  ;
+; Average fan-out                             ; 0.88                ;
 +---------------------------------------------+---------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -263,23 +263,23 @@ The pin-out file can be found in C:/Git/hdl/lab_ms/quartus/Metastabil.pin.
 +---------------------------------------------+--------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                ; Low                            ;
 ;                                             ;                    ;                                ;
-; Total logic elements                        ; 2 / 6272 ( < 1 % ) ; 0 / 6272 ( 0 % )               ;
+; Total logic elements                        ; 3 / 6272 ( < 1 % ) ; 0 / 6272 ( 0 % )               ;
 ;     -- Combinational with no register       ; 0                  ; 0                              ;
-;     -- Register only                        ; 2                  ; 0                              ;
+;     -- Register only                        ; 3                  ; 0                              ;
 ;     -- Combinational with a register        ; 0                  ; 0                              ;
 ;                                             ;                    ;                                ;
 ; Logic element usage by number of LUT inputs ;                    ;                                ;
 ;     -- 4 input functions                    ; 0                  ; 0                              ;
 ;     -- 3 input functions                    ; 0                  ; 0                              ;
 ;     -- <=2 input functions                  ; 0                  ; 0                              ;
-;     -- Register only                        ; 2                  ; 0                              ;
+;     -- Register only                        ; 3                  ; 0                              ;
 ;                                             ;                    ;                                ;
 ; Logic elements by mode                      ;                    ;                                ;
 ;     -- normal mode                          ; 0                  ; 0                              ;
 ;     -- arithmetic mode                      ; 0                  ; 0                              ;
 ;                                             ;                    ;                                ;
-; Total registers                             ; 2                  ; 0                              ;
-;     -- Dedicated logic registers            ; 2 / 6272 ( < 1 % ) ; 0 / 6272 ( 0 % )               ;
+; Total registers                             ; 3                  ; 0                              ;
+;     -- Dedicated logic registers            ; 3 / 6272 ( < 1 % ) ; 0 / 6272 ( 0 % )               ;
 ;     -- I/O registers                        ; 0                  ; 0                              ;
 ;                                             ;                    ;                                ;
 ; Total LABs:  partially or completely used   ; 1 / 392 ( < 1 % )  ; 0 / 392 ( 0 % )                ;
@@ -290,25 +290,25 @@ The pin-out file can be found in C:/Git/hdl/lab_ms/quartus/Metastabil.pin.
 ; Total memory bits                           ; 0                  ; 0                              ;
 ; Total RAM block bits                        ; 0                  ; 0                              ;
 ; PLL                                         ; 0 / 2 ( 0 % )      ; 1 / 2 ( 50 % )                 ;
-; Clock control block                         ; 0 / 12 ( 0 % )     ; 2 / 12 ( 16 % )                ;
+; Clock control block                         ; 0 / 12 ( 0 % )     ; 1 / 12 ( 8 % )                 ;
 ;                                             ;                    ;                                ;
 ; Connections                                 ;                    ;                                ;
-;     -- Input Connections                    ; 2                  ; 1                              ;
-;     -- Registered Input Connections         ; 2                  ; 0                              ;
-;     -- Output Connections                   ; 1                  ; 2                              ;
+;     -- Input Connections                    ; 3                  ; 1                              ;
+;     -- Registered Input Connections         ; 3                  ; 0                              ;
+;     -- Output Connections                   ; 1                  ; 3                              ;
 ;     -- Registered Output Connections        ; 0                  ; 0                              ;
 ;                                             ;                    ;                                ;
 ; Internal Connections                        ;                    ;                                ;
-;     -- Total Connections                    ; 11                 ; 11                             ;
-;     -- Registered Connections               ; 4                  ; 0                              ;
+;     -- Total Connections                    ; 14                 ; 11                             ;
+;     -- Registered Connections               ; 6                  ; 0                              ;
 ;                                             ;                    ;                                ;
 ; External Connections                        ;                    ;                                ;
-;     -- Top                                  ; 0                  ; 3                              ;
-;     -- hard_block:auto_generated_inst       ; 3                  ; 0                              ;
+;     -- Top                                  ; 0                  ; 4                              ;
+;     -- hard_block:auto_generated_inst       ; 4                  ; 0                              ;
 ;                                             ;                    ;                                ;
 ; Partition Interface                         ;                    ;                                ;
 ;     -- Input Ports                          ; 2                  ; 1                              ;
-;     -- Output Ports                         ; 1                  ; 2                              ;
+;     -- Output Ports                         ; 1                  ; 1                              ;
 ;     -- Bidir Ports                          ; 0                  ; 0                              ;
 ;                                             ;                    ;                                ;
 ; Registered Ports                            ;                    ;                                ;
@@ -548,25 +548,25 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; Compensate clock              ; clock0                                                                   ;
 ; Compensated input/output pins ; --                                                                       ;
 ; Switchover type               ; --                                                                       ;
-; Input frequency 0             ; 100.0 MHz                                                                ;
+; Input frequency 0             ; 400.0 MHz                                                                ;
 ; Input frequency 1             ; --                                                                       ;
-; Nominal PFD frequency         ; 50.0 MHz                                                                 ;
-; Nominal VCO frequency         ; 350.0 MHz                                                                ;
+; Nominal PFD frequency         ; 200.0 MHz                                                                ;
+; Nominal VCO frequency         ; 600.0 MHz                                                                ;
 ; VCO post scale K counter      ; 2                                                                        ;
 ; VCO frequency control         ; Auto                                                                     ;
-; VCO phase shift step          ; 357 ps                                                                   ;
+; VCO phase shift step          ; 208 ps                                                                   ;
 ; VCO multiply                  ; --                                                                       ;
 ; VCO divide                    ; --                                                                       ;
-; Freq min lock                 ; 85.73 MHz                                                                ;
-; Freq max lock                 ; 185.77 MHz                                                               ;
+; Freq min lock                 ; 200.04 MHz                                                               ;
+; Freq max lock                 ; 433.46 MHz                                                               ;
 ; M VCO Tap                     ; 0                                                                        ;
 ; M Initial                     ; 1                                                                        ;
-; M value                       ; 7                                                                        ;
+; M value                       ; 3                                                                        ;
 ; N value                       ; 2                                                                        ;
 ; Charge pump current           ; setting 1                                                                ;
-; Loop filter resistance        ; setting 27                                                               ;
+; Loop filter resistance        ; setting 28                                                               ;
 ; Loop filter capacitance       ; setting 0                                                                ;
-; Bandwidth                     ; 1.03 MHz to 1.97 MHz                                                     ;
+; Bandwidth                     ; 1.98 MHz to 2.97 MHz                                                     ;
 ; Bandwidth type                ; Medium                                                                   ;
 ; Real time reconfigurable      ; Off                                                                      ;
 ; Scan chain MIF file           ; --                                                                       ;
@@ -579,14 +579,13 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +-------------------------------+--------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; PLL Usage                                                                                                                                                                                                                                                                                                         ;
-+--------------------------------------------------------------------------------------+--------------+------+-----+------------------+--------------+------------------+------------+---------+---------------+------------+---------------+---------+---------+---------------------------------------------------+
-; Name                                                                                 ; Output Clock ; Mult ; Div ; Output Frequency ; Phase Shift  ; Phase Shift Step ; Duty Cycle ; Counter ; Counter Value ; High / Low ; Cascade Input ; Initial ; VCO Tap ; SDC Pin Name                                      ;
-+--------------------------------------------------------------------------------------+--------------+------+-----+------------------+--------------+------------------+------------+---------+---------------+------------+---------------+---------+---------+---------------------------------------------------+
-; PLL_CLK:P_clk|altpll:altpll_component|PLL_CLK_altpll:auto_generated|wire_pll1_clk[0] ; clock0       ; 1    ; 4   ; 25.0 MHz         ; 0 (0 ps)     ; 3.21 (357 ps)    ; 50/50      ; C0      ; 14            ; 7/7 Even   ; --            ; 1       ; 0       ; P_clk|altpll_component|auto_generated|pll1|clk[0] ;
-; PLL_CLK:P_clk|altpll:altpll_component|PLL_CLK_altpll:auto_generated|wire_pll1_clk[1] ; clock1       ; 1    ; 4   ; 25.0 MHz         ; 10 (1071 ps) ; 3.21 (357 ps)    ; 50/50      ; C1      ; 14            ; 7/7 Even   ; --            ; 1       ; 3       ; P_clk|altpll_component|auto_generated|pll1|clk[1] ;
-+--------------------------------------------------------------------------------------+--------------+------+-----+------------------+--------------+------------------+------------+---------+---------------+------------+---------------+---------+---------+---------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; PLL Usage                                                                                                                                                                                                                                                                                                        ;
++--------------------------------------------------------------------------------------+--------------+------+-----+------------------+-------------+------------------+------------+---------+---------------+------------+---------------+---------+---------+---------------------------------------------------+
+; Name                                                                                 ; Output Clock ; Mult ; Div ; Output Frequency ; Phase Shift ; Phase Shift Step ; Duty Cycle ; Counter ; Counter Value ; High / Low ; Cascade Input ; Initial ; VCO Tap ; SDC Pin Name                                      ;
++--------------------------------------------------------------------------------------+--------------+------+-----+------------------+-------------+------------------+------------+---------+---------------+------------+---------------+---------+---------+---------------------------------------------------+
+; PLL_CLK:P_clk|altpll:altpll_component|PLL_CLK_altpll:auto_generated|wire_pll1_clk[0] ; clock0       ; 1    ; 4   ; 100.0 MHz        ; 0 (0 ps)    ; 7.50 (208 ps)    ; 50/50      ; C0      ; 6             ; 3/3 Even   ; --            ; 1       ; 0       ; P_clk|altpll_component|auto_generated|pll1|clk[0] ;
++--------------------------------------------------------------------------------------+--------------+------+-----+------------------+-------------+------------------+------------+---------+---------------+------------+---------------+---------+---------+---------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -594,7 +593,7 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------+----------------+--------------+
 ; Compilation Hierarchy Node               ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                             ; Entity Name    ; Library Name ;
 +------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------+----------------+--------------+
-; |Metastabil                              ; 2 (2)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 3    ; 0            ; 0 (0)        ; 2 (2)             ; 0 (0)            ; |Metastabil                                                                     ; Metastabil     ; work         ;
+; |Metastabil                              ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 3    ; 0            ; 0 (0)        ; 3 (3)             ; 0 (0)            ; |Metastabil                                                                     ; Metastabil     ; work         ;
 ;    |PLL_CLK:P_clk|                       ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |Metastabil|PLL_CLK:P_clk                                                       ; PLL_CLK        ; work         ;
 ;       |altpll:altpll_component|          ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |Metastabil|PLL_CLK:P_clk|altpll:altpll_component                               ; altpll         ; work         ;
 ;          |PLL_CLK_altpll:auto_generated| ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |Metastabil|PLL_CLK:P_clk|altpll:altpll_component|PLL_CLK_altpll:auto_generated ; PLL_CLK_altpll ; work         ;
@@ -608,8 +607,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name     ; Pin Type ; Pad to Core 0 ; Pad to Core 1 ; Pad to Input Register ; TCO ; TCOE ;
 +----------+----------+---------------+---------------+-----------------------+-----+------+
 ; out_fail ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; data_in  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; clk_in   ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; data_in  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 +----------+----------+---------------+---------------+-----------------------+-----+------+
 
 
@@ -618,9 +617,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------+-------------------+---------+
 ; Source Pin / Fanout ; Pad To Core Index ; Setting ;
 +---------------------+-------------------+---------+
-; data_in             ;                   ;         ;
-;      - RG_in~feeder ; 0                 ; 6       ;
 ; clk_in              ;                   ;         ;
+; data_in             ;                   ;         ;
+;      - RG_in~feeder ; 1                 ; 6       ;
 +---------------------+-------------------+---------+
 
 
@@ -629,8 +628,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------+----------+---------+-------+--------+----------------------+------------------+---------------------------+
 ; Name                                                                                 ; Location ; Fan-Out ; Usage ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +--------------------------------------------------------------------------------------+----------+---------+-------+--------+----------------------+------------------+---------------------------+
-; PLL_CLK:P_clk|altpll:altpll_component|PLL_CLK_altpll:auto_generated|wire_pll1_clk[0] ; PLL_1    ; 1       ; Clock ; yes    ; Global Clock         ; GCLK3            ; --                        ;
-; PLL_CLK:P_clk|altpll:altpll_component|PLL_CLK_altpll:auto_generated|wire_pll1_clk[1] ; PLL_1    ; 1       ; Clock ; yes    ; Global Clock         ; GCLK4            ; --                        ;
+; PLL_CLK:P_clk|altpll:altpll_component|PLL_CLK_altpll:auto_generated|wire_pll1_clk[0] ; PLL_1    ; 3       ; Clock ; yes    ; Global Clock         ; GCLK3            ; --                        ;
 ; clk_in                                                                               ; PIN_23   ; 1       ; Clock ; no     ; --                   ; --               ; --                        ;
 +--------------------------------------------------------------------------------------+----------+---------+-------+--------+----------------------+------------------+---------------------------+
 
@@ -640,8 +638,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name                                                                                 ; Location ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +--------------------------------------------------------------------------------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; PLL_CLK:P_clk|altpll:altpll_component|PLL_CLK_altpll:auto_generated|wire_pll1_clk[0] ; PLL_1    ; 1       ; 0                                    ; Global Clock         ; GCLK3            ; --                        ;
-; PLL_CLK:P_clk|altpll:altpll_component|PLL_CLK_altpll:auto_generated|wire_pll1_clk[1] ; PLL_1    ; 1       ; 0                                    ; Global Clock         ; GCLK4            ; --                        ;
+; PLL_CLK:P_clk|altpll:altpll_component|PLL_CLK_altpll:auto_generated|wire_pll1_clk[0] ; PLL_1    ; 3       ; 0                                    ; Global Clock         ; GCLK3            ; --                        ;
 +--------------------------------------------------------------------------------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
@@ -652,10 +649,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+----------------------+
 ; Block interconnects   ; 2 / 32,401 ( < 1 % ) ;
 ; C16 interconnects     ; 0 / 1,326 ( 0 % )    ;
-; C4 interconnects      ; 0 / 21,816 ( 0 % )   ;
-; Direct links          ; 1 / 32,401 ( < 1 % ) ;
-; Global clocks         ; 2 / 10 ( 20 % )      ;
-; Local interconnects   ; 1 / 10,320 ( < 1 % ) ;
+; C4 interconnects      ; 2 / 21,816 ( < 1 % ) ;
+; Direct links          ; 0 / 32,401 ( 0 % )   ;
+; Global clocks         ; 1 / 10 ( 10 % )      ;
+; Local interconnects   ; 2 / 10,320 ( < 1 % ) ;
 ; R24 interconnects     ; 0 / 1,289 ( 0 % )    ;
 ; R4 interconnects      ; 0 / 28,186 ( 0 % )   ;
 +-----------------------+----------------------+
@@ -664,11 +661,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------+
 ; LAB Logic Elements                                                       ;
 +--------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 2.00) ; Number of LABs  (Total = 1) ;
+; Number of Logic Elements  (Average = 3.00) ; Number of LABs  (Total = 1) ;
 +--------------------------------------------+-----------------------------+
 ; 1                                          ; 0                           ;
-; 2                                          ; 1                           ;
-; 3                                          ; 0                           ;
+; 2                                          ; 0                           ;
+; 3                                          ; 1                           ;
 ; 4                                          ; 0                           ;
 ; 5                                          ; 0                           ;
 ; 6                                          ; 0                           ;
@@ -690,20 +687,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------+-----------------------------+
 ; LAB-wide Signals  (Average = 1.00) ; Number of LABs  (Total = 1) ;
 +------------------------------------+-----------------------------+
-; 2 Clocks                           ; 1                           ;
+; 1 Clock                            ; 1                           ;
 +------------------------------------+-----------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                       ;
 +---------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 4.00) ; Number of LABs  (Total = 1) ;
+; Number of Signals Sourced  (Average = 6.00) ; Number of LABs  (Total = 1) ;
 +---------------------------------------------+-----------------------------+
 ; 0                                           ; 0                           ;
 ; 1                                           ; 0                           ;
 ; 2                                           ; 0                           ;
 ; 3                                           ; 0                           ;
-; 4                                           ; 1                           ;
+; 4                                           ; 0                           ;
+; 5                                           ; 0                           ;
+; 6                                           ; 1                           ;
 +---------------------------------------------+-----------------------------+
 
 
@@ -720,12 +719,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                       ;
 +---------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 3.00) ; Number of LABs  (Total = 1) ;
+; Number of Distinct Inputs  (Average = 2.00) ; Number of LABs  (Total = 1) ;
 +---------------------------------------------+-----------------------------+
 ; 0                                           ; 0                           ;
 ; 1                                           ; 0                           ;
-; 2                                           ; 0                           ;
-; 3                                           ; 1                           ;
+; 2                                           ; 1                           ;
 +---------------------------------------------+-----------------------------+
 
 
@@ -790,8 +788,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Total Inapplicable ; 0         ; 3            ; 0         ; 3            ; 3            ; 0         ; 0         ; 3            ; 0         ; 0         ; 2            ; 3            ; 3            ; 3            ; 1            ; 2            ; 3            ; 1            ; 3            ; 3            ; 3            ; 3            ; 3            ; 3            ; 3            ; 3            ; 3            ; 0         ; 3            ; 3            ;
 ; Total Fail         ; 0         ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
 ; out_fail           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; data_in            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; clk_in             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; data_in            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 
 
@@ -841,7 +839,6 @@ Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Info (15535): Implemented PLL "PLL_CLK:P_clk|altpll:altpll_component|PLL_CLK_altpll:auto_generated|pll1" as Cyclone IV E PLL type File: C:/Git/hdl/lab_ms/quartus/db/pll_clk_altpll.v Line: 43
     Info (15099): Implementing clock multiplication of 1, clock division of 4, and phase shift of 0 degrees (0 ps) for PLL_CLK:P_clk|altpll:altpll_component|PLL_CLK_altpll:auto_generated|wire_pll1_clk[0] port File: C:/Git/hdl/lab_ms/quartus/db/pll_clk_altpll.v Line: 43
-    Info (15099): Implementing clock multiplication of 1, clock division of 4, and phase shift of 10 degrees (1071 ps) for PLL_CLK:P_clk|altpll:altpll_component|PLL_CLK_altpll:auto_generated|wire_pll1_clk[1] port File: C:/Git/hdl/lab_ms/quartus/db/pll_clk_altpll.v Line: 43
 Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
 Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
 Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
@@ -854,23 +851,23 @@ Info (169124): Fitter converted 5 user pins into dedicated programming pins
     Info (169125): Pin ~ALTERA_DCLK~ is reserved at location 12
     Info (169125): Pin ~ALTERA_DATA0~ is reserved at location 13
     Info (169125): Pin ~ALTERA_nCEO~ is reserved at location 101
+Critical Warning (176573): Cannot place  PLL "PLL_CLK:P_clk|altpll:altpll_component|PLL_CLK_altpll:auto_generated|pll1" in PLL location PLL_1, because the input clock of the PLL "clk_in" uses I/O standard 2.5 V and has a frequency of 400 MHz. However, the PLL I/O pin Pin_23 only supports a frequency up to 250 MHz. File: C:/Git/hdl/lab_ms/quartus/db/pll_clk_altpll.v Line: 77
+Critical Warning (176575): Cannot implement  PLL "PLL_CLK:P_clk|altpll:altpll_component|PLL_CLK_altpll:auto_generated|pll1", because the input clock of the PLL "clk_in" uses I/O standard 2.5 V and has a frequency of 400 MHz. However, the device only supports a frequency up to 250 MHz. File: C:/Git/hdl/lab_ms/quartus/db/pll_clk_altpll.v Line: 77
 Info (176353): Automatically promoted node PLL_CLK:P_clk|altpll:altpll_component|PLL_CLK_altpll:auto_generated|wire_pll1_clk[0] (placed in counter C0 of PLL_1) File: C:/Git/hdl/lab_ms/quartus/db/pll_clk_altpll.v Line: 77
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G3
-Info (176353): Automatically promoted node PLL_CLK:P_clk|altpll:altpll_component|PLL_CLK_altpll:auto_generated|wire_pll1_clk[1] (placed in counter C1 of PLL_1) File: C:/Git/hdl/lab_ms/quartus/db/pll_clk_altpll.v Line: 77
-    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G4
 Info (332104): Reading SDC File: 'SDC1.sdc'
 Info (332110): Deriving PLL clocks
     Info (332110): create_generated_clock -source {P_clk|altpll_component|auto_generated|pll1|inclk[0]} -divide_by 4 -duty_cycle 50.00 -name {P_clk|altpll_component|auto_generated|pll1|clk[0]} {P_clk|altpll_component|auto_generated|pll1|clk[0]}
-    Info (332110): create_generated_clock -source {P_clk|altpll_component|auto_generated|pll1|inclk[0]} -divide_by 4 -phase 9.64 -duty_cycle 50.00 -name {P_clk|altpll_component|auto_generated|pll1|clk[1]} {P_clk|altpll_component|auto_generated|pll1|clk[1]}
 Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Warning (332056): PLL cross checking found inconsistent PLL clock settings:
+    Warning (332056): Clock: P_clk|altpll_component|auto_generated|pll1|clk[0] with master clock period: 10.000 found on PLL node: P_clk|altpll_component|auto_generated|pll1|clk[0] does not match the master clock period requirement: 2.500
 Info (332129): Detected timing requirements -- optimizing circuit to achieve only the specified requirements
-Info (332111): Found 3 clocks
+Info (332111): Found 2 clocks
     Info (332111):   Period   Clock Name
     Info (332111): ======== ============
     Info (332111):   10.000       clk_in
     Info (332111):   40.000 P_clk|altpll_component|auto_generated|pll1|clk[0]
-    Info (332111):   40.000 P_clk|altpll_component|auto_generated|pll1|clk[1]
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
@@ -883,22 +880,23 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X11_Y0 to location X22_Y11
+    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X0_Y0 to location X10_Y11
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
+    Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.05 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.03 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Info (144001): Generated suppressed messages file C:/Git/hdl/lab_ms/quartus/Metastabil.fit.smsg
-Info: Quartus Prime Fitter was successful. 0 errors, 2 warnings
+Info: Quartus Prime Fitter was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 1275 megabytes
-    Info: Processing ended: Mon Feb 26 23:16:14 2018
+    Info: Processing ended: Tue Feb 27 22:01:49 2018
     Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Total CPU time (on all processors): 00:00:05
 
 
 +----------------------------+

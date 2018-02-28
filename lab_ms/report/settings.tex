@@ -24,6 +24,7 @@
 \usepackage{accsupp}
 \usepackage{makecell}
 \usepackage{graphicx}
+\usepackage{array}
 
 \setitemize{itemsep=0em}
 \setenumerate{itemsep=0em}
@@ -97,3 +98,5 @@
 \newcommand{\nott}[1]{\overline{#1}}
 \newcommand{\noncopynumber}[1]{\BeginAccSupp{method=escape,ActualText={}}#1\EndAccSupp{}}
 \newcommand{\code}[1]{\lstinline{#1}}
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}

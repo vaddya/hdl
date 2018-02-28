@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Mon Feb 26 23:16:09 2018
+Analysis & Synthesis Status : Successful - Tue Feb 27 22:01:44 2018
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : Metastabil
 Top-level Entity Name : Metastabil
 Family : Cyclone IV E
-Total logic elements : 2
+Total logic elements : 3
     Total combinational functions : 0
-    Dedicated logic registers : 2
-Total registers : 2
+    Dedicated logic registers : 3
+Total registers : 3
 Total pins : 3
 Total virtual pins : 0
 Total memory bits : 0

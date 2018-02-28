@@ -4,10 +4,10 @@
 
 \include{titlepage}
 
-%\tableofcontents
-%\newpage
-%\listoffigures
-%\lstlistoflistings
+\tableofcontents
+\listoffigures
+\lstlistoflistings
+\listoftables
 \newpage
 
 \section{Задание}
@@ -34,6 +34,8 @@
 
 \vspace{0.5cm}
 \lstinputlisting[caption=SDC1.sdc, label=code:sdc]{SDC1.sdc}
+
+\newpage
 
 \subsection{Компиляция и анализ проекта с заданными временными требованиями и анализ результатов}
 
@@ -66,6 +68,8 @@
 	\end{center}
 \end{figure}
 
+\newpage
+
 На рис. \ref{fig:waveform_1} изображена временная диаграмма для регистровой передачи \code{From Node RG_in To Node RG_out}. Тактовым сигналом, запускающим данные в данной регистровой передаче является сигнал с вывода \code{clk[0] PLL_CLK} (Launch Clock), а захватывающим - сигнал с вывода \code{clk[1] PLL_CLK} (Latch Clock). Временной интервал между ними соответствует фазовому сдвигу, заданному при настройке \code{PLL_CLK}.
 
 \begin{figure}[H]
@@ -88,6 +92,8 @@
 
 Полученный проект не содержит временных ошибок и для него может проводиться анализ метастабильности для всех моделей задержек. Установлен минимальный положительный допуск Setup, для которого интенсивность сбоев, вызванных метастабильностью, будет максимальной.
 
+\newpage
+
 \subsection{Анализ интенсивности сбоев, вызванных метастабильностью}
 
 На рис. \ref{fig:assignments_1} приведена заданная активность переключений в Assignment Editor, равная 20 МГц.
@@ -100,13 +106,13 @@
 	\end{center}
 \end{figure}
 
-На рис. \ref{fig:timing_2} приведен Metastability Report для модели Slow 1200mV 85C Model Setup. Из отчета видно, что частота переключений Data Toggle Rate, используемая для вычисления Mean Time Before Faille (MTBF), соответствует заданной.
+На рис. \ref{fig:timing_3} приведен Metastability Report для модели Slow 1200mV 85C Model Setup. Из отчета видно, что частота переключений Data Toggle Rate, используемая для вычисления Mean Time Before Faille (MTBF), соответствует заданной.
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.95]{timing_3}
 		\caption{Metastability Report для Slow 1200mV 85C Model}
-		\label{fig:timing_2}
+		\label{fig:timing_3}
 	\end{center}
 \end{figure}
 
@@ -114,20 +120,89 @@
 
 \begin{table}[H]
 	\centering
+	\small
 	\caption{Исследование метастабильности}
 	\label{tab:research}
-	\begin{tabular}{|c|p{0.2\linewidth}|p{0.1\linewidth}|p{0.1\linewidth}|p{0.1\linewidth}|p{0.1\linewidth}|p{0.1\linewidth}|p{0.1\linewidth}|}
+	\begin{tabular}{|c|P{0.17\linewidth}|P{0.1\linewidth}|P{0.11\linewidth}|P{0.1\linewidth}|P{0.11\linewidth}|P{0.1\linewidth}|P{0.11\linewidth}|}
 		\hline
-		\multirow{2}{*}{\makecell{\\ \\ №}} & \multirow{2}{*}{\makecell{\\ \\ Сдвиг фазы / \\ Output slack, нс}} & \multicolumn{2}{l|}{\makecell{\centering Slow 85C}} & \multicolumn{2}{l|}{\makecell{\centering Slow 0C}} & \multicolumn{2}{l|}{\makecell{\centering Fast 0C}} \\ \cline{3-8} 
-		&  & Available Setting Time, нс & Typical MTBF, лет & Available Setting Time, нс & Typical MTBF, лет & Available Setting Time, нс & Typical MTBF, лет \\ 
+		\multirow{2}{*}{\makecell{\\ \\ №}} & \multirow{2}{*}{\makecell{\\ Сдвиг фазы / \\ Output slack, нс}} & \multicolumn{2}{l|}{\makecell{\centering Slow 85C}} & \multicolumn{2}{l|}{\makecell{Slow 0C}} & \multicolumn{2}{l|}{\makecell{\centering Fast 0C}} \\ \cline{3-8} 
+		&  & Available Setting Time, нс & Typical MTBF, лет & Available Setting Time, нс & Typical MTBF, лет & Available Setting Time, нс & Typical MTBF, лет \\
 		\hline
-		1 &  &  &  &  &  &  &  \\ 
+		1 & 1.058 & 0.013 & 0 & 0.121 & 0 & 0.602 & 2.63e-06 \\
 		\hline
-		2 &  &  &  &  &  &  &  \\ 
+		2 & 1.258 & 0.192 & 0 & 0.300 & 0 & 0.781 & 1.85e-04 \\
+		\hline
+		3 & 1.458 & 0.400 & 0 & 0.508 & 2.82e-07 & 0.989 & 2.58e-02 \\
+		\hline
+		4 & 1.658 & 0.608 & 3.03e-06 & 0.716 & 3.94e-05 & 1.197 & 3.61 \\
+		\hline
+		5 & 1.858 & 0.817 & 4.34e-04 & 0.925 & 5.65e-3 & 1.406 & 517 \\
+		\hline
+		6 & 2.058 & 0.987 & 2.46e-02 & 1.095 & 0.32 & 1.576 & 2.93e+04 \\
+		\hline
+		7 & 2.258 & 1.192 & 3.21 & 1.300 & 41.7 & 1.781 & 3.82e+06 \\
+		\hline
+		8 & 2.458 & 1.442 & 1.22e+03 & 1.550 & 1.58e+04 & 2.031 & 1e+09 \\
+		\hline
+		9 & 2.658 & 1.650 & 1.70e+05 & 1.758 & 2.21e+06 & 2.239 & 1e+09 \\
+		\hline
+		10 & 2.858 & 1.799 & 5.86e+06 & 1.907 & 7.62e+07 & 2.388 & 1e+09 \\
+		\hline
+		11 & 3.058 & 1.997 & 6.46e+08 & 2.105 & 1e+09 & 2.586 & 1e+09 \\
+		\hline
+		12 & 3.258 & 2.192 & 1e+09 & 2.300 & 1e+09 & 2.781 & 1e+09 \\
 		\hline
 	\end{tabular}
 \end{table}
 
+\noindent Подключим вход синхронизации триггера \code{RG_out} к выходу \code{c0 PLL_CLK}:
+\begin{itemize}
+	\item Available Setting Time = 39.036 нс
+	\item Typical MTBF = 1e+09 лет
+\end{itemize}
+
+\noindent Установим тактовую частоту на выходе \code{c0 PLL_CLK} равной 400 МГц:
+\begin{itemize}
+	\item Available Setting Time = 39.036 нс
+	\item Typical MTBF = 1e+09 лет
+\end{itemize}
+
+\noindent Установим цепь синхронной привязки сигналов с тремя триггерами:
+\begin{itemize}
+	\item Available Setting Time = 78.074 нс
+	\item Typical MTBF = 1e+09 лет
+\end{itemize}
+
+%\section{Контрольные вопросы}
+%
+%\begin{itemize}
+%	\item Что такое MTBF?
+%	
+%	Mean Time Between Failures – среднее время между сбоями.
+%	
+%	\item Соответствуют ли полученные результаты экспериментальных исследований увеличению значения MTBF в 10.8 раз при увеличении Available Setting Time на 100 пс?
+%	
+%	Из 9-10 строк таблицы можно найти, что MTBF увеличилось в 34 раз при изменении Available Setting Time на 149 пс, что соответствует увеличению в 22 раза на 100 пс.
+%	
+%	\item Назовите причины, по которым результаты, полученные на компьютерной модели (Quartus II) могут не соответствовать результатам на физической модели.
+%	
+%	Наличие посторонних помех, особенности проводников (сопротивление, длина и т.д.), коррозия металла, внешние условия, при которых используется устройство, «старение» электронных компонентов, то есть их износ.
+%	
+%	\item Почему микросхема с большим быстродействием обеспечивает меньшую интенсивность сбоев при прочих равных условиях?
+%	
+%	Большее быстродействие обеспечивает более быструю обработку ситуации, которая может привести к сбою, следовательно, при большем быстродействии сбоя может не произойти.
+%	
+%	\item Почему наличие логики между триггерами принимающего данные тактового домена увеличивает MTBF?
+%	
+%	Отсутствие логики создает слишком малую задержку между триггерами. Если они синхронизируются разными тактовыми доменами, малая задержка может привести к сбою. 
+%	
+%	\item Как наличие логики между триггерами принимающего данные домена имитируется в выполняемой работе?
+%	
+%	С помощью сдвига фазы тактовых частот на 1 нс.
+%\end{itemize}
+
 \section{Выводы}
+
+В работе выполнены типовые задания временных требований к синхронному проекту. Для анализа метастабильности обеспечена работоспособность проекта с заданными частотами, исключены из временного анализа пути, для которых определялась метастабильность, выполнены настройки компилятора, обеспечивающие анализ взаимодействия асинхронных тактовых доменов. Оценено влияние допуска Setup и количества синхронизирующих триггеров на интенсивность сбоев.
 
 \end{document}
