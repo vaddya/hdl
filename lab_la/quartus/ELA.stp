@@ -1,0 +1,285 @@
+<session jtag_chain="USB-Blaster [USB-0]" jtag_device="@1: 10CL006(Y|Z)/10CL010(Y|Z)/.. (0x020F10DD)" sof_file="output_files/lab_la.sof">
+  <display_tree gui_logging_enabled="0">
+    <display_branch instance="ELA1" log="USE_GLOBAL_TEMP" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
+    <display_branch instance="ELA2" log="USE_GLOBAL_TEMP" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
+  </display_tree>
+  <instance enabled="false" entity_name="sld_signaltap" is_auto_node="yes" is_expanded="true" name="ELA1" source_file="sld_signaltap.vhd">
+    <node_ip_info instance_id="0" mfg_id="110" node_id="0" version="6"/>
+    <signal_set global_temp="1" is_expanded="true" name="signal_set: 2018/02/28 13:01:42  #0">
+      <clock name="clk_25MHz" polarity="posedge" tap_mode="probeonly"/>
+      <config pipeline_level="2" ram_type="AUTO" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="1024" trigger_in_enable="no" trigger_out_enable="no"/>
+      <top_entity/>
+      <signal_vec>
+        <trigger_input_vec>
+          <wire name="cnt[0]" tap_mode="classic"/>
+          <wire name="cnt[1]" tap_mode="classic"/>
+          <wire name="cnt[2]" tap_mode="classic"/>
+          <wire name="cnt[3]" tap_mode="classic"/>
+          <wire name="cnt[4]" tap_mode="classic"/>
+          <wire name="cnt[5]" tap_mode="classic"/>
+          <wire name="cnt[6]" tap_mode="classic"/>
+          <wire name="cnt[7]" tap_mode="classic"/>
+          <wire name="cnt[8]" tap_mode="classic"/>
+          <wire name="cnt[9]" tap_mode="classic"/>
+        </trigger_input_vec>
+        <data_input_vec>
+          <wire name="cnt[0]" tap_mode="classic"/>
+          <wire name="cnt[1]" tap_mode="classic"/>
+          <wire name="cnt[2]" tap_mode="classic"/>
+          <wire name="cnt[3]" tap_mode="classic"/>
+          <wire name="cnt[4]" tap_mode="classic"/>
+          <wire name="cnt[5]" tap_mode="classic"/>
+          <wire name="cnt[6]" tap_mode="classic"/>
+          <wire name="cnt[7]" tap_mode="classic"/>
+          <wire name="cnt[8]" tap_mode="classic"/>
+          <wire name="cnt[9]" tap_mode="classic"/>
+        </data_input_vec>
+        <storage_qualifier_input_vec>
+          <wire name="cnt[0]" tap_mode="classic"/>
+          <wire name="cnt[1]" tap_mode="classic"/>
+          <wire name="cnt[2]" tap_mode="classic"/>
+          <wire name="cnt[3]" tap_mode="classic"/>
+          <wire name="cnt[4]" tap_mode="classic"/>
+          <wire name="cnt[5]" tap_mode="classic"/>
+          <wire name="cnt[6]" tap_mode="classic"/>
+          <wire name="cnt[7]" tap_mode="classic"/>
+          <wire name="cnt[8]" tap_mode="classic"/>
+          <wire name="cnt[9]" tap_mode="classic"/>
+        </storage_qualifier_input_vec>
+      </signal_vec>
+      <presentation>
+        <unified_setup_data_view>
+          <node is_selected="false" level-0="alt_or" name="cnt[26..0]" order="msb_to_lsb" radix="bar" state="collapse" storage-0="alt_or" storage-1="alt_or" storage-2="alt_or" type="combinatorial">
+            <node data_index="9" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[9]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="9" tap_mode="classic" trigger_index="9" type="unknown"/>
+            <node data_index="8" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[8]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="8" tap_mode="classic" trigger_index="8" type="unknown"/>
+            <node data_index="7" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="cnt[7]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="7" tap_mode="classic" trigger_index="7" type="unknown"/>
+            <node data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[6]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="6" tap_mode="classic" trigger_index="6" type="unknown"/>
+            <node data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[5]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="5" tap_mode="classic" trigger_index="5" type="unknown"/>
+            <node data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[4]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="4" tap_mode="classic" trigger_index="4" type="unknown"/>
+            <node data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[3]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="3" tap_mode="classic" trigger_index="3" type="unknown"/>
+            <node data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[2]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="2" tap_mode="classic" trigger_index="2" type="unknown"/>
+            <node data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[1]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="1" tap_mode="classic" trigger_index="1" type="unknown"/>
+            <node data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[0]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="0" tap_mode="classic" trigger_index="0" type="unknown"/>
+          </node>
+        </unified_setup_data_view>
+        <data_view>
+          <bus is_selected="false" level-0="alt_or" name="cnt[26..0]" order="msb_to_lsb" radix="bar" state="collapse" storage-0="alt_or" storage-1="alt_or" storage-2="alt_or" type="combinatorial">
+            <net data_index="9" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[9]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="9" tap_mode="classic" trigger_index="9" type="unknown"/>
+            <net data_index="8" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[8]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="8" tap_mode="classic" trigger_index="8" type="unknown"/>
+            <net data_index="7" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="cnt[7]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="7" tap_mode="classic" trigger_index="7" type="unknown"/>
+            <net data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[6]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="6" tap_mode="classic" trigger_index="6" type="unknown"/>
+            <net data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[5]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="5" tap_mode="classic" trigger_index="5" type="unknown"/>
+            <net data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[4]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="4" tap_mode="classic" trigger_index="4" type="unknown"/>
+            <net data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[3]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="3" tap_mode="classic" trigger_index="3" type="unknown"/>
+            <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[2]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="2" tap_mode="classic" trigger_index="2" type="unknown"/>
+            <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[1]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="1" tap_mode="classic" trigger_index="1" type="unknown"/>
+            <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[0]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="0" tap_mode="classic" trigger_index="0" type="unknown"/>
+          </bus>
+        </data_view>
+        <setup_view>
+          <bus is_selected="false" level-0="alt_or" name="cnt[26..0]" order="msb_to_lsb" radix="bar" state="collapse" storage-0="alt_or" storage-1="alt_or" storage-2="alt_or" type="combinatorial">
+            <net data_index="9" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[9]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="9" tap_mode="classic" trigger_index="9" type="unknown"/>
+            <net data_index="8" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[8]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="8" tap_mode="classic" trigger_index="8" type="unknown"/>
+            <net data_index="7" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="cnt[7]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="7" tap_mode="classic" trigger_index="7" type="unknown"/>
+            <net data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[6]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="6" tap_mode="classic" trigger_index="6" type="unknown"/>
+            <net data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[5]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="5" tap_mode="classic" trigger_index="5" type="unknown"/>
+            <net data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[4]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="4" tap_mode="classic" trigger_index="4" type="unknown"/>
+            <net data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[3]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="3" tap_mode="classic" trigger_index="3" type="unknown"/>
+            <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[2]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="2" tap_mode="classic" trigger_index="2" type="unknown"/>
+            <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[1]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="1" tap_mode="classic" trigger_index="1" type="unknown"/>
+            <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="false" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[0]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="0" tap_mode="classic" trigger_index="0" type="unknown"/>
+          </bus>
+        </setup_view>
+        <trigger_in_editor/>
+        <trigger_out_editor/>
+      </presentation>
+      <trigger CRC="2FCF33F" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2018/02/28 14:27:40  #0" position="center" power_up_trigger_mode="false" record_data_gap="true" segment_size="256" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="segmented">
+        <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
+        <events use_custom_flow_control="no">
+          <level enabled="yes" name="condition1" type="basic">'cnt[0]' == low &amp;&amp; 'cnt[1]' == low &amp;&amp; 'cnt[2]' == low &amp;&amp; 'cnt[3]' == low &amp;&amp; 'cnt[4]' == low &amp;&amp; 'cnt[5]' == low &amp;&amp; 'cnt[6]' == low &amp;&amp; 'cnt[7]' == high &amp;&amp; 'cnt[8]' == low &amp;&amp; 'cnt[9]' == low
+            <power_up enabled="yes">
+            </power_up><op_node/>
+          </level>
+          <custom_flow_control>
+            <runtime_configurable comparison_operator="yes" counter_action="no" flag_action="no" logical_operator="yes" numerical_value="yes" state_transition="yes"/>
+            <flow_expression><![CDATA[state ST1:
+trigger;]]>
+            </flow_expression>
+            <power_up_flow_expression><![CDATA[state ST1:
+trigger;]]>
+            </power_up_flow_expression>
+          </custom_flow_control>
+        </events>
+        <storage_qualifier_events>
+          <transitional>1111111111
+            <pwr_up_transitional>1111111111</pwr_up_transitional>
+          </transitional>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+        </storage_qualifier_events>
+        <log>
+          <data global_temp="1" name="log: Trig @ 2018/02/28 14:28:53 (0:0:0.2 elapsed)" power_up_mode="false" sample_depth="1024" segment_size="256">0000000000100000000001000000001100000000001000000010100000000110000000111000000000010000001001000000010100000011010000000011000000101100000001110000001111000000000010000010001000000100100000110010000000101000001010100000011010000011101000000001100000100110000001011000001101100000001110000010111000000111100000111110000000000100001000010000010001000011000100000010010000101001000001100100001110010000000101000010010100000101010000110101000000110100001011010000011101000011110100000000110000100011000001001100001100110000001011000010101100000110110000111011000000011100001001110000010111000011011100000011110000101111000001111100001111110000000000100010000010000100001000110000100000100010001010001000011000100011100010000001001000100100100001010010001101001000001100100010110010000111001000111100100000001010001000101000010010100011001010000010101000101010100001101010001110101000000110100010011010000101101000110110100000111010001011101000011110100011111010000000011000100001100001000110001100011000001001100010100110000110011000111001100000010110001001011000010101100011010110000011011000101101100001110110001111011000000011100010001110000100111000110011100000101110001010111000011011100011101110000001111000100111100001011110001101111000001111100010111110000111111000111111100000000001001000000100010000010011000001000010000100101000010001100001001110000100000100010010010001000101000100110100010000110001001011000100011100010011110001000000100100100010010001001001001100100100001010010010101001000110100100111010010000011001001001100100010110010011011001000011100100101110010001111001001111100100000001010010000101000100010100110001010000100101001010010100011001010011100101000001010100100101010001010101001101010100001101010010110101000111010100111101010000001101001000110100010011010011001101000010110100101011010001101101001110110100000111010010011101000101110100110111010000111101001011110100011111010011111101000000001100100000110001000011001100001100001000110010100011000110001100111000110000010011001001001100010100110011010011000011001100101100110001110011001111001100000010110010001011000100101100110010110000101011001010101100011010110011101011000001101100100110110001011011001101101100001110110010111011000111101100111110110000000111001000011100010001110011000111000010011100101001110001100111001110011100000101110010010111000101011100110101110000110111001011011100011101110011110111000000111100100011110001001111001100111100001011110010101111000110111100111011110000011111001001111100010111110011011111000011111100101111110001111111001111111100000000000010000000000100000000110000000000100000001010000000011000000011100000000001000000100100000001010000001101000000001100000010110000000111000000111100000000001000001000100000010010000011001000000010100000101010000001101000001110100000000110000010011000000101100000110110000000111000001011100000011110000011111000000000010000100001000001000100001100010000001001000010100100000110010000111001000000010100001001010000010101000011010100000011010000101101000001110100001111010000000011000010001100000100110000110011000000101100001010110000011011000011101100000001110000100111000001011100001101110000001111000010111100000111110000111111000000000010001000001000010000100011000010000010001000101000100001100010001110001000000100100010010010000101001000110100100000110010001011001000011100100011110010000000101000100010100001001010001100101000001010100010101010000110101000111010100000011010001001101000010110100011011010000011101000101110100001111010001111101000000001100010000110000100011000110001100000100110001010011000011001100011100110000001011000100101100001010110001101011000001101100010110110000111011000111101100000001110001000111000010011100011001110000010111000101011100001101110001110111000000111100010011110000101111000110111100000111110001011111000011111100011111110000000000100100000010001000001001100000100001000010010100001000110000100111000010000010001001001000100010100010011010001000011000100101100010001110001001111000100000010010010001001000100100100110010010000101001001010100100011010010011101001000001100100100110010001011001001101100100001110010010111001000111100100111110010000000101001000010100010001010011000101000010010100101001010001100101001110010100000101010010010101000101010100110101010000110101001011010100011101010011110101000000110100100011010001001101001100110100001011010010101101000110110100111011010000011101001001110100010111010011011101000011110100101111010001111101001111110100000000110010000011000100001100110000110000100011001010001100011000110011100011000001001100100100110001010011001101001100001100110010110011000111001100111100110000001011001000101100010010110011001011000010101100101010110001101011001110101100000110110010011011000101101100110110110000111011001011101100011110110011111011000000011100100001110001000111001100011100001001110010100111000110011100111001110000010111001001011100010101110011010111000011011100101101110001110111001111011100000011110010001111000100111100110011110000101111001010111100011011110011101111000001111100100111110001011111001101111100001111110010111111000111111100111111110000000000001000000000010000000011000000000010000000101000000001100000001110000000000100000010010000000101000000110100000000110000001011000000011100000011110000000000100000100010000001001000001100100000001010000010101000000110100000111010000000011000001001100000010110000011011000000011100000101110000001111000001111100000000001000010000100000100010000110001000000100100001010010000011001000011100100000001010000100101000001010100001101010000001101000010110100000111010000111101000000001100001000110000010011000011001100000010110000101011000001101100001110110000000111000010011100000101110000110111000000111100001011110000011111000011111100000000001000100000100001000010001100001000001000100010100010000110001000111000100000010010001001001000010100100011010010000011001000101100100001110010001111001000000010100010001010000100101000110010100000101010001010101000011010100011101010000001101000100110100001011010001101101000001110100010111010000111101000111110100000000110001000011000010001100011000110000010011000101001100001100110001110011000000101100010010110000101011000110101100000110110001011011000011101100011110110000000111000100011100001001110001100111000001011100010101110000110111000111011100000011110001001111000010111100011011110000011111000101111100001111110001111111000000000010010000001000100000100110000010000100001001010000100011000010011100001000001000100100100010001010001001101000100001100010010110001000111000100111100010000001001001000100100010010010011001001000010100100101010010001101001001110100100000110010010011001000101100100110110010000111001001011100100011110010011111001000000010100100001010001000101001100010100001001010010100101000110010100111001010000010101001001010100010101010011010101000011010100101101010001110101001111010100000011010010001101000100110100110011010000101101001010110100011011010011101101000001110100100111010001011101001101110100001111010010111101000111110100111111010000000011001000001100010000110011000011000010001100101000110001100011001110001100000100110010010011000101001100110100110000110011001011001100011100110011110011000000101100100010110001001011001100101100001010110010101011000110101100111010110000011011001001101100010110110011011011000011101100101110110001111011001111101100000001110010000111000100011100110001110000100111001010011100011001110011100111000001011100100101110001010111001101011100001101110010110111000111011100111101110000001111001000111100010011110011001111000010111100101011110001101111001110111100000111110010011111000101111100110111110000111111001011111100011111110011111111000000000000100000000001000000001100000000001000000010100000000110000000111000000000010000001001000000010100000011010000000011000000101100000001110000001111000000000010000010001000000100100000110010000000101000001010100000011010000011101000000001100000100110000001011000001101100000001110000010111000000111100000111110000000000100001000010000010001000011000100000010010000101001000001100100001110010000000101000010010100000101010000110101000000110100001011010000011101000011110100000000110000100011000001001100001100110000001011000010101100000110110000111011000000011100001001110000010111000011011100000011110000101111000001111100001111110000000000100010000010000100001000110000100000100010001010001000011000100011100010000001001000100100100001010010001101001000001100100010110010000111001000111100100000001010001000101000010010100011001010000010101000101010100001101010001110101000000110100010011010000101101000110110100000111010001011101000011110100011111010000000011000100001100001000110001100011000001001100010100110000110011000111001100000010110001001011000010101100011010110000011011000101101100001110110001111011000000011100010001110000100111000110011100000101110001010111000011011100011101110000001111000100111100001011110001101111000001111100010111110000111111000111111100000000001001000000100010000010011000001000010000100101000010001100001001110000100000100010010010001000101000100110100010000110001001011000100011100010011110001000000100100100010010001001001001100100100001010010010101001000110100100111010010000011001001001100100010110010011011001000011100100101110010001111001001111100100000001010010000101000100010100110001010000100101001010010100011001010011100101000001010100100101010001010101001101010100001101010010110101000111010100111101010000001101001000110100010011010011001101000010110100101011010001101101001110110100000111010010011101000101110100110111010000111101001011110100011111010011111101000000001100100000110001000011001100001100001000110010100011000110001100111000110000010011001001001100010100110011010011000011001100101100110001110011001111001100000010110010001011000100101100110010110000101011001010101100011010110011101011000001101100100110110001011011001101101100001110110010111011000111101100111110110000000111001000011100010001110011000111000010011100101001110001100111001110011100000101110010010111000101011100110101110000110111001011011100011101110011110111000000111100100011110001001111001100111100001011110010101111000110111100111011110000011111001001111100010111110011011111000011111100101111110001111111001111111100</data>
+          <extradata>11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111T111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111T111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111T111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111T1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</extradata>
+        </log>
+      </trigger>
+    </signal_set>
+    <position_info>
+      <single attribute="active tab" value="0"/>
+      <single attribute="data horizontal scroll position" value="0"/>
+      <single attribute="data vertical scroll position" value="0"/>
+      <single attribute="setup horizontal scroll position" value="0"/>
+      <single attribute="setup vertical scroll position" value="0"/>
+      <single attribute="zoom level denominator" value="1"/>
+      <single attribute="zoom level numerator" value="1"/>
+      <single attribute="zoom offset denominator" value="1"/>
+      <single attribute="zoom offset numerator" value="130048"/>
+    </position_info>
+  </instance>
+  <mnemonics/>
+  <static_plugin_mnemonics/>
+  <instance enabled="true" entity_name="sld_signaltap" is_auto_node="yes" is_expanded="true" name="ELA2" source_file="sld_signaltap.vhd">
+    <node_ip_info instance_id="1" mfg_id="110" node_id="0" version="6"/>
+    <position_info>
+      <single attribute="active tab" value="0"/>
+      <single attribute="setup horizontal scroll position" value="0"/>
+      <single attribute="setup vertical scroll position" value="0"/>
+      <single attribute="data vertical scroll position" value="0"/>
+      <single attribute="data horizontal scroll position" value="122"/>
+      <single attribute="zoom level numerator" value="64"/>
+      <single attribute="zoom level denominator" value="1"/>
+      <single attribute="zoom offset numerator" value="2032"/>
+      <single attribute="zoom offset denominator" value="1"/>
+    </position_info>
+    <signal_set global_temp="1" name="signal_set: 2018/02/28 14:49:41  #0">
+      <clock name="clk_25MHz" polarity="posedge" tap_mode="classic"/>
+      <config pipeline_level="0" ram_type="AUTO" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="1024" trigger_in_enable="no" trigger_out_enable="no"/>
+      <top_entity/>
+      <signal_vec>
+        <trigger_input_vec>
+          <wire name="cnt[21]" tap_mode="classic"/>
+          <wire name="cnt[22]" tap_mode="classic"/>
+          <wire name="cnt[23]" tap_mode="classic"/>
+          <wire name="cnt[24]" tap_mode="classic"/>
+          <wire name="cnt[25]" tap_mode="classic"/>
+          <wire name="cnt[26]" tap_mode="classic"/>
+          <wire name="led[6]" tap_mode="classic"/>
+        </trigger_input_vec>
+        <data_input_vec>
+          <wire name="cnt[21]" tap_mode="classic"/>
+          <wire name="cnt[22]" tap_mode="classic"/>
+          <wire name="cnt[23]" tap_mode="classic"/>
+          <wire name="cnt[24]" tap_mode="classic"/>
+          <wire name="cnt[25]" tap_mode="classic"/>
+          <wire name="cnt[26]" tap_mode="classic"/>
+          <wire name="led[6]" tap_mode="classic"/>
+        </data_input_vec>
+        <storage_qualifier_input_vec>
+          <wire name="cnt[21]" tap_mode="classic"/>
+          <wire name="cnt[22]" tap_mode="classic"/>
+          <wire name="cnt[23]" tap_mode="classic"/>
+          <wire name="cnt[24]" tap_mode="classic"/>
+          <wire name="cnt[25]" tap_mode="classic"/>
+          <wire name="cnt[26]" tap_mode="classic"/>
+          <wire name="led[6]" tap_mode="classic"/>
+        </storage_qualifier_input_vec>
+      </signal_vec>
+      <presentation>
+        <unified_setup_data_view>
+          <node is_selected="false" level-0="alt_or" name="cnt[26..0]" order="msb_to_lsb" radix="hex" state="expand" storage-0="alt_or" storage-1="alt_or" storage-2="alt_or" type="combinatorial">
+            <node data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[26]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="5" tap_mode="classic" trigger_index="5" type="unknown"/>
+            <node data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[25]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="4" tap_mode="classic" trigger_index="4" type="unknown"/>
+            <node data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[24]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="3" tap_mode="classic" trigger_index="3" type="unknown"/>
+            <node data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[23]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="2" tap_mode="classic" trigger_index="2" type="unknown"/>
+            <node data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[22]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="1" tap_mode="classic" trigger_index="1" type="unknown"/>
+            <node data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[21]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="0" tap_mode="classic" trigger_index="0" type="unknown"/>
+          </node>
+          <node data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="led[6]" storage_index="6" tap_mode="classic" trigger_index="6" type="unknown"/>
+        </unified_setup_data_view>
+        <data_view>
+          <bus is_selected="false" level-0="alt_or" name="cnt[26..0]" order="msb_to_lsb" radix="hex" state="expand" storage-0="alt_or" storage-1="alt_or" storage-2="alt_or" type="combinatorial">
+            <net data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[26]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="5" tap_mode="classic" trigger_index="5" type="unknown"/>
+            <net data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[25]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="4" tap_mode="classic" trigger_index="4" type="unknown"/>
+            <net data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[24]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="3" tap_mode="classic" trigger_index="3" type="unknown"/>
+            <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[23]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="2" tap_mode="classic" trigger_index="2" type="unknown"/>
+            <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[22]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="1" tap_mode="classic" trigger_index="1" type="unknown"/>
+            <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[21]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="0" tap_mode="classic" trigger_index="0" type="unknown"/>
+          </bus>
+          <net data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="led[6]" storage_index="6" tap_mode="classic" trigger_index="6" type="unknown"/>
+        </data_view>
+        <setup_view>
+          <bus is_selected="false" level-0="alt_or" name="cnt[26..0]" order="msb_to_lsb" radix="hex" state="expand" storage-0="alt_or" storage-1="alt_or" storage-2="alt_or" type="combinatorial">
+            <net data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[26]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="5" tap_mode="classic" trigger_index="5" type="unknown"/>
+            <net data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[25]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="4" tap_mode="classic" trigger_index="4" type="unknown"/>
+            <net data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[24]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="3" tap_mode="classic" trigger_index="3" type="unknown"/>
+            <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[23]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="2" tap_mode="classic" trigger_index="2" type="unknown"/>
+            <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[22]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="1" tap_mode="classic" trigger_index="1" type="unknown"/>
+            <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="cnt[21]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="0" tap_mode="classic" trigger_index="0" type="unknown"/>
+          </bus>
+          <net data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="led[6]" storage_index="6" tap_mode="classic" trigger_index="6" type="unknown"/>
+        </setup_view>
+        <trigger_in_editor/>
+        <trigger_out_editor/>
+      </presentation>
+      <trigger CRC="788AB9B6" attribute_mem_mode="false" gap_record="true" global_temp="1" name="trigger: 2018/02/28 14:49:41  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="64" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
+        <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
+        <events use_custom_flow_control="no">
+          <level enabled="yes" name="condition1" type="basic">'cnt[21]' == low &amp;&amp; 'cnt[22]' == low &amp;&amp; 'cnt[23]' == low &amp;&amp; 'cnt[24]' == low &amp;&amp; 'cnt[25]' == low &amp;&amp; 'cnt[26]' == low
+            <power_up enabled="yes">
+            </power_up>
+            <op_node/>
+          </level>
+        </events>
+        <storage_qualifier_events>
+          <transitional>1111111
+            <pwr_up_transitional>1111111</pwr_up_transitional>
+          </transitional>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+        </storage_qualifier_events>
+        <log>
+          <data global_temp="1" name="log: Trig @ 2018/02/28 14:50:46 (0:0:2.4 elapsed)" power_up_mode="false" sample_depth="1024" trigger_position="128">1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111000000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001</data>
+          <extradata>11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111T1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</extradata>
+        </log>
+      </trigger>
+    </signal_set>
+  </instance>
+  <global_info>
+    <single attribute="active instance" value="1"/>
+    <single attribute="config widget visible" value="1"/>
+    <single attribute="data log widget visible" value="1"/>
+    <single attribute="hierarchy widget height" value="222"/>
+    <single attribute="hierarchy widget visible" value="1"/>
+    <single attribute="instance widget visible" value="1"/>
+    <single attribute="jtag widget visible" value="1"/>
+    <single attribute="lock mode" value="0"/>
+    <multi attribute="column width" size="23" value="34,34,89,74,68,78,95,96,98,98,88,88,110,101,101,101,101,101,101,101,101,10,78"/>
+    <multi attribute="frame size" size="2" value="660,868"/>
+    <multi attribute="jtag widget size" size="2" value="348,135"/>
+  </global_info>
+</session>

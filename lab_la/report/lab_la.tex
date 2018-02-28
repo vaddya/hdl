@@ -1,0 +1,152 @@
+\include{settings}
+
+\begin{document}
+
+\include{titlepage}
+
+\tableofcontents
+\listoffigures
+\newpage
+
+\section{Цель работы}
+
+Познакомиться с базовыми возможностями встроенного логического анализатора SignalTapII пакета QuartusII. Научиться выполнять типовые действия для наблюдения и анализа сигналов в цифровых устройствах.
+
+\section{Выполнение работы}
+
+\subsection{Создание и ввод проекта}
+
+На рис. \ref{fig:source} изображен исследуемый проект, обеспечивающий реализацию 27-разрядного счетчика, работающего на частоте 25 МГц, включение/выключение светодиодов \code{led[5..0]} старшими разрядами счетчика и соединение сигнала выхода переноса \code{cout} со светодиодом \code{led[6]}.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{source}
+		\caption{Исследуемый проект}
+		\label{fig:source}
+	\end{center}
+\end{figure}
+\vspace{-1cm}
+
+\subsection{Создание экземпляра логического анализатора ELA1}
+
+На рис. \ref{fig:stp_1} изображено окно SignalTapII Logic Analyzer со списком целей в созданном \code{stp}-файле.
+\vspace{-0.5cm}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{stp_1}
+		\caption{Список целей в SignalTapII Logic Analyzer}
+		\label{fig:stp_1}
+	\end{center}
+\end{figure}
+
+\subsection{Конфигурирование СБИС}
+
+На рис. \ref{fig:stp_2} изображено окно SignalTapII Logic Analyzer после конфигурации и программирования СБИС.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.95\textwidth]{stp_2}
+		\caption{Список целей в SignalTapII Logic Analyzer}
+		\label{fig:stp_2}
+	\end{center}
+\end{figure}
+
+\subsection{Захват и анализ данных}
+
+На рис. \ref{fig:data_1} изображены захваченные данные в SignalTapII Logic Analyzer, записанные когда значение разрядов счетчика \code{cnt[9..0]} станет равным \code{128}.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.95\textwidth]{data_1}
+		\caption{Захваченные данные r}
+		\label{fig:data_1}
+	\end{center}
+\end{figure}
+
+На рис. \ref{fig:data_2} захваченные данные изображены в формате \code{Unsigned Bar Chart}.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.95\textwidth]{data_2}
+		\caption{Захваченные данные в формате Unsigned Bar Chart}
+		\label{fig:data_2}
+	\end{center}
+\end{figure}
+
+\subsection{Управление режимами захвата данных}
+
+На рис. \ref{fig:data_3} захваченные данные изображены с \code{Trigger position = Center trigger position} и значением условия захвата данных равным \code{128}.
+
+\vspace{-0.5cm}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.95\textwidth]{data_3}
+		\caption{Захваченные данные с Center trigger position (\code{128})}
+		\label{fig:data_3}
+	\end{center}
+\end{figure}
+
+На рис. \ref{fig:data_4} захваченные данные изображены с \code{Trigger position = Center trigger position} и значением условия захвата данных равным \code{512}.
+
+\vspace{-0.5cm}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.95\textwidth]{data_4}
+		\caption{Захваченные данные с Center trigger position (\code{512})}
+		\label{fig:data_4}
+	\end{center}
+\end{figure}
+
+На рис. \ref{fig:data_5} захваченные данные изображены с \code{Trigger position = Post trigger position} и значением условия захвата данных равным \code{128}.
+
+\vspace{-0.5cm}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.95\textwidth]{data_5}
+		\caption{Захваченные данные с Post trigger position (\code{128})}
+		\label{fig:data_5}
+	\end{center}
+\end{figure}
+
+На рис. \ref{fig:data_6} захваченные данные изображены с \code{Trigger position = Post trigger position} и значением условия захвата данных равным \code{896}.
+
+\vspace{-0.5cm}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.95\textwidth]{data_6}
+		\caption{Захваченные данные с Post trigger position (\code{896})}
+		\label{fig:data_6}
+	\end{center}
+\end{figure}
+
+На рис. \ref{fig:data_7} захваченные данные изображены с сегментированным типом буфера (4 сегмента по 256 отсчетов) и \code{Trigger position = Center trigger position}.
+
+\vspace{-0.5cm}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.95\textwidth]{data_7}
+		\caption{Захваченные данные с Post trigger position (\code{896})}
+		\label{fig:data_7}
+	\end{center}
+\end{figure}
+
+\section{Дополнительное задание}
+
+Сигнал переноса \code{cout} выведен на светодиод \code{led[6]}, однако он не загорается. Это можно объяснить тем, что сигнал переноса появляется только на один такт и кажется, что светодиод не загорается.
+
+На рис. \ref{fig:data_8} изображены снятые данные для сигналов \code{cnt[26..21]} и сигнала переноса \code{cout} в новом экземпляре логического анализатора \code{ELA2}. Из временной диаграммы видно, что на один такт \code{led[6] = 0}, что соответствует значению \code{cout = 1}.
+
+\vspace{-0.5cm}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.95\textwidth]{data_8}
+		\caption{Захваченные данные с Post trigger position (\code{896})}
+		\label{fig:data_8}
+	\end{center}
+\end{figure}
+
+\section{Выводы}
+
+В ходе работы изучены основы работы с встроенным логическим анализатором \code{SignalTapII} пакета \code{QuartusII}. Были созданы два экземпляра анализатора для получения временных диаграмм для сигналов старших и младших разрядов. Рассмотрены различные режимы захвата данных с различными значениями \code{Triger position} и типа буфера. Временные диаграммы, построенные по захваченным данным, позволили проанализировать сигналы в цифровых устройствах.
+
+\end{document}
