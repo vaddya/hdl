@@ -1,0 +1,102 @@
+\documentclass[a4paper,14pt]{extarticle}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{mmap}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+\usepackage{hyperref}
+\usepackage{indentfirst}
+\usepackage{here}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{chngcntr}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{askmaps}
+\usepackage{pgfplots}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{titlesec}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{accsupp}
+\usepackage{makecell}
+\usepackage{graphicx}
+\usepackage{array}
+
+\setitemize{itemsep=0em}
+\setenumerate{itemsep=0em}
+
+\definecolor{green}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{purple}{rgb}{0.58,0,0.82}
+\definecolor{orange}{rgb}{1, 0.27, 0}
+
+\lstset{
+	language=Verilog,
+	backgroundcolor=\color{white},   
+	basicstyle=\small\ttfamily,
+	commentstyle=\color{green},
+	keywordstyle=\color{blue},	
+	numberstyle=\tiny\color{black}\noncopynumber,
+	stringstyle=\color{purple},
+	breakatwhitespace=false,
+	breaklines=true,
+	keepspaces=true,
+	columns=flexible,
+	captionpos=b,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=4,
+	frame=single,
+	moredelim=*[s][\colorIndex]{[}{]},
+	inputpath={../quartus/},
+	literate={~}{$\sim$}{1}%
+}
+
+\makeatletter
+\newcommand*\@lbracket{[}
+\newcommand*\@rbracket{]}
+\newcommand*\@colon{:}
+\newcommand*\colorIndex{%
+	\edef\@temp{\the\lst@token}%
+	\ifx\@temp\@lbracket \color{black}%
+	\else\ifx\@temp\@rbracket \color{black}%
+	\else\ifx\@temp\@colon \color{black}%
+	\else \color{orange}%
+	\fi\fi\fi
+}
+\makeatother
+
+\titleformat*{\section}{\large\bfseries} 
+\titleformat*{\subsection}{\normalsize\bfseries} 
+\titleformat*{\subsubsection}{\normalsize\bfseries} 
+\titleformat*{\paragraph}{\normalsize\bfseries} 
+\titleformat*{\subparagraph}{\normalsize\bfseries} 
+
+\counterwithin{figure}{section}
+\counterwithin{equation}{section}
+\counterwithin{table}{section}
+\newcommand{\sign}[1][5cm]{\makebox[#1]{\hrulefill}}
+\graphicspath{{../pics/}}
+\captionsetup{justification=centering,margin=1cm}
+\def\arraystretch{1.3}
+\setlength\parindent{5ex}
+\titlelabel{\thetitle.\quad}
+
+\renewcommand{\le}{\ensuremath{\leqslant}}
+\renewcommand{\leq}{\ensuremath{\leqslant}}
+\renewcommand{\ge}{\ensuremath{\geqslant}}
+\renewcommand{\geq}{\ensuremath{\geqslant}}
+\renewcommand{\epsilon}{\ensuremath{\varepsilon}}
+\renewcommand{\phi}{\ensuremath{\varphi}}	
+\newcommand{\nott}[1]{\overline{#1}}
+\newcommand{\noncopynumber}[1]{\BeginAccSupp{method=escape,ActualText={}}#1\EndAccSupp{}}
+\newcommand{\code}[1]{\lstinline{#1}}
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
