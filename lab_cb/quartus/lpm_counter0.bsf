@@ -21,7 +21,7 @@ refer to the applicable agreement for further details.
 (header "symbol" (version "1.2"))
 (symbol
 	(rect 0 0 144 96)
-	(text "cnt" (rect 64 0 85 16)(font "Arial" (font_size 10)))
+	(text "lpm_counter0" (rect 34 0 126 16)(font "Arial" (font_size 10)))
 	(text "inst" (rect 8 80 25 92)(font "Arial" ))
 	(port
 		(pt 0 32)

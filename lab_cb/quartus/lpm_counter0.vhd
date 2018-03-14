@@ -4,7 +4,7 @@
 -- MODULE: LPM_COUNTER 
 
 -- ============================================================
--- File Name: cnt.vhd
+-- File Name: lpm_counter0.vhd
 -- Megafunction Name(s):
 -- 			LPM_COUNTER
 --
@@ -39,17 +39,17 @@ USE ieee.std_logic_1164.all;
 LIBRARY lpm;
 USE lpm.all;
 
-ENTITY cnt IS
+ENTITY lpm_counter0 IS
 	PORT
 	(
 		aclr		: IN STD_LOGIC ;
 		clock		: IN STD_LOGIC ;
 		q		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
 	);
-END cnt;
+END lpm_counter0;
 
 
-ARCHITECTURE SYN OF cnt IS
+ARCHITECTURE SYN OF lpm_counter0 IS
 
 	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (7 DOWNTO 0);
 
@@ -122,9 +122,9 @@ END SYN;
 -- Retrieval info: CONNECT: @aclr 0 0 0 0 aclr 0 0 0 0
 -- Retrieval info: CONNECT: @clock 0 0 0 0 clock 0 0 0 0
 -- Retrieval info: CONNECT: q 0 0 8 0 @q 0 0 8 0
--- Retrieval info: GEN_FILE: TYPE_NORMAL cnt.vhd TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL cnt.inc TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL cnt.cmp TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL cnt.bsf TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL cnt_inst.vhd TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter0.vhd TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter0.inc FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter0.cmp TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter0.bsf TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter0_inst.vhd FALSE
 -- Retrieval info: LIB_FILE: lpm

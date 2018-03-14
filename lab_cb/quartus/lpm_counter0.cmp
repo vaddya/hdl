@@ -13,12 +13,11 @@
 --refer to the applicable agreement for further details.
 
 
-FUNCTION cnt 
-(
-	aclr,
-	clock
-)
-
-RETURNS (
-	q[7..0]
-);
+component lpm_counter0
+	PORT
+	(
+		aclr		: IN STD_LOGIC ;
+		clock		: IN STD_LOGIC ;
+		q		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+	);
+end component;
