@@ -60,7 +60,115 @@
 
 \subsection{Исследование дребезга при переключениях из 0 => 1}
 
+Переведем \code{sw[0]} в положение 0 и сбросим счетчик с помощью кнопки \code{pbb}. Проведем эксперимент, переключая \code{sw[0]} из 0 в 1, будем подсчитывать количество импульсов $N_{stp}$ на плате, отображаемых на светодиодах, количество импульсов $N_{cnt}$, подсчитанных с помощью логического анализатора ELA1 и длительность процесса дребезга $T_{bounce}$. Результаты эксперимента приведены в таблице \ref{tab:0to1} и на рис. \ref{fig:0to1}.
+
+\begin{table}[H]
+	\def\tabcolsep{20pt}
+	\centering
+	\caption{Исследование дребезга при переключениях из 0 => 1}
+	\label{tab:0to1}
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		№ & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
+		$N_{stp}$ & 8 & 3 & 22 & 20 & 5 & 31 \\ \hline
+		$N_{ctn}$ & 8 & 3 & 22 & 20 & 5 & 31 \\ \hline
+		$T_{bounce}$, мкс & 48 & 10 & 40 & 68 & 5 & 72 \\ \hline
+	\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{0to1_1}
+		\vspace{0.2cm}
+	\end{subfigure}
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{0to1_2}
+		\vspace{0.2cm}
+	\end{subfigure}
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{0to1_3}
+		\vspace{0.2cm}
+	\end{subfigure}
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{0to1_4}
+		\vspace{0.2cm}
+	\end{subfigure}
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{0to1_5}
+		\vspace{0.2cm}
+	\end{subfigure}
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{0to1_6}
+		\vspace{0.2cm}
+	\end{subfigure}
+	\caption{Исследование дребезга при переключениях из 0 => 1}
+	\label{fig:0to1}
+\end{figure}
+
+Из результатов видно, что максимальное число переходов из 0 в 1 оказалось равно 31, а максимальная длительность 72 мкс.
+
 \subsection{Исследование дребезга при переключениях из 1 => 0}
+
+Переведем \code{sw[0]} в положение 1 и сбросим счетчик с помощью кнопки \code{pbb}. Проведем эксперимент, переключая \code{sw[0]} из 1 в 0, будем подсчитывать количество импульсов $N_{stp}$ на плате, отображаемых на светодиодах, количество импульсов $N_{cnt}$, подсчитанных с помощью логического анализатора ELA1 и длительность процесса дребезга $T_{bounce}$. Результаты эксперимента приведены в таблице \ref{tab:1to0} и на рис. \ref{fig:1to0}.
+
+\begin{table}[H]
+	\def\tabcolsep{20pt}
+	\centering
+	\caption{Исследование дребезга при переключениях из 1 => 0}
+	\label{tab:1to0}
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		№ & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
+		$N_{stp}$ & 2 & 14 & 12 & 14 & 3 & 17 \\ \hline
+		$N_{ctn}$ & 2 & 14 & 12 & 14 & 3 & 17 \\ \hline
+		$T_{bounce}$, мкс & 44 & 76 & 40 & 13 & 36 & 92 \\ \hline
+	\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{1to0_1}
+		\vspace{0.2cm}
+	\end{subfigure}
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{1to0_2}
+		\vspace{0.2cm}
+	\end{subfigure}
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{1to0_3}
+		\vspace{0.2cm}
+	\end{subfigure}
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{1to0_4}
+		\vspace{0.2cm}
+	\end{subfigure}
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{1to0_5}
+		\vspace{0.2cm}
+	\end{subfigure}
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{1to0_6}
+		\vspace{0.2cm}
+	\end{subfigure}
+	\caption{Исследование дребезга при переключениях из 1 => 0}
+	\label{fig:1to0}
+\end{figure}
+
+Из результатов видно, что максимальное число переходов из 1 в 0 оказалось равно 17, а максимальная длительность 76 мкс.
 
 \section{Реализация устройства защиты от дребезга}
 

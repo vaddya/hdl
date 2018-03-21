@@ -21,7 +21,7 @@ refer to the applicable agreement for further details.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 440 312 608 328)
+	(rect 440 328 608 344)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "pb" (rect 5 0 16 17)(font "Intel Clear" ))
 	(pt 168 8)
@@ -39,7 +39,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 440 232 608 248)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "sw" (rect 5 0 18 12)(font "Arial" ))
+	(text "sw" (rect 5 0 17 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -55,7 +55,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 440 272 608 288)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "clk_25mhz" (rect 5 0 57 17)(font "Intel Clear" ))
+	(text "clk_25mhz" (rect 5 0 56 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -126,20 +126,49 @@ refer to the applicable agreement for further details.
 		(line (pt 0 0)(pt 0 0))
 	)
 )
+(symbol
+	(rect 656 320 704 352)
+	(text "NOT" (rect 1 0 21 10)(font "Arial" (font_size 6)))
+	(text "inst1" (rect 3 21 25 38)(font "Intel Clear" ))
+	(port
+		(pt 0 16)
+		(input)
+		(text "IN" (rect 2 7 13 19)(font "Courier New" (bold))(invisible))
+		(text "IN" (rect 2 7 13 19)(font "Courier New" (bold))(invisible))
+		(line (pt 0 16)(pt 13 16))
+	)
+	(port
+		(pt 48 16)
+		(output)
+		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
+		(line (pt 39 16)(pt 48 16))
+	)
+	(drawing
+		(line (pt 13 25)(pt 13 7))
+		(line (pt 13 7)(pt 31 16))
+		(line (pt 13 25)(pt 31 16))
+		(circle (rect 31 12 39 20))
+	)
+)
 (connector
 	(pt 608 240)
 	(pt 640 240)
 )
 (connector
-	(pt 720 320)
-	(pt 608 320)
-)
-(connector
-	(pt 720 304)
-	(pt 720 320)
-)
-(connector
 	(pt 784 248)
 	(pt 824 248)
 	(bus)
+)
+(connector
+	(pt 720 336)
+	(pt 720 304)
+)
+(connector
+	(pt 720 336)
+	(pt 704 336)
+)
+(connector
+	(pt 656 336)
+	(pt 608 336)
 )
