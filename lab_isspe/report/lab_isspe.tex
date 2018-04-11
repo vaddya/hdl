@@ -21,8 +21,7 @@
 
 На рис. \ref{fig:source} изображена схема исследуемого объекта -- широтно-импульсного модулятора (счетчик \code{Counter_PWM}, компаратор \code{Compare_PWM} и \code{DFF}-триггер). Счетчик работает с тактовой частотой 25МГц. Сигнал с выхода триггера подается на вывод, подключенный к \code{LED}. Рабочие данные поступают на ШИМ с входных выводов \code{D[]}.
 
-Для отладки ШИМ в состав проекта введены мультиплексор данных \code{Mux_Data} и блок \code{ISSPE}, позволяющий в процессе отладки исключить системное окружение, задающее сигналы на выводы \code{D[]}. Данные на компаратор поступают с выхода мультиплексора \code{Mux_Data}, который в соответствии с управляющим сигналом \code{Sel} коммутирует на свой выход либо внешние данные \code{D[]} (сигналы на \code{D[]} подаются с переключателей \code{SW[7..0]}), либо внутреннюю шину данных \code{DI[]}. При отладке ШИМ на лабораторном стенде создание управляющего сигнала \code{Sel} и формирование кода на внутренней шине данных \code{DI[]} обеспечивается с помощью мегафункции In-System Sources and Probe Editor (ISSPE). ISSPE также подключен для наблюдения сигналов на входах компаратора (\code{Q[]}, \code{D_Mux[]}).
-
+\vspace{-0.5cm}
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=\textwidth]{source}
@@ -30,7 +29,45 @@
 		\label{fig:source}
 	\end{center}
 \end{figure}
-\vspace{-1cm}
+\vspace{-0.5cm}
+
+Для отладки ШИМ в состав проекта введены мультиплексор данных \code{Mux_Data} и блок \code{ISSPE}, позволяющий в процессе отладки исключить системное окружение, задающее сигналы на выводы \code{D[]}. Данные на компаратор поступают с выхода мультиплексора \code{Mux_Data}, который в соответствии с управляющим сигналом \code{Sel} коммутирует на свой выход либо внешние данные \code{D[]} (сигналы на \code{D[]} подаются с переключателей \code{SW[7..0]}), либо внутреннюю шину данных \code{DI[]}. При отладке ШИМ на лабораторном стенде создание управляющего сигнала \code{Sel} и формирование кода на внутренней шине данных \code{DI[]} обеспечивается с помощью мегафункции In-System Sources and Probe Editor (ISSPE). ISSPE также подключен для наблюдения сигналов на входах компаратора (\code{Q[]}, \code{D_Mux[]}).
+
+\subsection{Компиляция проекта}
+
+Выполним компиляцию введенного проекта и проанализируем предупреждения. Полученные предупреждения говорят о том, что не найден файл, задающий временные ограничения. В листинге \ref{code:sdc} приведен созданный SDC файл.
+
+\begin{lstlisting}[caption=Synopsys Design Constraints (SDC) файл, label=code:sdc]
+create_clock -name Clk25 -period 40.000 [get_ports {Clk25}]
+derive_clock_uncertainty
+\end{lstlisting}
+
+После компиляции предупреждения не появлются. Определим аппаратурные затраты и быстродействие проекта:
+
+\begin{enumerate}
+	\item Аппаратурные затраты: 905 ЛЭ, включая 688 триггеров;
+	\item Быстродействие Slow 1200 mV 85C Model:
+		\begin{itemize}[leftmargin=*]
+			\item \code{altera_reserved_tck}: Fmax = 72.85 MHz, Restricted Fmax = 72.85 MHz
+			\item \code{Clk25}: Fmax = 146.43 MHz, Restricted Fmax = 146.43 MHz
+		\end{itemize}
+\end{enumerate}
+
+\subsection{Настройка In System Sources and Probe Editor}
+
+Сгруппируем вывода в In System Sources and Probe Editor так, как показано на рис. \ref{fig:isspe1}.
+
+\vspace{-0.5cm}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.75\textwidth]{isspe1}
+		\caption{Исследуемый проект}
+		\label{fig:isspe1}
+	\end{center}
+\end{figure}
+\vspace{-0.5cm}
+
+\section{Подготовка логического анализатора SignalTapII}
 
 \section{Выводы}
 
