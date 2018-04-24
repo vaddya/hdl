@@ -19,7 +19,49 @@
 
 \subsection{Создание и ввод проекта}
 
+Создадим Verilog-описание генератора, схема которого приведена на рис. \ref{fig:source}. Генератор содержит счетчик, который используется для последовательной адресации ROM. В памяти хранятся данные, интерпретируемые как периодический сигнал.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{source}
+	\caption{Схема генератора}
+	\label{fig:source}
+\end{figure}
+
+\noindent На рис. \ref{fig:mif} приведен созданный инициализирующий файл \code{.mif} для ROM. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{mif}
+	\caption{Инициализирующие значения ROM}
+	\label{fig:mif}
+\end{figure}
+
+На основе мегафукцнии <<ROM: 1-PORT>> создадим модуль ROM, после чего создадим описание генератора. В листинге \ref{code:lab_ismce} приведен код программы на языке Verilog.
+
+\lstinputlisting[caption=lab\_ismce.v, label=code:lab_ismce]{lab_ismce.v}
+
+На рис. \ref{fig:rtl} изображена схема устройства в RTL Viewer, полученная после компиляции созданного проекта.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{rtl}
+	\caption{Схема устройства в RTL Viewer}
+	\label{fig:rtl}
+\end{figure}
+
 \subsection{Создание экземпляра логического анализатора SignalTapII}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{stp1}
+	\caption{Схема устройства в RTL Viewer}
+	\label{fig:rtl}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{stp2}
+	\caption{Схема устройства в RTL Viewer}
+	\label{fig:rtl}
+\end{figure}
 
 \subsection{Настройка и запуск ISMCE}
 
