@@ -49,24 +49,90 @@
 
 \subsection{Создание экземпляра логического анализатора SignalTapII}
 
+Настроим экземпляр логического анализатора так, как изображено на рис. \ref{fig:stp1}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{stp1}
-	\caption{Схема устройства в RTL Viewer}
-	\label{fig:rtl}
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{stp1}
+		\vspace{0.2cm}
+	\end{subfigure}
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[scale=1]{stp2}
+		\vspace{0.2cm}
+	\end{subfigure}
+	\caption{Настройка логического анализатора}
+	\label{fig:stp1}
 \end{figure}
 
+Запустим компиляцию, запрограммируем плату и произведем захват данных. 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=1]{stp2}
-	\caption{Схема устройства в RTL Viewer}
-	\label{fig:rtl}
+	\includegraphics[width=\textwidth]{stp3}
+	\caption{Захваченные данные}
+	\label{fig:stp3}
 \end{figure}
+
+Из временной диаграммы видно, что на выход \code{led[7..0]} выводится сигнал, соответствующий значениям из \code{.mif} файла, инициализирующего ROM.
 
 \subsection{Настройка и запуск ISMCE}
 
+Запустим ISMCE, так как данные еще не считаны, то данные отображаются как вопросы:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{ismce1}
+	\caption{Окно ISMCE}
+\end{figure}
+
+Прочитаем значения:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{ismce2}
+	\caption{Значения в памяти}
+\end{figure}
+
+Изменим значения и занесем их в память:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{ismce3}
+	\caption{Измененные значения}
+\end{figure}
+
+На рис. \ref{fig:stp4} изображены захваченные значения после их изменения в ISMCE.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{stp4}
+	\caption{Захваченные данные}
+	\label{fig:stp4}
+\end{figure}
+
 \subsection{Генерация заданного сигнала}
 
+Сгенерируем сигнал, заданный на рис. \ref{fig:dop1}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{dop1}
+	\caption{Заданный сигнал}
+	\label{fig:dop1}
+\end{figure}
+
+В ISMCE изменил данные:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{dop2}
+	\caption{Измененные значения}
+\end{figure}
+
+Захватим данные в логическом анализаторе:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{dop3}
+	\caption{Захваченные данные}
+\end{figure}
+
 \section{Выводы}
+
+Для создания генератора сигналов сложной формы использовался блок памяти ROM, в который были занесены значения исходного сигнала. Основным файлом проекта являлся файл Verilog, в котором инициализировался счетчик адреса, выбирающий все адреса из памяти ROM по очереди. С помощью SignalTapII Logic Analyzer был произведен захват данных с платы для проверки устройства с помощью анализа получаемой диаграммы сигнала. Выполнено индивидуальное задание, включающее в себя занесение значений исходного сигнала в память и получен сигнал с помощью логического анализатора SignalTapII.
 
 \end{document}

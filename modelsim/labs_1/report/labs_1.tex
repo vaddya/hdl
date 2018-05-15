@@ -1,0 +1,79 @@
+\include{settings}
+
+\begin{document}
+
+\include{titlepage}
+
+\tableofcontents
+%\listoffigures
+\newpage
+
+\section{Задание}
+
+\begin{itemize}
+	\item На языке Verilog описать параметризированный преобразователь $N$-разрядного двоичного кода в позиционный код (переключатели платы \code{miniDiLaB_CIV} задают двоичный код; светодиоды отображают позиционный код):
+		\begin{itemize}
+			\item Модуль -- \code{b2oh}; файл \code{b2oh.v}; проект в Quartus -- \code{b2oh}; \item Рабочая папка -- \code{labs_1};
+			\item Параметр $N$ -- разрядность двоичного кода: $N=3$ -- задается из теста (базовое значение параметра -- $8$) стандарты и номера выводов СБИС для платы \code{miniDiLaB_CIV} задать с помощью атрибутов.
+		\end{itemize}
+	
+	\item На языке Verilog создать описание тестов:
+		\begin{itemize}
+			\item Тест класса 1 -- \code{tb1_b2oh.v};
+			\item Тест класса 2 с вычислением результата -- \code{tb2_b2oh.v} (должен обеспечить проверку всех возможных вариантов входных сигналов);
+			\item Тест класса 2 с чтением файлов -- \code{tb2f_b2oh.v} (файл с тестовыми воздействиями -- \code{input_b2oh.dat}, файл с ожидаемыми результатами -- \code{exp_b2oh.dat}).
+		\end{itemize}
+	\item Осуществить моделирование и отладку модулей и проверку тестов класса 2.
+	\item Реализовать проект на плате \code{miniDiLaB_CIV}
+\end{itemize}
+
+\section{Описание устройства}
+
+В листинге \ref{code:b2oh} приведено описание параметризированного преобразователя $N$-разрядного двоичного кода в позиционный.
+\lstinputlisting[caption=\code{b2oh.v}, label=code:b2oh]{b2oh.v}
+
+\section{Описание тестов}
+\label{sec:tests}
+
+\subsection{Тест первого класса}
+
+В листинге \ref{code:test1} приведено описание теста 
+\lstinputlisting[caption=\code{tb1_b2oh.v}, label=code:test1]{tb1_b2oh.v}
+
+В листинге \ref{code:test1_results} приведен вывод результатов теста в консоль.
+\begin{lstlisting}[caption=Результаты теста первого класса, label=code:test1_results, language={}]
+run -all
+# 		         time bin_code pos_code
+#                    0   0     1
+#                  100   1     2
+#                  200   2     4
+#                  300   3     8
+#                  400   4    16
+#                  500   5    32
+#                  600   6    64
+#                  700   7   128
+# ** Note: $stop    : D:/Git/hdl/modelsim/labs_1/modelsim/tb1_b2oh.v(23)
+#    Time: 800 ns  Iteration: 0  Instance: /tb1_b2oh
+# Break in Module tb1_b2oh at D:/Git/hdl/modelsim/labs_1/modelsim/tb1_b2oh.v line 23
+\end{lstlisting}
+
+На рис. \ref{fig:test1_results} изображена временная диаграмма теста.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=\textwidth]{test1_results}
+		\caption{Результаты теста первого класса}
+		\label{fig:test1_results}
+	\end{center}
+\end{figure}
+
+\subsection{Тест второго класса с вычислением результата}
+
+\subsection{Тест второго класса с чтением файлов}
+
+\section{Тестирование на плате miniDiLaB\_CIV}
+
+Для тестирования проекта на плате были использованы тесты, описанные в пункте \ref{sec:tests}. Результаты тестирования совпадают с ожидаемыми, следовательно, устройство работает верно.
+
+\section{Выводы}
+
+\end{document}

@@ -60,17 +60,113 @@ derive_clock_uncertainty
 \vspace{-0.5cm}
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.75\textwidth]{isspe1}
-		\caption{Исследуемый проект}
+		\includegraphics[scale=1]{isspe1}
+		\caption{Настройка In System Sources and Probe Editor}
 		\label{fig:isspe1}
 	\end{center}
 \end{figure}
 \vspace{-0.5cm}
 
-\section{Подготовка логического анализатора SignalTapII}
+\subsection{Подготовка логического анализатора SignalTapII}
+
+Создадим экземпляр логического анализатора \code{ELA1} и зададим настройки в соответствии с рис. \ref{fig:stp1}. Аппаратные затраты для реализации созданного анализатора: 862 логических элемента, 34816 бит памяти, 4 medium blocks.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=1]{stp1}
+		\caption{Настройка Signal Tap Logic Analyzer}
+		\label{fig:stp1}
+	\end{center}
+\end{figure}
+\vspace{-0.5cm}
+
+\subsection{Исследование работы ШИМ в системе-прототипе}
+
+На рис. \ref{fig:stp2} приведена диаграмма, подтверждающая работоспособность счетчика ШИМ.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=\textwidth]{stp2}
+		\caption{Проверка работоспособности счетчика ШИМ}
+		\label{fig:stp2}
+	\end{center}
+\end{figure}
+\vspace{-0.5cm}
+
+Проверим работоспособность ШИМ в In System Sources and Probe Editor.
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{isspe2}
+		\vspace{0.2cm}
+	\end{subfigure}
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{isspe3}
+		\vspace{0.2cm}
+	\end{subfigure}
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{isspe4}
+	\end{subfigure}
+	\caption{Проверка работоспособности счетчика ШИМ в ISSPE}
+	\label{fig:isspe2}
+\end{figure}
+
+Если \code{Sel = 0}, то входные данные считываются из положения переключателей \code{SW[7..0]}. Если \code{sel = 1}, то входные данные задаются в редакторе ISSPE в значении \code{DI[7..0]}. Выход синтезированной схемы соединен с \code{LED[0]}, следовательно ШИМ регулирует яркость светодиода: чем меньше значение \code{DI[7..0]} (более узкий импульс), тем ярче горит светодиод.
+
+\subsection{Исследование ШИМ с использованием сегментированного буфера логического анализатора}
+
+Для управления ШИМ будем использовать код, формируемый генератором линейно растущего, а затем линейно уменьшающегося кода. Генератор реализуется на основе реверсивного счетчика \code{Cnt_Triangle}, структура которого приведена на рис. \ref{fig:source2}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=\textwidth]{source2}
+		\caption{Схема проекта с защитой от дребезга контактов}
+		\label{fig:source2}
+	\end{center}
+\end{figure}
+
+Настроим логической анализатор как на рис. \ref{fig:stp3}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=1]{stp3}
+		\caption{Схема проекта с защитой от дребезга контактов}
+		\label{fig:stp3}
+	\end{center}
+\end{figure}
+
+На рис. \ref{fig:stp4} приведены захваченные данные в Signal Tap Logic Analyzer.
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{stp4}
+		\vspace{0.2cm}
+	\end{subfigure}
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{stp5}
+		\vspace{0.2cm}
+	\end{subfigure}
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{stp6}
+	\end{subfigure}
+	\caption{Захват данных данные в SignatlTapII}
+	\label{fig:stp4}
+\end{figure}
+
+%На рис. \ref{fig:stp7} изображен захват данных с использованием сегментированного буфера с таким условием захвата, чтобы отобразить 32 значения длительности выходного сигнала за период управления яркостью свечения светодиода.
+%\begin{figure}[H]
+%	\begin{center}
+%		\includegraphics[scale=1]{stp7}
+%		\caption{Захват данных с использованием сегментированного буфера}
+%		\label{fig:stp7}
+%	\end{center}
+%\end{figure}
 
 \section{Выводы}
 
-
+Для изучения ШИМ использован встроенный логический анализатор SignalTapII и средство In System Sources and Probe Editor. Исследовалась схема с возможностью выбора входных данных для счетчика ШИМ. ISSPE позволяет задавать входные сигналы схемы прямо из QuartusII и схема ШИМ с входными данными, поступающими со счетчика, генерирующего треугольный сигнал. Для достижения цели исследования ШИМ были решены следующие задачи: исследование работы в системе-прототипе, а также исследование с использованием сегментированного буфера логического анализатора путем задания необходимых условий захвата.
 
 \end{document}
