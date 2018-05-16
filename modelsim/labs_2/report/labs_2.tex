@@ -1,0 +1,144 @@
+\include{settings}
+
+\begin{document}
+
+\include{titlepage}
+
+\tableofcontents
+\lstlistoflistings
+\listoffigures
+\newpage
+
+\section{Задание}
+
+\begin{itemize}
+	\item На языке Verilog описать на структурном уровне (используя только примитивы) $N$-разрядный мультиплексор $2 \rightarrow 1$ (переключатели платы \code{miniDiLaB_CIV} задают двоичные коды данных; кнопка -- вход управления мультиплексором; светодиоды отображают выход мультиплексора):
+		\begin{itemize}
+			\item Модуль -- \code{mux}; файл \code{mux.v}; проект в Quartus -- \code{mux};
+			\item Рабочая папка -- \code{labs_2};
+			\item $N$ -- разрядность данных $N = 3$, стандарты и номера выводов СБИС для платы \code{miniDiLaB_CIV} задать с помощью атрибутов.
+		\end{itemize}
+
+	\item На языке Verilog создать описание тестов:
+		\begin{itemize}
+			\item Тест класса 1 -- \code{tb1_mux.v};
+			\item Тест класса 2 с вычислением результата -- \code{tb2_mux.v} (должен обеспечить проверку всех возможных вариантов входных сигналов);
+			\item Тест класса 2 с чтением файлов -- \code{tb2f_mux.v} (файл с тестовыми воздействиями -- \code{input_mux.dat}, файл с ожидаемыми результатами -- \code{exp_mux.dat}).
+		\end{itemize}
+	
+	\item Осуществить моделирование и отладку модулей и проверку тестов класса 2.
+	
+	\item Реализовать проект на плате \code{miniDiLaB_CIV}.
+\end{itemize}
+
+\section{Описание устройства}
+
+В листинге \ref{code:mux} приведено описание $N$-разрядного мультиплексора $2 \rightarrow 1$.
+\lstinputlisting[caption=\code{mux.v}, label=code:mux]{mux.v}
+
+\section{Описание тестов}
+\label{sec:tests}
+
+\subsection{Тест первого класса}
+
+В листинге \ref{code:test1} приведено описание теста первого класса.
+\lstinputlisting[caption=\code{tb1_mux.v}, label=code:test1]{tb1_mux.v}
+
+В листинге \ref{code:test1_results} приведен вывод результатов теста в консоль.
+\begin{lstlisting}[caption=Результаты теста первого класса, label=code:test1_results, language={}]
+run -all
+# 
+# 
+# 		             time sel a b result
+#                    0    0    1    7   1
+#                   80    1    1    7   7
+#                  160    0    7    4   7
+#                  240    1    7    4   4
+#    Time: 320 ns  Iteration: 0  Instance: /tb1_mux
+\end{lstlisting}
+
+На рис. \ref{fig:test1_results} изображена временная диаграмма теста.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{test1_results}
+		\caption{Результаты теста первого класса}
+		\label{fig:test1_results}
+	\end{center}
+\end{figure}
+\vspace{-1.5cm}
+
+\subsection{Тест второго класса с вычислением результата}
+
+В листинге \ref{code:test2} приведено описание теста второго класса с вычислением результата.
+\lstinputlisting[caption=\code{tb2_mux.v}, label=code:test2]{tb2_mux.v}
+
+В листинге \ref{code:test2_results} приведен вывод результатов теста в консоль.
+\begin{lstlisting}[caption=Результаты теста второго класса с вычислением результата, label=code:test2_results, language={}]
+run -all
+# 		            time sel a b result
+#                  120   1   0   0   0
+#                  200   0   0   1   0
+#                  280   1   0   2   2
+...
+#                 4920   1   7   4   4
+#                 5000   0   7   5   7
+#                 5080   1   7   6   6
+# Testing complited
+# ** Note: $stop    : D:/Git/hdl/modelsim/labs_2/modelsim/tb2_mux.v(36)
+#    Time: 5120 ns  Iteration: 1  Instance: /tb2_mux
+\end{lstlisting}
+
+На рис. \ref{fig:test2_results} изображена временная диаграмма теста.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{test2_results}
+		\caption{Результаты теста второго класса с вычислением результата}
+		\label{fig:test2_results}
+	\end{center}
+\end{figure}
+\vspace{-1cm}
+
+\subsection{Тест второго класса с чтением файлов}
+
+В листинге \ref{code:test3} приведено описание теста второго класса с чтением файлов.
+\lstinputlisting[caption=\code{tb2f_mux.v}, label=code:test3]{tb2f_mux.v}
+
+В листинге \ref{code:test3_results} приведен вывод результатов теста в консоль.
+\begin{lstlisting}[caption=Результаты теста второго класса с чтением файлов, label=code:test3_results, language={}]
+run -all
+# 		             time sel a b result
+#                   80   0   4   0   4
+#                  160   1   4   0   0
+#                  240   0   7   3   7
+#                  320   1   7   3   3
+#                  400   0   5   1   5
+#                  480   1   5   1   1
+#                  560   0   2   5   2
+#                  640   1   2   5   5
+#                  720   0   4   2   4
+#                  800   1   4   2   2
+# Testing complited
+#    Time: 800 ns  Iteration: 1  Instance: /tb2f_mux
+\end{lstlisting}
+
+На рис. \ref{fig:test3_results} изображена временная диаграмма теста.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{test3_results}
+		\caption{Результаты теста второго класса с чтением файлов}
+		\label{fig:test3_results}
+	\end{center}
+\end{figure}
+
+\section{Тестирование на плате miniDiLaB\_CIV}
+
+Для тестирования проекта на плате было создано Verilog описание с назначением выходов, приведенное в листинге  \ref{code:dilab}.
+\lstinputlisting[caption=\code{dilab_mux.v}, label=code:dilab]{dilab_mux.v}
+
+Результаты тестирования совпадают с ожидаемыми, следовательно, устройство работает верно.
+ 
+\section{Выводы}
+
+В ходе лабораторной работы на языке Verilog описан $N$-разрядный мультиплексор $2 \rightarrow 1$. Создано описание тестов первого и второго уровней, а также модуль для проверки работы на плате \code{miniDiLaB_CIV}. Тестирование разработанного устройства показало: результаты совпадают с ожидаемыми, устройство работает корректно
+
+\end{document}

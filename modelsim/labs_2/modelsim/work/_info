@@ -1,0 +1,115 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Git/hdl/modelsim/labs_1/modelsim
+vdilab_mux
+Z0 !s110 1526465934
+!i10b 1
+!s100 X<4OYDCEK7SQ:kSOH:>=<2
+I_;a]T;]lX1k3MkizJGRdJ1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dD:/Git/hdl/modelsim/labs_2/modelsim
+w1525181500
+8D:/Git/hdl/modelsim/labs_2/modelsim/dilab_mux.v
+FD:/Git/hdl/modelsim/labs_2/modelsim/dilab_mux.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1526465934.000000
+!s107 D:/Git/hdl/modelsim/labs_2/modelsim/dilab_mux.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_2/modelsim/dilab_mux.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vmux
+R0
+!i10b 1
+!s100 IBk[<JHRkO[MW>lBPPkhz0
+IBBo[]_L;DZf2YlA>zEQ^`1
+R1
+R2
+w1526464224
+8D:/Git/hdl/modelsim/labs_2/modelsim/mux.v
+FD:/Git/hdl/modelsim/labs_2/modelsim/mux.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Git/hdl/modelsim/labs_2/modelsim/mux.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_2/modelsim/mux.v|
+!i113 1
+R5
+R6
+vtb1_mux
+R0
+!i10b 1
+!s100 2VH5gJfU1cUb6<oI[C^RZ3
+I[0d`]ZQ>GEk]47OENJ35@3
+R1
+R2
+w1526464946
+8D:/Git/hdl/modelsim/labs_2/modelsim/tb1_mux.v
+FD:/Git/hdl/modelsim/labs_2/modelsim/tb1_mux.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Git/hdl/modelsim/labs_2/modelsim/tb1_mux.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_2/modelsim/tb1_mux.v|
+!i113 1
+R5
+R6
+vtb2_mux
+!s110 1526465935
+!i10b 1
+!s100 P4Bng;aWS]=XS0CE=ce>m2
+IFcdZFDEAiQD7OAX@AHGZm1
+R1
+R2
+w1526465219
+8D:/Git/hdl/modelsim/labs_2/modelsim/tb2_mux.v
+FD:/Git/hdl/modelsim/labs_2/modelsim/tb2_mux.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Git/hdl/modelsim/labs_2/modelsim/tb2_mux.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_2/modelsim/tb2_mux.v|
+!i113 1
+R5
+R6
+vtb2f_mux
+R0
+!i10b 1
+!s100 jUZZR<LzSMzOCiF8W1?VZ3
+Ie[@3<AEfi2bngY0[c@o1=0
+R1
+R2
+w1526465826
+8D:\Git\hdl\modelsim\labs_2\modelsim\tb2f_mux.v
+FD:\Git\hdl\modelsim\labs_2\modelsim\tb2f_mux.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:\Git\hdl\modelsim\labs_2\modelsim\tb2f_mux.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:\Git\hdl\modelsim\labs_2\modelsim\tb2f_mux.v|
+!i113 1
+R5
+R6
