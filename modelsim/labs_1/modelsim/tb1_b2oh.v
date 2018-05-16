@@ -3,7 +3,6 @@ module tb1_b2oh;
 
 reg [2:0] binary;
 wire [7:0] positional;
-
 b2oh #(3) bin2pos(binary, positional);
 
 initial begin
@@ -18,7 +17,7 @@ initial begin
 end
 
 initial begin
-	$display("\t\t time bin_code pos_code");
+	$display("\t\t time binary positinal");
 	$monitor($time,,,,binary,,,,positional);
 	#800 $stop;
 end

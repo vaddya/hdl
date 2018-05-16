@@ -9,34 +9,55 @@ z2
 cModel Technology
 dD:/modelsim
 vb2oh
-Z0 !s110 1526425191
+Z0 !s110 1526461918
 !i10b 1
 !s100 mHUZiJKkZUFFkSh;he[XS3
-IYY@oj7_?<:P;J=5_@6gB]3
+IW^G_<NmFf@lfZN]<W<hSA2
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 Z2 dD:/Git/hdl/modelsim/labs_1/modelsim
 w1526423149
-8D:\Git\hdl\modelsim\labs_1\modelsim\b2oh.v
-FD:\Git\hdl\modelsim\labs_1\modelsim\b2oh.v
+8D:/Git/hdl/modelsim/labs_1/modelsim/b2oh.v
+FD:/Git/hdl/modelsim/labs_1/modelsim/b2oh.v
 L0 1
 Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1526425191.000000
-!s107 D:\Git\hdl\modelsim\labs_1\modelsim\b2oh.v|
-!s90 -reportprogress|300|-work|work|-stats=none|D:\Git\hdl\modelsim\labs_1\modelsim\b2oh.v|
+!s108 1526461917.000000
+!s107 D:/Git/hdl/modelsim/labs_1/modelsim/b2oh.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_1/modelsim/b2oh.v|
 !i113 1
-Z5 o-work work
-Z6 tCvgOpt 0
+Z4 o-work work
+Z5 tCvgOpt 0
+vdilab_b2oh
+!s110 1526463042
+!i10b 1
+!s100 ;cbgMAUUobm3fK<2NQh8I0
+Ia0DQJ@L;ZJhACL53alm8J0
+R1
+R2
+w1526462838
+8D:/Git/hdl/modelsim/labs_1/modelsim/dilab_b2oh.v
+FD:/Git/hdl/modelsim/labs_1/modelsim/dilab_b2oh.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1526463042.000000
+!s107 D:/Git/hdl/modelsim/labs_1/modelsim/dilab_b2oh.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_1/modelsim/dilab_b2oh.v|
+!i113 1
+R4
+R5
 vtb1_b2oh
 R0
 !i10b 1
-!s100 1EST]RlRPXYz<HhIonADB2
-IKDSMTINX@5:noDXGNj?nZ2
+!s100 TC]B]F=UU>SeJz2jnTZFn2
+IFS?a`l^@0AF8l0l9Cbanz1
 R1
 R2
-w1526424316
+w1526455959
 8D:/Git/hdl/modelsim/labs_1/modelsim/tb1_b2oh.v
 FD:/Git/hdl/modelsim/labs_1/modelsim/tb1_b2oh.v
 L0 2
@@ -44,20 +65,20 @@ R3
 r1
 !s85 0
 31
-R4
+Z6 !s108 1526461918.000000
 !s107 D:/Git/hdl/modelsim/labs_1/modelsim/tb1_b2oh.v|
 !s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_1/modelsim/tb1_b2oh.v|
 !i113 1
+R4
 R5
-R6
 vtb2_b2oh
 R0
 !i10b 1
-!s100 0318_Wk;Y`27gaSj6P?>C3
-IBb;gZYY@ACd3gL<[c:BK00
+!s100 XbSe48ebe5H=2z2LD1Ea33
+I1ZAk275=zm5>bTUC:306D3
 R1
 R2
-w1526423599
+w1526455962
 8D:/Git/hdl/modelsim/labs_1/modelsim/tb2_b2oh.v
 FD:/Git/hdl/modelsim/labs_1/modelsim/tb2_b2oh.v
 L0 2
@@ -65,30 +86,30 @@ R3
 r1
 !s85 0
 31
-R4
+R6
 !s107 D:/Git/hdl/modelsim/labs_1/modelsim/tb2_b2oh.v|
 !s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_1/modelsim/tb2_b2oh.v|
 !i113 1
+R4
 R5
-R6
 vtb2f_b2oh
 R0
 !i10b 1
-!s100 d>17mK:GS<XaaZ@UNci>;0
-I<4B?OJh17la[jH0Id`1D^1
+!s100 N8TG94U82<>RTJU]lITdF1
+IXF7=eXM`X=69JmZATMEnc0
 R1
 R2
-w1526423622
-8D:/Git/hdl/modelsim/labs_1/modelsim/tb2f_b2oh.v
-FD:/Git/hdl/modelsim/labs_1/modelsim/tb2f_b2oh.v
+w1526461874
+8D:\Git\hdl\modelsim\labs_1\modelsim\tb2f_b2oh.v
+FD:\Git\hdl\modelsim\labs_1\modelsim\tb2f_b2oh.v
 L0 2
 R3
 r1
 !s85 0
 31
-R4
-!s107 D:/Git/hdl/modelsim/labs_1/modelsim/tb2f_b2oh.v|
-!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_1/modelsim/tb2f_b2oh.v|
-!i113 1
-R5
 R6
+!s107 D:\Git\hdl\modelsim\labs_1\modelsim\tb2f_b2oh.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:\Git\hdl\modelsim\labs_1\modelsim\tb2f_b2oh.v|
+!i113 1
+R4
+R5

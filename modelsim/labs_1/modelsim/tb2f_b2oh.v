@@ -1,18 +1,17 @@
 `timescale 1ns/1ns
 module tb2f_b2oh;
 
-localparam period = 40;
-localparam N = 2;
+localparam period = 80;
+localparam N = 3;
 
-reg [N - 1:0] binary_code;
-wire [2 ** N - 1:0] pos_code;
-reg  [2 ** N - 1:0] right_pos_code;
+reg [N - 1:0] binary;
+wire [2 ** N - 1:0] positional;
+reg  [2 ** N - 1:0] expected;
 reg clk;
 integer i;
-reg [N - 1:0] input_mem [0:2 ** N];
-reg [2 ** N - 1:0] right_mem [0:2 ** N];
-
-b2oh #(N) xxx(binary_code, pos_code);
+reg [N - 1:0] binary_mem [0:2 ** N];
+reg [2 ** N - 1:0] expected_mem [0:2 ** N];
+b2oh #(N) xxx(binary, positional);
 
 initial begin
 	clk = 1'b0;
@@ -20,25 +19,23 @@ initial begin
 end
 
 initial begin
-	$readmemb("input_b2oh.dat", input_mem );
-	$readmemb("exp_b2oh.dat", right_mem );
+	$readmemb("binary_b2oh.dat", binary_mem);
+	$readmemb("expected_b2oh.dat", expected_mem);
 end
 
 initial begin
-	$display("\t\t time bin_code pos_code");
-	for (i = 0; i < 4; i = i + 1)
-	    begin
+	$display("\t\t time binary positional");
+	for (i = 0; i < 2 ** N; i = i + 1) begin
 		@(posedge clk);
-		binary_code = input_mem[i];
-		right_pos_code = right_mem[i];
-		@(negedge clk);		
-		$display($time,,,,binary_code,,,,pos_code);
-		if (pos_code !== right_pos_code)
-		     $display("Error: expected %b, got %b.\n", right_pos_code, pos_code);
-	    end
+		binary = binary_mem[i];
+		expected = expected_mem[i];
+		@(negedge clk);
+		$display($time,,,,binary,,,,positional);
+		if (positional !== expected)
+			$display("Error: expected %b, got %b.\n", expected, positional);
+	end
 	$display("Testing complited");
 	$stop;
 end
 
 endmodule
-	
