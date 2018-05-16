@@ -1,0 +1,29 @@
+D:/Git/hdl/modelsim/labs_3/modelsim/tb1_dmux.v {1 {vlog -work work -stats=none {D:\Git\hdl\modelsim\labs_3\modelsim\tb1_dmux.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb1_dmux
+
+Top level modules:
+	tb1_dmux
+
+} {} {}} D:/Git/hdl/modelsim/labs_3/modelsim/dilab_dmux.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_3/modelsim/dilab_dmux.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module dilab_dmux
+
+Top level modules:
+	dilab_dmux
+
+} {} {}} D:/Git/hdl/modelsim/labs_3/modelsim/tb2_dmux.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_3/modelsim/tb2_dmux.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb2_dmux
+
+Top level modules:
+	tb2_dmux
+
+} {} {}} D:/Git/hdl/modelsim/labs_3/modelsim/dmux.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_3/modelsim/dmux.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module dmux
+
+Top level modules:
+	dmux
+
+} {} {}}

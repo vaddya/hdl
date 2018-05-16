@@ -1,0 +1,136 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Git/hdl/modelsim/labs_2/modelsim
+vdilab_dmux
+Z0 !s110 1526468280
+!i10b 1
+!s100 m9RNMX_LYFD:5Xlz?nzID1
+Ig;KBi?1AAQ2@Ecm;BjiHU0
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dD:/Git/hdl/modelsim/labs_3/modelsim
+w1526468088
+8D:/Git/hdl/modelsim/labs_3/modelsim/dilab_dmux.v
+FD:/Git/hdl/modelsim/labs_3/modelsim/dilab_dmux.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1526468280.000000
+!s107 D:/Git/hdl/modelsim/labs_3/modelsim/dilab_dmux.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_3/modelsim/dilab_dmux.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vdmux
+R0
+!i10b 1
+!s100 AW?mb6LEhS3ahc=gXT3hY2
+I_4^a49k9:12G4C1R0VKg^2
+R1
+R2
+w1526467108
+8D:/Git/hdl/modelsim/labs_3/modelsim/dmux.v
+FD:/Git/hdl/modelsim/labs_3/modelsim/dmux.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Git/hdl/modelsim/labs_3/modelsim/dmux.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_3/modelsim/dmux.v|
+!i113 1
+R5
+R6
+vtb1_dmux
+R0
+!i10b 1
+!s100 f>Z9V0z6K=bCQBH>4[PH=3
+INMg:gBJWz4TlfX>5S?Q@K0
+R1
+R2
+w1526468263
+8D:\Git\hdl\modelsim\labs_3\modelsim\tb1_dmux.v
+FD:\Git\hdl\modelsim\labs_3\modelsim\tb1_dmux.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:\Git\hdl\modelsim\labs_3\modelsim\tb1_dmux.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:\Git\hdl\modelsim\labs_3\modelsim\tb1_dmux.v|
+!i113 1
+R5
+R6
+vtb1_mux
+!s110 1526468170
+!i10b 1
+!s100 ^<_kR[2]^j?6DVR9YhP6_3
+I=6jHI1@C8W?N[zjaEhU^;3
+R1
+R2
+w1526467734
+8D:/Git/hdl/modelsim/labs_3/modelsim/tb1_dmux.v
+FD:/Git/hdl/modelsim/labs_3/modelsim/tb1_dmux.v
+L0 2
+R3
+r1
+!s85 0
+31
+!s108 1526468170.000000
+!s107 D:/Git/hdl/modelsim/labs_3/modelsim/tb1_dmux.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_3/modelsim/tb1_dmux.v|
+!i113 1
+R5
+R6
+vtb2_dmux
+R0
+!i10b 1
+!s100 fMD?@7XB>b0[n>iJZ:<_U1
+I;ZoU[RJWDncdh3^K6C9S^1
+R1
+R2
+w1526467736
+8D:/Git/hdl/modelsim/labs_3/modelsim/tb2_dmux.v
+FD:/Git/hdl/modelsim/labs_3/modelsim/tb2_dmux.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Git/hdl/modelsim/labs_3/modelsim/tb2_dmux.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_3/modelsim/tb2_dmux.v|
+!i113 1
+R5
+R6
+vtb2f_dmux
+!s110 1526468279
+!i10b 1
+!s100 dZgCbZ6n37[5OzZ@M]UR31
+I[B90di]2:gEcL1^S2VMU12
+R1
+R2
+w1526467925
+8D:/Git/hdl/modelsim/labs_3/modelsim/tb2f_dmux.v
+FD:/Git/hdl/modelsim/labs_3/modelsim/tb2f_dmux.v
+L0 2
+R3
+r1
+!s85 0
+31
+!s108 1526468279.000000
+!s107 D:/Git/hdl/modelsim/labs_3/modelsim/tb2f_dmux.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_3/modelsim/tb2f_dmux.v|
+!i113 1
+R5
+R6
