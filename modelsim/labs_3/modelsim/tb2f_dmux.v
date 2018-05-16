@@ -25,7 +25,7 @@ end
 initial begin
 	k = 0;
 	$display("\t\t time data sel out1 out2");
-	for (i = 0; i < 17; i = i + 2) begin
+	for (i = 0; i < 15; i = i + 2) begin
 		@(posedge clk);
 		data = input_mem[i];
 		sel = input_mem[i + 1];

@@ -9,7 +9,7 @@ z2
 cModel Technology
 dD:/Git/hdl/modelsim/labs_2/modelsim
 vdilab_dmux
-Z0 !s110 1526468280
+Z0 !s110 1526476197
 !i10b 1
 !s100 m9RNMX_LYFD:5Xlz?nzID1
 Ig;KBi?1AAQ2@Ecm;BjiHU0
@@ -23,7 +23,7 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1526468280.000000
+Z4 !s108 1526476197.000000
 !s107 D:/Git/hdl/modelsim/labs_3/modelsim/dilab_dmux.v|
 !s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_3/modelsim/dilab_dmux.v|
 !i113 1
@@ -54,20 +54,20 @@ vtb1_dmux
 R0
 !i10b 1
 !s100 f>Z9V0z6K=bCQBH>4[PH=3
-INMg:gBJWz4TlfX>5S?Q@K0
+IlU[zC5VZBY7PGV2CMK^6N3
 R1
 R2
 w1526468263
-8D:\Git\hdl\modelsim\labs_3\modelsim\tb1_dmux.v
-FD:\Git\hdl\modelsim\labs_3\modelsim\tb1_dmux.v
+Z7 8D:/Git/hdl/modelsim/labs_3/modelsim/tb1_dmux.v
+Z8 FD:/Git/hdl/modelsim/labs_3/modelsim/tb1_dmux.v
 L0 2
 R3
 r1
 !s85 0
 31
 R4
-!s107 D:\Git\hdl\modelsim\labs_3\modelsim\tb1_dmux.v|
-!s90 -reportprogress|300|-work|work|-stats=none|D:\Git\hdl\modelsim\labs_3\modelsim\tb1_dmux.v|
+Z9 !s107 D:/Git/hdl/modelsim/labs_3/modelsim/tb1_dmux.v|
+Z10 !s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_3/modelsim/tb1_dmux.v|
 !i113 1
 R5
 R6
@@ -79,27 +79,27 @@ I=6jHI1@C8W?N[zjaEhU^;3
 R1
 R2
 w1526467734
-8D:/Git/hdl/modelsim/labs_3/modelsim/tb1_dmux.v
-FD:/Git/hdl/modelsim/labs_3/modelsim/tb1_dmux.v
+R7
+R8
 L0 2
 R3
 r1
 !s85 0
 31
 !s108 1526468170.000000
-!s107 D:/Git/hdl/modelsim/labs_3/modelsim/tb1_dmux.v|
-!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_3/modelsim/tb1_dmux.v|
+R9
+R10
 !i113 1
 R5
 R6
 vtb2_dmux
 R0
 !i10b 1
-!s100 fMD?@7XB>b0[n>iJZ:<_U1
-I;ZoU[RJWDncdh3^K6C9S^1
+!s100 8[I`:>l1eA@Lh?dBSHWk63
+IRzR7R9g:fz<Y9OTNSbPK=1
 R1
 R2
-w1526467736
+w1526475920
 8D:/Git/hdl/modelsim/labs_3/modelsim/tb2_dmux.v
 FD:/Git/hdl/modelsim/labs_3/modelsim/tb2_dmux.v
 L0 2
@@ -114,13 +114,13 @@ R4
 R5
 R6
 vtb2f_dmux
-!s110 1526468279
+R0
 !i10b 1
-!s100 dZgCbZ6n37[5OzZ@M]UR31
-I[B90di]2:gEcL1^S2VMU12
+!s100 nK3RU4^2YE6;edG9mB8eo1
+I<Eg5?Y_^^c<kVjOdA>K6Y1
 R1
 R2
-w1526467925
+w1526476179
 8D:/Git/hdl/modelsim/labs_3/modelsim/tb2f_dmux.v
 FD:/Git/hdl/modelsim/labs_3/modelsim/tb2f_dmux.v
 L0 2
@@ -128,7 +128,7 @@ R3
 r1
 !s85 0
 31
-!s108 1526468279.000000
+R4
 !s107 D:/Git/hdl/modelsim/labs_3/modelsim/tb2f_dmux.v|
 !s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_3/modelsim/tb2f_dmux.v|
 !i113 1

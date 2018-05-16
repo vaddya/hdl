@@ -45,7 +45,7 @@
 \lstinputlisting[caption=\code{tb1_mux.v}, label=code:test1]{tb1_mux.v}
 
 В листинге \ref{code:test1_results} приведен вывод результатов теста в консоль.
-\begin{lstlisting}[caption=Результаты теста первого класса, label=code:test1_results, language={}]
+\begin{lstlisting}[caption=Результаты теста первого класса, label=code:test1_results, style=console]
 run -all
 # 
 # 
@@ -69,11 +69,11 @@ run -all
 
 \subsection{Тест второго класса с вычислением результата}
 
-В листинге \ref{code:test2} приведено описание теста второго класса с вычислением результата.
+В листинге \ref{code:test2} приведено описание теста второго класса с вычислением результата. В данном тесте на вход устройства подаются всевозможные входные значения, а также вычисляется ожидаемое значение результата. 
 \lstinputlisting[caption=\code{tb2_mux.v}, label=code:test2]{tb2_mux.v}
 
 В листинге \ref{code:test2_results} приведен вывод результатов теста в консоль.
-\begin{lstlisting}[caption=Результаты теста второго класса с вычислением результата, label=code:test2_results, language={}]
+\begin{lstlisting}[caption=Результаты теста второго класса с вычислением результата, label=code:test2_results, style=console]
 run -all
 # 		            time sel a b result
 #                  120   1   0   0   0
@@ -98,13 +98,38 @@ run -all
 \end{figure}
 \vspace{-1cm}
 
+В листинге \ref{code:test2_error} приведен вывод результатов теста в консоль при внесении ошибки в вычисление ожидаемого значения.	
+\begin{lstlisting}[caption=Результаты ошибочного теста второго класса с вычислением результата, label=code:test2_error, style=console]
+run -all
+# 		 time sel a b result
+#                   40   0   x   x   x
+# Expected 000, got xxx.
+# 
+#                  120   1   0   0   0
+#                  200   0   0   1   0
+# Expected 001, got 000.
+# 
+#                  280   1   0   2   2
+...
+# 
+#                 4920   1   7   4   4
+#                 5000   0   7   5   7
+# Expected 101, got 111.
+# 
+#                 5080   1   7   6   6
+# Testing complited
+#    Time: 5120 ns  Iteration: 1  Instance: /tb2_mux
+\end{lstlisting}
+
 \subsection{Тест второго класса с чтением файлов}
 
-В листинге \ref{code:test3} приведено описание теста второго класса с чтением файлов.
+В листинге \ref{code:test3} приведено описание теста второго класса с чтением файлов. В данном тесте на вход устройства из файла \code{input_mux.dat}, приведенного в листинге \ref{code:input}, подаются всевозможные значения преобразуемого кода, а ожидаемые считываются из файла \code{exp_mux.dat}, приведенного в листинге \ref{code:exp}. 
 \lstinputlisting[caption=\code{tb2f_mux.v}, label=code:test3]{tb2f_mux.v}
+\lstinputlisting[caption=\code{input_mux.dat}, label=code:input, style=dat]{input_mux.dat}	
+\lstinputlisting[caption=\code{exp_mux.dat}, label=code:exp, style=dat]{exp_mux.dat}
 
 В листинге \ref{code:test3_results} приведен вывод результатов теста в консоль.
-\begin{lstlisting}[caption=Результаты теста второго класса с чтением файлов, label=code:test3_results, language={}]
+\begin{lstlisting}[caption=Результаты теста второго класса с чтением файлов, label=code:test3_results, style=console]
 run -all
 # 		             time sel a b result
 #                   80   0   4   0   4
@@ -124,11 +149,49 @@ run -all
 На рис. \ref{fig:test3_results} изображена временная диаграмма теста.
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.9\textwidth]{test3_results}
+		\includegraphics[width=0.85\textwidth]{test3_results}
 		\caption{Результаты теста второго класса с чтением файлов}
 		\label{fig:test3_results}
 	\end{center}
 \end{figure}
+
+В листинге \ref{code:test3_error} приведен вывод результатов теста в консоль при внесении ошибок в ожидаемые значения.
+\begin{lstlisting}[caption=Результаты ошибочного теста второго класса с чтением файлов, label=code:test3_error, style=console]
+run -all
+# 		 time sel a b result
+#                   80   0   4   0   4
+# Expected 010, got 100.
+# 
+#                  160   1   4   0   0
+# Expected 100, got 000.
+# 
+#                  240   0   7   3   7
+# Expected 000, got 111.
+# 
+#                  320   1   7   3   3
+# Expected 111, got 011.
+# 
+#                  400   0   5   1   5
+# Expected 011, got 101.
+# 
+#                  480   1   5   1   1
+# Expected 101, got 001.
+# 
+#                  560   0   2   5   2
+# Expected 001, got 010.
+# 
+#                  640   1   2   5   5
+# Expected 010, got 101.
+# 
+#                  720   0   4   2   4
+# Expected 101, got 100.
+# 
+#                  800   1   4   2   2
+# Expected 100, got 010.
+# 
+# Testing complited
+#    Time: 800 ns  Iteration: 1  Instance: /tb2f_mux
+\end{lstlisting}
 
 \section{Тестирование на плате miniDiLaB\_CIV}
 
@@ -136,7 +199,7 @@ run -all
 \lstinputlisting[caption=\code{dilab_mux.v}, label=code:dilab]{dilab_mux.v}
 
 Результаты тестирования совпадают с ожидаемыми, следовательно, устройство работает верно.
- 
+
 \section{Выводы}
 
 В ходе лабораторной работы на языке Verilog описан $N$-разрядный мультиплексор $2 \rightarrow 1$. Создано описание тестов первого и второго уровней, а также модуль для проверки работы на плате \code{miniDiLaB_CIV}. Тестирование разработанного устройства показало: результаты совпадают с ожидаемыми, устройство работает корректно.

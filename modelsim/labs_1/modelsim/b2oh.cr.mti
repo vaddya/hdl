@@ -1,4 +1,4 @@
-D:/Git/hdl/modelsim/labs_1/modelsim/tb2_b2oh.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_1/modelsim/tb2_b2oh.v
+D:/Git/hdl/modelsim/labs_1/modelsim/tb2_b2oh.v {1 {vlog -work work -stats=none {D:\Git\hdl\modelsim\labs_1\modelsim\tb2_b2oh.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module tb2_b2oh
 
@@ -19,14 +19,14 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	b2oh
 
-} {} {}} D:/Git/hdl/modelsim/labs_1/modelsim/tb2f_b2oh.v {1 {vlog -work work -stats=none {D:\Git\hdl\modelsim\labs_1\modelsim\tb2f_b2oh.v}
+} {} {}} D:/Git/hdl/modelsim/labs_1/modelsim/tb2f_b2oh.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_1/modelsim/tb2f_b2oh.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module tb2f_b2oh
 
 Top level modules:
 	tb2f_b2oh
 
-} {} {}} D:/Git/hdl/modelsim/labs_1/modelsim/tb1_b2oh.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_1/modelsim/tb1_b2oh.v
+} {} {}} D:/Git/hdl/modelsim/labs_1/modelsim/tb1_b2oh.v {1 {vlog -work work -stats=none {D:\Git\hdl\modelsim\labs_1\modelsim\tb1_b2oh.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module tb1_b2oh
 

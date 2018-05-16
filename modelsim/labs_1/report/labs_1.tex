@@ -42,7 +42,7 @@
 \lstinputlisting[caption=\code{tb1_b2oh.v}, label=code:test1]{tb1_b2oh.v}
 
 В листинге \ref{code:test1_results} приведен вывод результатов теста в консоль.
-\begin{lstlisting}[caption=Результаты теста первого класса, label=code:test1_results, language={}]
+\begin{lstlisting}[caption=Результаты теста первого класса, label=code:test1_results, style=console]
 run -all
 # 		          time binary positional
 #                    0   0     1
@@ -68,11 +68,11 @@ run -all
 
 \subsection{Тест второго класса с вычислением результата}
 
-В листинге \ref{code:test2} приведено описание теста второго класса с вычислением результата.
+В листинге \ref{code:test2} приведено описание теста второго класса с вычислением результата. В данном тесте на вход устройства подаются всевозможные значения преобразуемого кода, а также вычисляется ожидаемое значение результата.
 \lstinputlisting[caption=\code{tb2_b2oh.v}, label=code:test2]{tb2_b2oh.v}
 
 В листинге \ref{code:test2_results} приведен вывод результатов теста в консоль.
-\begin{lstlisting}[caption=Результаты теста второго класса с вычислением результата, label=code:test2_results, language={}]
+\begin{lstlisting}[caption=Результаты теста второго класса с вычислением результата, label=code:test2_results, style=console]
 run -all
 # 		          time binary positional
 #                   40   0     1
@@ -96,10 +96,45 @@ run -all
 	\end{center}
 \end{figure}
 
+В листинге \ref{code:test2_error} приведен вывод результатов теста в консоль при внесении ошибки в вычисление ожидаемого значения.
+\begin{lstlisting}[caption=Результаты ошибочного теста второго класса с вычислением результата, label=code:test2_error, style=console]
+run -all
+# 		 time binary positional
+#                   40   0     1
+#                  120   1     2
+# Expected 00000001, got 00000010.
+# 
+#                  200   2     4
+# Expected 00000001, got 00000100.
+# 
+#                  280   3     8
+# Expected 00000001, got 00001000.
+# 
+#                  360   4    16
+# Expected 00000001, got 00010000.
+# 
+#                  440   5    32
+# Expected 00000001, got 00100000.
+# 
+#                  520   6    64
+# Expected 00000001, got 01000000.
+# 
+#                  600   7   128
+# Expected 00000001, got 10000000.
+# 
+# Testing complited
+#    Time: 640 ns  Iteration: 1  Instance: /tb2_b2oh
+\end{lstlisting}
+
 \subsection{Тест второго класса с чтением файлов}
 
-В листинге \ref{code:test3} приведено описание теста второго класса с чтением файлов.
+В листинге \ref{code:test3} приведено описание теста второго класса с чтением файлов. В данном тесте на вход устройства из файла \code{input_b2oh.dat}, приведенного в листинге \ref{code:input}, подаются всевозможные значения преобразуемого кода, а ожидаемые значения считываются из файла \code{exp_b2oh.dat}, приведенного в листинге \ref{code:exp}. 
 \lstinputlisting[caption=\code{tb2f_b2oh.v}, label=code:test3]{tb2f_b2oh.v}
+
+\begin{multicols}{2}
+	\lstinputlisting[caption=\code{input_b2oh.dat}, label=code:input, style=dat]{input_b2oh.dat}
+	\lstinputlisting[caption=\code{exp_b2oh.dat}, label=code:exp, style=dat]{exp_b2oh.dat}
+\end{multicols}
 
 В листинге \ref{code:test3_results} приведен вывод результатов теста в консоль.
 \begin{lstlisting}[caption=Результаты теста второго класса с чтением файлов, label=code:test3_results, language={}]
@@ -125,6 +160,39 @@ run -all
 		\label{fig:test3_results}
 	\end{center}
 \end{figure}
+
+В листинге \ref{code:test3_error} приведен вывод результатов теста в консоль при внесении ошибок в ожидаемые значения.
+\begin{lstlisting}[caption=Результаты ошибочного теста второго класса с чтением файлов, label=code:test3_error, style=console]
+run -all
+# 		 time binary positional
+#                   80   0     1
+# Error: expected 10000000, got 00000001.
+# 
+#                  160   1     2
+# Error: expected 00000001, got 00000010.
+# 
+#                  240   2     4
+# Error: expected 00000010, got 00000100.
+# 
+#                  320   3     8
+# Error: expected 00000100, got 00001000.
+# 
+#                  400   4    16
+# Error: expected 00001000, got 00010000.
+# 
+#                  480   5    32
+# Error: expected 00010000, got 00100000.
+# 
+#                  560   6    64
+# Error: expected 00100000, got 01000000.
+# 
+#                  640   7   128
+# Error: expected 01000000, got 10000000.
+# 
+# Testing complited
+#    Time: 640 ns  Iteration: 1  Instance: /tb2f_b2oh
+\end{lstlisting}
+\vspace{-0.5cm}
 
 \section{Тестирование на плате miniDiLaB\_CIV}
 

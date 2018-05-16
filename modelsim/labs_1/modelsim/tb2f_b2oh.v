@@ -9,7 +9,7 @@ wire [2 ** N - 1:0] positional;
 reg  [2 ** N - 1:0] expected;
 reg clk;
 integer i;
-reg [N - 1:0] binary_mem [0:2 ** N];
+reg [N - 1:0] input_mem [0:2 ** N];
 reg [2 ** N - 1:0] expected_mem [0:2 ** N];
 b2oh #(N) xxx(binary, positional);
 
@@ -19,15 +19,15 @@ initial begin
 end
 
 initial begin
-	$readmemb("binary_b2oh.dat", binary_mem);
-	$readmemb("expected_b2oh.dat", expected_mem);
+	$readmemb("input_b2oh.dat", input_mem);
+	$readmemb("exp_b2oh.dat", expected_mem);
 end
 
 initial begin
 	$display("\t\t time binary positional");
 	for (i = 0; i < 2 ** N; i = i + 1) begin
 		@(posedge clk);
-		binary = binary_mem[i];
+		binary = input_mem[i];
 		expected = expected_mem[i];
 		@(negedge clk);
 		$display($time,,,,binary,,,,positional);

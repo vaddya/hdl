@@ -9,13 +9,13 @@ z2
 cModel Technology
 dD:/Git/hdl/modelsim/labs_1/modelsim
 vdilab_mux
-Z0 !s110 1526465934
+Z0 !s110 1526475240
 !i10b 1
-!s100 X<4OYDCEK7SQ:kSOH:>=<2
-I_;a]T;]lX1k3MkizJGRdJ1
+!s100 8aEAL_3EIeTISHHodCzSm0
+ImD_>^YAJXYKc0dS>Gh8L[3
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 Z2 dD:/Git/hdl/modelsim/labs_2/modelsim
-w1525181500
+w1526475087
 8D:/Git/hdl/modelsim/labs_2/modelsim/dilab_mux.v
 FD:/Git/hdl/modelsim/labs_2/modelsim/dilab_mux.v
 L0 1
@@ -23,7 +23,7 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1526465934.000000
+Z4 !s108 1526475240.000000
 !s107 D:/Git/hdl/modelsim/labs_2/modelsim/dilab_mux.v|
 !s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_2/modelsim/dilab_mux.v|
 !i113 1
@@ -72,13 +72,13 @@ R4
 R5
 R6
 vtb2_mux
-!s110 1526465935
+R0
 !i10b 1
-!s100 P4Bng;aWS]=XS0CE=ce>m2
-IFcdZFDEAiQD7OAX@AHGZm1
+!s100 N3l72QFlU[BFj]dh_08KZ1
+IcBEVJU:UZYIfnVnPeHzFC0
 R1
 R2
-w1526465219
+w1526474970
 8D:/Git/hdl/modelsim/labs_2/modelsim/tb2_mux.v
 FD:/Git/hdl/modelsim/labs_2/modelsim/tb2_mux.v
 L0 2
@@ -96,20 +96,20 @@ vtb2f_mux
 R0
 !i10b 1
 !s100 jUZZR<LzSMzOCiF8W1?VZ3
-Ie[@3<AEfi2bngY0[c@o1=0
+Ig<[=WN863UnJ63fe5TFG83
 R1
 R2
 w1526465826
-8D:\Git\hdl\modelsim\labs_2\modelsim\tb2f_mux.v
-FD:\Git\hdl\modelsim\labs_2\modelsim\tb2f_mux.v
+8D:/Git/hdl/modelsim/labs_2/modelsim/tb2f_mux.v
+FD:/Git/hdl/modelsim/labs_2/modelsim/tb2f_mux.v
 L0 2
 R3
 r1
 !s85 0
 31
 R4
-!s107 D:\Git\hdl\modelsim\labs_2\modelsim\tb2f_mux.v|
-!s90 -reportprogress|300|-work|work|-stats=none|D:\Git\hdl\modelsim\labs_2\modelsim\tb2f_mux.v|
+!s107 D:/Git/hdl/modelsim/labs_2/modelsim/tb2f_mux.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_2/modelsim/tb2f_mux.v|
 !i113 1
 R5
 R6

@@ -8,7 +8,6 @@ reg sel, clk;
 wire [N - 1:0] out1, out2;
 dmux #(N) dm(data, sel, out1, out2);
 integer i, j;
-
 initial begin
 	clk = 1'b0;
 	forever #(period / 2) clk = ~clk;
