@@ -1,0 +1,115 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Quartus/17.1
+vb2bd
+Z0 !s110 1526479297
+!i10b 1
+!s100 XAUU_<i>fgfX:3BSeOaQA3
+IdooO@Uc>L1KXIYbKYH?:D0
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dD:/Git/hdl/modelsim/labs_4/modelsim
+w1526478024
+8D:/Git/hdl/modelsim/labs_4/modelsim/b2bd.v
+FD:/Git/hdl/modelsim/labs_4/modelsim/b2bd.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1526479297.000000
+!s107 D:/Git/hdl/modelsim/labs_4/modelsim/b2bd.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_4/modelsim/b2bd.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vdilab_b2bd
+R0
+!i10b 1
+!s100 Zd;2@VAHSR_ma>QPj>lM71
+I^Gbej^@RUd3BF5L>GVT7a0
+R1
+R2
+w1526478265
+8D:/Git/hdl/modelsim/labs_4/modelsim/dilab_b2bd.v
+FD:/Git/hdl/modelsim/labs_4/modelsim/dilab_b2bd.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Git/hdl/modelsim/labs_4/modelsim/dilab_b2bd.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_4/modelsim/dilab_b2bd.v|
+!i113 1
+R5
+R6
+vtb1_b2db
+R0
+!i10b 1
+!s100 m0_4Pg0]Sk:U`iLY8>RZU1
+IG58aNTm`0hBc9?3a<T7582
+R1
+R2
+w1526478661
+8D:/Git/hdl/modelsim/labs_4/modelsim/tb1_b2bd.v
+FD:/Git/hdl/modelsim/labs_4/modelsim/tb1_b2bd.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Git/hdl/modelsim/labs_4/modelsim/tb1_b2bd.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_4/modelsim/tb1_b2bd.v|
+!i113 1
+R5
+R6
+vtb2_b2bd
+R0
+!i10b 1
+!s100 QGmMA31fK38kTVLB3hQ]:2
+Ig^:fXfXN18A>zmOSKni7e3
+R1
+R2
+w1526479199
+8D:/Git/hdl/modelsim/labs_4/modelsim/tb2_b2bd.v
+FD:/Git/hdl/modelsim/labs_4/modelsim/tb2_b2bd.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Git/hdl/modelsim/labs_4/modelsim/tb2_b2bd.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_4/modelsim/tb2_b2bd.v|
+!i113 1
+R5
+R6
+vtb2f_b2bd
+!s110 1526479296
+!i10b 1
+!s100 g6ebcZ39>:GOgSM]G=ilK0
+I3PAb4bG@LHmjNd[E=8?1@2
+R1
+R2
+w1526479285
+8D:/Git/hdl/modelsim/labs_4/modelsim/tb2f_b2bd.v
+FD:/Git/hdl/modelsim/labs_4/modelsim/tb2f_b2bd.v
+L0 2
+R3
+r1
+!s85 0
+31
+!s108 1526479296.000000
+!s107 D:/Git/hdl/modelsim/labs_4/modelsim/tb2f_b2bd.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_4/modelsim/tb2f_b2bd.v|
+!i113 1
+R5
+R6
