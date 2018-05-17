@@ -1,0 +1,115 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Git/hdl/modelsim/labs_4/modelsim
+vb27s
+Z0 !s110 1526503031
+!i10b 1
+!s100 nHTge@z?[TERe@PJl7VEU0
+IXLhWR:F`DUoiQfdE?[@Ke2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dD:/Git/hdl/modelsim/labs_5/modelsim
+w1526480999
+8D:/Git/hdl/modelsim/labs_5/modelsim/b27s.v
+FD:/Git/hdl/modelsim/labs_5/modelsim/b27s.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1526503031.000000
+!s107 D:/Git/hdl/modelsim/labs_5/modelsim/b27s.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_5/modelsim/b27s.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vdilab_b27s
+R0
+!i10b 1
+!s100 bT0ETmHSdYf4TQ6hC=aKh0
+I5;B6<H<2AHT@j1b:TzoGa2
+R1
+R2
+w1526481015
+8D:/Git/hdl/modelsim/labs_5/modelsim/dilab_b27s.v
+FD:/Git/hdl/modelsim/labs_5/modelsim/dilab_b27s.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Git/hdl/modelsim/labs_5/modelsim/dilab_b27s.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_5/modelsim/dilab_b27s.v|
+!i113 1
+R5
+R6
+vtb1_b27s
+R0
+!i10b 1
+!s100 3c5SZe^VSbP:Q]>YY9A0`2
+I3k7@L32i?]zg8]DOfb?AZ1
+R1
+R2
+w1526502525
+8D:/Git/hdl/modelsim/labs_5/modelsim/tb1_b27s.v
+FD:/Git/hdl/modelsim/labs_5/modelsim/tb1_b27s.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Git/hdl/modelsim/labs_5/modelsim/tb1_b27s.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_5/modelsim/tb1_b27s.v|
+!i113 1
+R5
+R6
+vtb2_b27s
+R0
+!i10b 1
+!s100 c]@7[dBUd@RmMWaihW^QF2
+I<SF[ASH^P?n2Z3:g1[67e0
+R1
+R2
+w1526503027
+8D:/Git/hdl/modelsim/labs_5/modelsim/tb2_b27s.v
+FD:/Git/hdl/modelsim/labs_5/modelsim/tb2_b27s.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Git/hdl/modelsim/labs_5/modelsim/tb2_b27s.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_5/modelsim/tb2_b27s.v|
+!i113 1
+R5
+R6
+vtb2f_b27s
+R0
+!i10b 1
+!s100 ;Db2HnC1CWNWKLXiPD2Z<0
+IbRI_4keBhi]d@LL3^<XQJ0
+R1
+R2
+w1526481278
+8D:/Git/hdl/modelsim/labs_5/modelsim/tb2f_b27s.v
+FD:/Git/hdl/modelsim/labs_5/modelsim/tb2f_b27s.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Git/hdl/modelsim/labs_5/modelsim/tb2f_b27s.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_5/modelsim/tb2f_b27s.v|
+!i113 1
+R5
+R6

@@ -12,19 +12,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	tb1_b2db
 
-} {} {}} D:/Git/hdl/modelsim/labs_4/modelsim/tb2_b2bd.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_4/modelsim/tb2_b2bd.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module tb2_b2bd
-
-Top level modules:
-	tb2_b2bd
-
 } {} {}} D:/Git/hdl/modelsim/labs_4/modelsim/dilab_b2bd.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_4/modelsim/dilab_b2bd.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module dilab_b2bd
 
 Top level modules:
 	dilab_b2bd
+
+} {} {}} D:/Git/hdl/modelsim/labs_4/modelsim/tb2_b2bd.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_4/modelsim/tb2_b2bd.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb2_b2bd
+
+Top level modules:
+	tb2_b2bd
 
 } {} {}} D:/Git/hdl/modelsim/labs_4/modelsim/b2bd.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_4/modelsim/b2bd.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
