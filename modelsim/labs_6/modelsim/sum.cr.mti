@@ -1,0 +1,57 @@
+D:/Git/hdl/modelsim/labs_6/modelsim/tb2f_sums.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_6/modelsim/tb2f_sums.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb2f_sums
+
+Top level modules:
+	tb2f_sums
+
+} {} {}} D:/Git/hdl/modelsim/labs_6/modelsim/sum_1.v {1 {vlog -work work -stats=none {D:\Git\hdl\modelsim\labs_6\modelsim\sum_1.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module sum_1
+
+Top level modules:
+	sum_1
+
+} {} {}} D:/Git/hdl/modelsim/labs_6/modelsim/sum.v {1 {vlog -work work -stats=none {D:\Git\hdl\modelsim\labs_6\modelsim\sum.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module sum
+
+Top level modules:
+	sum
+
+} {} {}} D:/Git/hdl/modelsim/labs_6/modelsim/tb2f_sum.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_6/modelsim/tb2f_sum.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb2f_sum
+
+Top level modules:
+	tb2f_sum
+
+} {} {}} D:/Git/hdl/modelsim/labs_6/modelsim/tb1_sums.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_6/modelsim/tb1_sums.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb1_sums
+
+Top level modules:
+	tb1_sums
+
+} {} {}} D:/Git/hdl/modelsim/labs_6/modelsim/tb2_sums.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_6/modelsim/tb2_sums.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb2_sums
+
+Top level modules:
+	tb2_sums
+
+} {} {}} D:/Git/hdl/modelsim/labs_6/modelsim/tb1_sum.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_6/modelsim/tb1_sum.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb1_sum
+
+Top level modules:
+	tb1_sum
+
+} {} {}} D:/Git/hdl/modelsim/labs_6/modelsim/tb2_sum.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_6/modelsim/tb2_sum.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb2_sum
+
+Top level modules:
+	tb2_sum
+
+} {} {}}

@@ -19,7 +19,7 @@
 			\item Стандарты и номера выводов СБИС для платы \code{miniDiLaB_CIV} задать с помощью атрибутов.
 		\end{itemize}
 	
-	\item На языке Verilogсоздать описание тестов:
+	\item На языке Verilog создать описание тестов:
 		\begin{itemize}
 			\item Тест класса 1 -- \code{tb1_b27s.v};
 			\item Тест класса 2 с вычислением результата -- \code{tb2_b27s.v} (должен обеспечить проверку всех возможных вариантов входных сигналов);
@@ -45,7 +45,7 @@
 \lstinputlisting[caption=\code{tb1_b27s.v}, label=code:test1]{tb1_b27s.v}
 
 В листинге \ref{code:test1_results} приведен вывод результатов теста в консоль.
-\begin{lstlisting}[caption=Результаты теста первого класса, label=code:test1_results, language={}]
+\begin{lstlisting}[caption=Результаты теста первого класса, label=code:test1_results, style=console]
 run -all
 # 		         time bin_code segments
 #                    0    0    63
@@ -59,7 +59,7 @@ run -all
 На рис. \ref{fig:test1_results} изображена временная диаграмма теста.
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.9\textwidth]{test1_results}
+		\includegraphics[width=0.85\textwidth]{test1_results}
 		\caption{Результаты теста первого класса}
 		\label{fig:test1_results}
 	\end{center}
@@ -71,7 +71,7 @@ run -all
 \lstinputlisting[caption=\code{tb2_b27s.v}, label=code:test2]{tb2_b27s.v}
 
 В листинге \ref{code:test2_results} приведен вывод результатов теста в консоль.
-\begin{lstlisting}[caption=Результаты теста второго класса с вычислением результата, label=code:test2_results, language={}]
+\begin{lstlisting}[caption=Результаты теста второго класса с вычислением результата, label=code:test2_results, style=console]
 run -all
 # 		         time bin_code segments
 #                   40    0    63
@@ -135,7 +135,7 @@ run -all
 
 \subsection{Тест второго класса с чтением файлов}
 
-В листинге \ref{code:test3} приведено описание теста второго класса с чтением файлов. В данном тесте на вход устройства из файла \code{input_b27s.dat}, приведенного в листинге \ref{code:input}, подаются всевозможные значения преобразуемого кода, а ожидаемые считываются из файла \code{exp_b27s.dat}, приведенного в листинге \ref{code:exp}. 
+В листинге \ref{code:test3} приведено описание теста второго класса с чтением файлов. В данном тесте на вход устройства из файла \code{input_b27s.dat}, приведенного в листинге \ref{code:input}, подаются всевозможные значения, а ожидаемые считываются из файла \code{exp_b27s.dat}, приведенного в листинге \ref{code:exp}. 
 \lstinputlisting[caption=\code{tb2f_b27s.v}, label=code:test3]{tb2f_b27s.v}
 \begin{multicols}{2}
 	\lstinputlisting[caption=\code{input_b27s.dat}, label=code:input, style=dat]{input_b27s.dat}	
@@ -143,7 +143,7 @@ run -all
 \end{multicols}
 
 В листинге \ref{code:test3_results} приведен вывод результатов теста в консоль.
-\begin{lstlisting}[caption=Результаты теста второго класса с чтением файлов, label=code:test3_results, language={}]
+\begin{lstlisting}[caption=Результаты теста второго класса с чтением файлов, label=code:test3_results, style=console]
 run -all
 # 		         time  bin_code segments
 #                   40    0    63
@@ -199,7 +199,6 @@ run -all
 #                  600   14     0
 #                  640   15     0
 # Testing complited
-# ** Note: $stop    : D:/Git/hdl/modelsim/labs_5/modelsim/tb2f_b27s.v(35)
 #    Time: 640 ns  Iteration: 1  Instance: /tb2f_b27s
 \end{lstlisting}
 
@@ -212,6 +211,6 @@ run -all
 
 \section{Выводы}
 
-В ходе лабораторной работы на языке Verilog описан параметризированный демультиплексор $1 \rightarrow 2$. Создано описание тестов первого и второго уровней, а также модуль для проверки работы на плате \code{miniDiLaB_CIV}. Тестирование разработанного устройства показало: результаты совпадают с ожидаемыми, устройство работает корректно.
+В ходе лабораторной работы на языке Verilog описан преобразователь $4$-разрядного двоичного кода в $7$-сегментный. Создано описание тестов первого и второго уровней, а также модуль для проверки работы на плате \code{miniDiLaB_CIV}. Тестирование разработанного устройства показало, что результаты совпадают с ожидаемыми и устройство работает верно.
 
 \end{document}
