@@ -1,0 +1,29 @@
+D:/Git/hdl/modelsim/labs_8/modelsim/tb1_labs_8.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_8/modelsim/tb1_labs_8.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb1_labs_8
+
+Top level modules:
+	tb1_labs_8
+
+} {} {}} D:/Git/hdl/modelsim/labs_8/modelsim/lab3_3.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_8/modelsim/lab3_3.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module lab3_3
+
+Top level modules:
+	lab3_3
+
+} {} {}} D:/Git/hdl/modelsim/labs_8/modelsim/tb2_labs_8.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_8/modelsim/tb2_labs_8.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb2_labs_8
+
+Top level modules:
+	tb2_labs_8
+
+} {} {}} D:/Git/hdl/modelsim/labs_8/modelsim/dilab_labs_8.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_8/modelsim/dilab_labs_8.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module dilab_labs_8
+
+Top level modules:
+	dilab_labs_8
+
+} {} {}}

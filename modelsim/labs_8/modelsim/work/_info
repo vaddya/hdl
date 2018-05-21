@@ -1,0 +1,115 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Quartus/17.1
+vdilab_labs_8
+Z0 !s110 1526924892
+!i10b 1
+!s100 CYl@?C_@;VMUMgFkY6HdS2
+IF`PHI>:HJlzdUDn^<CzgI2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dD:/Git/hdl/modelsim/labs_8/modelsim
+w1526924887
+8D:/Git/hdl/modelsim/labs_8/modelsim/dilab_labs_8.v
+FD:/Git/hdl/modelsim/labs_8/modelsim/dilab_labs_8.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1526924892.000000
+!s107 D:/Git/hdl/modelsim/labs_8/modelsim/dilab_labs_8.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_8/modelsim/dilab_labs_8.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vlab3_3
+R0
+!i10b 1
+!s100 4>WGojW:0IP^7kb^Q73gQ1
+IBF7gV18OSBz[3z]E9f6TO0
+R1
+R2
+w1520506480
+8D:/Git/hdl/modelsim/labs_8/modelsim/lab3_3.v
+FD:/Git/hdl/modelsim/labs_8/modelsim/lab3_3.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Git/hdl/modelsim/labs_8/modelsim/lab3_3.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_8/modelsim/lab3_3.v|
+!i113 1
+R5
+R6
+vtb1_labs_8
+R0
+!i10b 1
+!s100 ]XUG1;_C8hZi@2jU>bS1o3
+IXRln?iba3oXU1iEMe:?Dd1
+R1
+R2
+w1526923128
+8D:/Git/hdl/modelsim/labs_8/modelsim/tb1_labs_8.v
+FD:/Git/hdl/modelsim/labs_8/modelsim/tb1_labs_8.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Git/hdl/modelsim/labs_8/modelsim/tb1_labs_8.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_8/modelsim/tb1_labs_8.v|
+!i113 1
+R5
+R6
+vtb2_labs_8
+R0
+!i10b 1
+!s100 mbBo3daF5UaHT7:fGgGO73
+IXfhFcSa63a@`To?X;_AWY1
+R1
+R2
+w1526923756
+8D:/Git/hdl/modelsim/labs_8/modelsim/tb2_labs_8.v
+FD:/Git/hdl/modelsim/labs_8/modelsim/tb2_labs_8.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Git/hdl/modelsim/labs_8/modelsim/tb2_labs_8.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_8/modelsim/tb2_labs_8.v|
+!i113 1
+R5
+R6
+vtb2f_labs_8
+R0
+!i10b 1
+!s100 08CKlP[hggDi6FU==:kH43
+I<Oe2zALi`T:^<ic[]SN1Q3
+R1
+R2
+w1526924111
+8D:/Git/hdl/modelsim/labs_8/modelsim/tb2f_labs_8.v
+FD:/Git/hdl/modelsim/labs_8/modelsim/tb2f_labs_8.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Git/hdl/modelsim/labs_8/modelsim/tb2f_labs_8.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_8/modelsim/tb2f_labs_8.v|
+!i113 1
+R5
+R6
