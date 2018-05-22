@@ -12,18 +12,18 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	tb1_labs_9
 
-} {} {}} D:/Git/hdl/modelsim/labs_9/modelsim/tb2_labs_9.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_9/modelsim/tb2_labs_9.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module tb2_labs_9
-
-Top level modules:
-	tb2_labs_9
-
 } {} {}} D:/Git/hdl/modelsim/labs_9/modelsim/lab3_4.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_9/modelsim/lab3_4.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module lab3_4
 
 Top level modules:
 	lab3_4
+
+} {} {}} D:/Git/hdl/modelsim/labs_9/modelsim/tb2_labs_9.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_9/modelsim/tb2_labs_9.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb2_labs_9
+
+Top level modules:
+	tb2_labs_9
 
 } {} {}}

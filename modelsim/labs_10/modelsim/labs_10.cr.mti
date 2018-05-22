@@ -1,0 +1,79 @@
+D:/Git/hdl/modelsim/labs_10/modelsim/tb2f_labs_10top.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_10/modelsim/tb2f_labs_10top.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb2f_labs_10top
+
+Top level modules:
+	tb2f_labs_10top
+
+} {} {}} D:/Git/hdl/modelsim/labs_10/modelsim/tb1_labs_10top.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_10/modelsim/tb1_labs_10top.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb1_labs_10top
+
+Top level modules:
+	tb1_labs_10top
+
+} {} {}} D:/Git/hdl/modelsim/labs_10/modelsim/tb1_labs_10cb.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_10/modelsim/tb1_labs_10cb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb1_labs_10cb
+
+Top level modules:
+	tb1_labs_10cb
+
+} {} {}} D:/Git/hdl/modelsim/labs_10/modelsim/tb1_labs_10cd.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_10/modelsim/tb1_labs_10cd.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb1_labs_10cd
+
+Top level modules:
+	tb1_labs_10cd
+
+} {} {}} D:/Git/hdl/modelsim/labs_10/modelsim/tb2_labs_10cd.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_10/modelsim/tb2_labs_10cd.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb2_labs_10cd
+
+Top level modules:
+	tb2_labs_10cd
+
+} {} {}} D:/Git/hdl/modelsim/labs_10/modelsim/lab4_1.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_10/modelsim/lab4_1.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module lab4_1
+
+Top level modules:
+	lab4_1
+
+} {} {}} D:/Git/hdl/modelsim/labs_10/modelsim/tb2f_labs_10cb.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_10/modelsim/tb2f_labs_10cb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb2f_labs_10cb
+
+Top level modules:
+	tb2f_labs_10cb
+
+} {} {}} D:/Git/hdl/modelsim/labs_10/modelsim/tb2_labs_10top.v {2 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_10/modelsim/tb2_labs_10top.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb2_labs_10top
+** Warning: D:/Git/hdl/modelsim/labs_10/modelsim/tb2_labs_10top.v(7): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+Top level modules:
+	tb2_labs_10top
+
+} {} {}} D:/Git/hdl/modelsim/labs_10/modelsim/cb.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_10/modelsim/cb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module cb
+
+Top level modules:
+	cb
+
+} {} {}} D:/Git/hdl/modelsim/labs_10/modelsim/tb2f_labs_10cd.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_10/modelsim/tb2f_labs_10cd.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb2f_labs_10cd
+
+Top level modules:
+	tb2f_labs_10cd
+
+} {} {}} D:/Git/hdl/modelsim/labs_10/modelsim/cd.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_10/modelsim/cd.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module cd
+
+Top level modules:
+	cd
+
+} {} {}}

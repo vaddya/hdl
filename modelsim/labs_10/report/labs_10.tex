@@ -1,0 +1,180 @@
+\include{settings}
+
+\begin{document}
+
+\include{titlepage}
+
+\tableofcontents
+\lstlistoflistings
+%\listoffigures
+\newpage
+
+\section{Задание}
+
+\begin{itemize}
+	\item Для задания \code{lab4_1} осеннего семестра для каждого модуля (счетчик-делитель, двоичный счетчик) и для описания верхнего уровня, на языке Verilog создать описание тестов:
+		\begin{itemize}
+			\item Тест класса 1:
+				\begin{itemize}
+					\item Для счетчика-делителя -- \code{tb1_labs_10cd.v};
+					\item Для двоичного счетчика -- \code{tb1_labs_10cb.v};
+					\item Для описания верхнего уровня -- \code{tb1_ labs_10top.v}.
+				\end{itemize}
+			\item Тест класса 2 с вычислением результата:
+				\begin{itemize}
+					\item Для счетчика-делителя -- \code{tb2_labs_10cd.v};
+					\item Для двоичного счетчика -- \code{tb2_labs_10cb.v};
+					\item Для описания верхнего уровня -- \code{tb2_ labs_10top.v}.
+				\end{itemize}
+			\item Тест класса 2 с чтением файлов
+				\begin{itemize}
+					\item Для счетчика-делителя -- \code{tb2_labs_10cd.v} (файл с тестовыми воздействиями -- \code{input_labs_10cd.dat}, файл с ожидаемыми результатами -- \code{exp_labs_10cd.dat});
+					\item Для двоичного счетчика -- \code{tb2_labs_10cb.v} (файл с тестовыми воздействиями -- \code{input_labs_10cb.dat}, файл с ожидаемыми результатами -- \code{exp_labs_10cb.dat});
+					\item Для описания верхнего уровня -- \code{tb2_ labs_10top.v} (файл с тестовыми воздействиями -- \code{input_labs_10top.dat}, файл с ожидаемыми результатами -- \code{exp_labs_10top.dat}).
+				\end{itemize}
+		\end{itemize}
+
+	\item Осуществить проверку модуля с использованием всех тестов; проверку тестов класса 2 на обработку ошибок.
+\end{itemize}
+
+\section{Описание устройства}
+
+В листингах \ref{code:cd}--\ref{code:labs_10} приведено описание тестируемого устройства, включающего счетчик-делитель, обеспечивающий счет по модулю \code{25 000 000} и формирующий сигнал переноса, и двоичный $4$-разрядный счетчик.
+\lstinputlisting[caption=\code{cd.v}, label=code:cd]{cd.v}
+\lstinputlisting[caption=\code{cb.v}, label=code:cb]{cb.v}
+\lstinputlisting[caption=\code{lab4_1.v}, label=code:labs_10]{lab4_1.v}
+
+\section{Описание тестов}
+\label{sec:tests}
+
+\subsection{Тест первого класса}
+
+В листингах \ref{code:test1cd}--\ref{code:test1top} приведено описание тестов первого класса для каждого модуля и описания верхнего уровня.
+\lstinputlisting[caption=\code{tb1_labs_10cd.v}, label=code:test1cd]{tb1_labs_10cd.v}
+\lstinputlisting[caption=\code{tb1_labs_10cb.v}, label=code:test1cb]{tb1_labs_10cb.v}
+\newpage
+\lstinputlisting[caption=\code{tb1_labs_10top.v}, label=code:test1top]{tb1_labs_10top.v}
+
+На рис. \ref{fig:test1_results} изображены временные диаграммы тестов для каждого модуля и описания верхнего уровня.
+\vspace{-0.3cm}
+\begin{figure}[H]
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=0.85\textwidth]{test1cd_results}
+		\vspace{0.1cm}
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=0.87\textwidth]{test1cb_results}
+		\vspace{0.1cm}
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=0.83\textwidth]{test1top_results}
+	\end{subfigure}
+	\caption{Результаты тестов первого класса}
+	\label{fig:test1_results}
+\end{figure}
+
+\subsection{Тест второго класса с вычислением результата}
+
+В листингах \ref{code:test2cd}--\ref{code:test2top} приведено описание тестов второго класса с вычислением результата для каждого модуля и описания верхнего уровня.
+\lstinputlisting[caption=\code{tb2_labs_10cd.v}, label=code:test2cd]{tb2_labs_10cd.v}
+\lstinputlisting[caption=\code{tb2_labs_10cb.v}, label=code:test2cb]{tb2_labs_10cb.v}
+\lstinputlisting[caption=\code{tb2_labs_10top.v}, label=code:test2top]{tb2_labs_10top.v}
+
+На рис. \ref{fig:test2_results} изображена временная диаграмма теста.
+\vspace{-0.5cm}
+\begin{figure}[H]
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=0.77\textwidth]{test2cd_results}
+		\vspace{0.1cm}
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=0.92\textwidth]{test2cb_results}
+		\vspace{0.1cm}
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=0.88\textwidth]{test2top_results}
+	\end{subfigure}
+	\caption{Результаты тестов второго класса с вычислением результата}
+	\label{fig:test2_results}
+\end{figure}
+
+В листинге \ref{code:test2_error} приведен вывод результатов теста верхнего уровня в консоль при внесении ошибки в вычисление ожидаемого значения.	
+\begin{lstlisting}[caption=Результаты ошибочного теста второго класса с вычислением результата, label=code:test2_error, style=console]
+run -all
+# Expected  7, got  9
+# Expected  6, got 10
+# Expected  5, got 11
+# Expected  4, got 12
+# Expected  3, got 13
+# Expected  2, got 14
+...
+# Expected  2, got  8
+# Expected  1, got  9
+# Expected  0, got 10
+# Expected 15, got 11
+# Expected 14, got 12
+#    Time: 1 us  Iteration: 0  Instance: /tb2_labs_10top
+\end{lstlisting}
+
+\subsection{Тест второго класса с чтением файлов}
+
+В листинге \ref{code:test3cd}--\ref{code:test3top} приведено описание теста второго класса с чтением файлов. В данном тесте на вход модулей из файлов \code{input_labs_10cd.dat}--\code{input_labs_10top.dat}, фрагменты которых приведены в листингах \ref{code:inputcd}--\ref{code:inputtop}, подаются всевозможные значения, а ожидаемые считываются из файлов \code{exp_labs_10cd.dat}--\code{exp_labs_10top.dat}, фрагменты которых приведены в листингах \ref{code:expcd}--\ref{code:exptop}.
+\lstinputlisting[caption=\code{tb2f_labs_10cd.v}, label=code:test3cd]{tb2f_labs_10cd.v}
+\lstinputlisting[caption=\code{tb2f_labs_10cb.v}, label=code:test3cb]{tb2f_labs_10cb.v}
+\lstinputlisting[caption=\code{tb2f_labs_10top.v}, label=code:test3top]{tb2f_labs_10top.v}
+\begin{multicols}{2}
+	\lstinputlisting[caption=\code{inp_labs_10cd.dat}, linerange={1-5, 20-24}, label=code:inputcd, style=dat]{input_labs_10cd.dat}	
+	\lstinputlisting[caption=\code{inp_labs_10cb.dat}, linerange={1-5, 46-50}, label=code:inputcb, style=dat]{input_labs_10cb.dat}	
+	\lstinputlisting[caption=\code{inp_labs_10top.dat}, linerange={1-5, 46-50}, label=code:inputtop, style=dat]{input_labs_10top.dat}	
+	
+	\lstinputlisting[caption=\code{exp_labs_10cd.dat}, linerange={1-5, 20-24}, label=code:expcd, style=dat]{exp_labs_10cd.dat}
+	\lstinputlisting[caption=\code{exp_labs_10cb.dat}, linerange={1-5, 46-50}, label=code:expcb, style=dat]{exp_labs_10cb.dat}
+	\lstinputlisting[caption=\code{exp_labs_10top.dat}, linerange={1-5, 46-50}, label=code:exptop, style=dat]{exp_labs_10top.dat}
+\end{multicols}
+
+На рис. \ref{fig:test3_results} изображена временные диаграммы тестов.
+\begin{figure}[H]
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=0.63\textwidth]{test3cd_results}
+		\vspace{0.1cm}
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=0.88\textwidth]{test3cb_results}
+		\vspace{0.1cm}
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=0.92\textwidth]{test3top_results}
+	\end{subfigure}
+	\caption{Результаты тестов второго класса с чтением файлов}
+	\label{fig:test3_results}
+\end{figure}
+
+В листинге \ref{code:test3_error} приведен вывод результатов теста верхнего уровня в консоль при внесении ошибок в ожидаемые значения.
+\begin{lstlisting}[caption=Результаты ошибочного теста второго класса с чтением файлов, label=code:test3_error, style=console]
+run -all
+# Eexpected  6, got  8
+# Eexpected  8, got 10
+# Eexpected 10, got  9
+# Eexpected  9, got  8
+...
+# Eexpected  7, got  6
+# Eexpected  6, got  5
+# Eexpected  5, got  4
+# Eexpected  4, got  3
+#    Time: 500 ns  Iteration: 1  Instance: /tb2f_labs_10top
+\end{lstlisting}
+
+\section{Выводы}
+
+В ходе лабораторной работы на языке Verilog описаны тесты первого и второго классов для каждого из модулей исследуемого устройства и для описания верхнего уровня. Тестирование разработанного устройства показало, что результаты совпадают с ожидаемыми и устройство работает верно.
+
+\end{document}
