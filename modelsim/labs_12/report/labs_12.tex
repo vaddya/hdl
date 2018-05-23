@@ -1,0 +1,120 @@
+\include{settings}
+
+\begin{document}
+
+\include{titlepage}
+
+\tableofcontents
+\lstlistoflistings
+\listoffigures
+\newpage
+
+\section{Задание}
+
+\begin{itemize}
+	\item Для задания \code{lab5_2} осеннего семестра на языке Verilog создать описание тестов:
+		\begin{itemize}
+			\item Тест класса 1 -- \code{tb1_labs_12.v} (значения входов, выходов и время записывать в файл используя любую команду, данные должны быть отформатированы для удобного чтения, имя файла -- \code{tb1_.dat});
+			\item Тест класса 2 с вычислением результата -- \code{tb2_labs_12.v};
+			\item Тест класса 2 с чтением файлов -- \code{tb2f_labs_12.v} (файл с тестовыми воздействиями -- \code{input_labs_12.dat}, файл с ожидаемыми результатами -- \code{exp_labs_12.dat}.
+		\end{itemize}
+
+	\item Осуществить проверку модуля с использованием всех тестов; проверку тестов класса 2 на обработку ошибок.
+\end{itemize}
+
+\section{Описание устройства}
+
+В листинге \ref{code:lab5_2} приведено описание тестируемого устройства, включающего счетчик-делитель, обеспечивающий счет по модулю $N$ и формирующий сигнал переноса, и конечный автомат.
+\lstinputlisting[caption=\code{lab5_2.v}, label=code:lab5_2]{lab5_2.v}
+
+\section{Описание тестов}
+\label{sec:tests}
+
+\subsection{Тест первого класса}
+
+В листинге \ref{code:test1} приведено описание теста первого класса.
+\lstinputlisting[caption=\code{tb1_labs_12.v}, label=code:test1]{tb1_labs_12.v}
+
+В листинге \ref{code:test1_results} приведен вывод результатов теста в файл.
+\lstinputlisting[caption=\code{tb1_.dat}, label=code:test1_results, style=console, linerange={1-5, 26-301}]{tb1_.dat}
+
+На рис. \ref{fig:test1_results} изображена временная диаграмма теста.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.95\textwidth]{test1_results}
+		\caption{Результаты теста первого класса}
+		\label{fig:test1_results}
+	\end{center}
+\end{figure}
+
+\subsection{Тест второго класса с вычислением результата}
+
+В листинге \ref{code:test2} приведено описание теста второго класса с вычислением результата.
+\lstinputlisting[caption=\code{tb2_labs_12.v}, label=code:test2]{tb2_labs_12.v}
+
+На рис. \ref{fig:test2_results} изображена временная диаграмма теста.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.95\textwidth]{test2_results}
+		\caption{Результаты теста второго класса с вычислением результата}
+		\label{fig:test2_results}
+	\end{center}
+\end{figure}
+
+В листинге \ref{code:test2_error} приведен вывод результатов теста в консоль при внесении ошибки в вычисление ожидаемого значения.	
+\begin{lstlisting}[caption=Результаты ошибочного теста второго класса с вычислением результата, label=code:test2_error, style=console]
+run -all
+# Expected 2, got 1
+# Expected 3, got 2
+# Expected 4, got 3
+# Expected 5, got 4
+# Expected 6, got 5
+...
+# Expected 4, got 2
+# Expected 5, got 3
+# Expected 6, got 4
+# Expected 7, got 5
+# Expected 0, got 6
+#    Time: 630 ns  Iteration: 0  Instance: /tb2_labs_12
+\end{lstlisting}
+
+\subsection{Тест второго класса с чтением файлов}
+
+В листинге \ref{code:test3} приведено описание теста второго класса с чтением файлов. В данном тесте на вход устройства из файла \code{input_labs_12.dat}, содержание которого приведено в листинге \ref{code:input}, подаются всевозможные значения, а ожидаемые считываются из файла \code{exp_labs_12.dat}, содержание которого приведено в листинге \ref{code:exp}.
+
+\newpage
+
+\lstinputlisting[caption=\code{tb2f_labs_12.v}, label=code:test3]{tb2f_labs_12.v}
+\begin{multicols}{2}
+	\lstinputlisting[caption=\code{inp_labs_12.dat}, linerange={1-8}, label=code:input, style=dat]{input_labs_12.dat}	
+	\lstinputlisting[caption=\code{exp_labs_12.dat}, linerange={1-8}, label=code:exp, style=dat]{exp_labs_12.dat}
+\end{multicols}
+
+\newpage
+
+На рис. \ref{fig:test3_results} изображена временная диаграмма теста.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.85\textwidth]{test3_results}
+		\caption{Результаты теста второго класса с чтением файлов}
+		\label{fig:test3_results}
+	\end{center}
+\end{figure}
+
+В листинге \ref{code:test3_error} приведен вывод результатов теста в консоль при внесении ошибок в ожидаемые значения.
+\begin{lstlisting}[caption=Результаты ошибочного теста второго класса с чтением файлов, label=code:test3_error, style=console]
+run -all
+# Expected 0, got 1
+# Expected 1, got 2
+# Expected 2, got 1
+# Expected 1, got 0
+# Expected 0, got 2
+# Expected 2, got 4
+#    Time: 170 ns  Iteration: 1  Instance: /tb2f_labs_12
+\end{lstlisting}
+
+\section{Выводы}
+
+В ходе лабораторной работы на языке Verilog описаны тесты первого и второго классов для устройства, включающего счетчик-делитель и конечный автомат. Тестирование разработанного устройства показало, что результаты совпадают с ожидаемыми и устройство работает верно.
+
+\end{document}

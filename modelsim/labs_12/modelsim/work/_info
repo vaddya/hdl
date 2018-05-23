@@ -1,0 +1,94 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Git/hdl/modelsim/labs_11/modelsim
+vlab5_2
+Z0 !s110 1527069373
+!i10b 1
+!s100 kYRYO?XTd]9Z]Rdd5;VAb3
+ImRU=`5VPKRFlE3eO^;gh63
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dD:/Git/hdl/modelsim/labs_12/modelsim
+w1527067937
+8D:/Git/hdl/modelsim/labs_12/modelsim/lab5_2.v
+FD:/Git/hdl/modelsim/labs_12/modelsim/lab5_2.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1527069373.000000
+!s107 D:/Git/hdl/modelsim/labs_12/modelsim/lab5_2.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_12/modelsim/lab5_2.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vtb1_labs_12
+Z7 !s110 1527069374
+!i10b 1
+!s100 L5>K03d?blDbMcl`<giVC1
+I;mN0mVGMmVNnFWinjWBR50
+R1
+R2
+w1527068249
+8D:/Git/hdl/modelsim/labs_12/modelsim/tb1_labs_12.v
+FD:/Git/hdl/modelsim/labs_12/modelsim/tb1_labs_12.v
+L0 2
+R3
+r1
+!s85 0
+31
+Z8 !s108 1527069374.000000
+!s107 D:/Git/hdl/modelsim/labs_12/modelsim/tb1_labs_12.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_12/modelsim/tb1_labs_12.v|
+!i113 1
+R5
+R6
+vtb2_labs_12
+R7
+!i10b 1
+!s100 kMR=LM:AGm;KTHOd<^7J51
+I[V^afJ71`<Jjmzz]6?[5c1
+R1
+R2
+w1527068908
+8D:/Git/hdl/modelsim/labs_12/modelsim/tb2_labs_12.v
+FD:/Git/hdl/modelsim/labs_12/modelsim/tb2_labs_12.v
+L0 2
+R3
+r1
+!s85 0
+31
+R8
+!s107 D:/Git/hdl/modelsim/labs_12/modelsim/tb2_labs_12.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_12/modelsim/tb2_labs_12.v|
+!i113 1
+R5
+R6
+vtb2f_labs_12
+R0
+!i10b 1
+!s100 z;D;gO=PJmEHZM=3eg;E60
+I@TGkQNzXmRCM^6=mX22j22
+R1
+R2
+w1527069371
+8D:/Git/hdl/modelsim/labs_12/modelsim/tb2f_labs_12.v
+FD:/Git/hdl/modelsim/labs_12/modelsim/tb2f_labs_12.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Git/hdl/modelsim/labs_12/modelsim/tb2f_labs_12.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_12/modelsim/tb2f_labs_12.v|
+!i113 1
+R5
+R6
