@@ -1,0 +1,29 @@
+D:/Git/hdl/modelsim/labs_14/modelsim/lab7_1.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_14/modelsim/lab7_1.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module lab7_1
+
+Top level modules:
+	lab7_1
+
+} {} {}} D:/Git/hdl/modelsim/labs_14/modelsim/tb2f_labs_14.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_14/modelsim/tb2f_labs_14.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb2f_labs_14
+
+Top level modules:
+	tb2f_labs_14
+
+} {} {}} D:/Git/hdl/modelsim/labs_14/modelsim/tb1_labs_14.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_14/modelsim/tb1_labs_14.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb1_labs_14
+
+Top level modules:
+	tb1_labs_14
+
+} {} {}} D:/Git/hdl/modelsim/labs_14/modelsim/tb2_labs_14.v {1 {vlog -work work -stats=none D:/Git/hdl/modelsim/labs_14/modelsim/tb2_labs_14.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb2_labs_14
+
+Top level modules:
+	tb2_labs_14
+
+} {} {}}

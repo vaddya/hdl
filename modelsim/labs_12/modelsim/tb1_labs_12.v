@@ -14,7 +14,7 @@ initial begin
 end
 	
 initial begin
-    aclr = 0; 
+    aclr = 0;
 	#30 aclr = 1; data = 0; 
 	#100 data = 1; 
 	#100 data = 2; 
@@ -26,7 +26,7 @@ end
 
 initial begin 
     tb1_ = $fopen("tb1_.dat");
-	$fwirte(tb1_, "\t time aclr data res\n");
+	$fwrite(tb1_, "\t time aclr data res\n");
     $timeformat(-9, 0, " ns", 7);
     $fmonitor(tb1_, "%t %b %d %d", $time, aclr, data, result);
 end

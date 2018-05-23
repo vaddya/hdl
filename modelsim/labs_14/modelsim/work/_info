@@ -1,0 +1,94 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Git/hdl/modelsim/labs_13/modelsim
+vlab7_1
+Z0 !s110 1527075355
+!i10b 1
+!s100 A]jOeZ3YQ@Uf^1DXXaFEc2
+IzUZNMkjbTaD;`h6O:DfWh0
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dD:/Git/hdl/modelsim/labs_14/modelsim
+w1520506481
+8D:/Git/hdl/modelsim/labs_14/modelsim/lab7_1.v
+FD:/Git/hdl/modelsim/labs_14/modelsim/lab7_1.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1527075355.000000
+!s107 D:/Git/hdl/modelsim/labs_14/modelsim/lab7_1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_14/modelsim/lab7_1.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vtb1_labs_14
+R0
+!i10b 1
+!s100 MG0HIJLZhgME?EFzVf>VL1
+Ig2Y^W]LQW?IR[jW_ZlFYz3
+R1
+R2
+w1527073935
+8D:/Git/hdl/modelsim/labs_14/modelsim/tb1_labs_14.v
+FD:/Git/hdl/modelsim/labs_14/modelsim/tb1_labs_14.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Git/hdl/modelsim/labs_14/modelsim/tb1_labs_14.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_14/modelsim/tb1_labs_14.v|
+!i113 1
+R5
+R6
+vtb2_labs_14
+R0
+!i10b 1
+!s100 7JhBWgGbZDVNOF:ghc5fe2
+In:WEhR3BYdmJ=FeVZlcg_0
+R1
+R2
+w1527074588
+8D:/Git/hdl/modelsim/labs_14/modelsim/tb2_labs_14.v
+FD:/Git/hdl/modelsim/labs_14/modelsim/tb2_labs_14.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Git/hdl/modelsim/labs_14/modelsim/tb2_labs_14.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_14/modelsim/tb2_labs_14.v|
+!i113 1
+R5
+R6
+vtb2f_labs_14
+R0
+!i10b 1
+!s100 IBR^b7YEk_eeF@7^lD;0@0
+IYjRPY8FZ_=YQI0kzGFMQ53
+R1
+R2
+w1527075341
+8D:/Git/hdl/modelsim/labs_14/modelsim/tb2f_labs_14.v
+FD:/Git/hdl/modelsim/labs_14/modelsim/tb2f_labs_14.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Git/hdl/modelsim/labs_14/modelsim/tb2f_labs_14.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Git/hdl/modelsim/labs_14/modelsim/tb2f_labs_14.v|
+!i113 1
+R5
+R6

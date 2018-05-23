@@ -1,0 +1,117 @@
+\include{settings}
+
+\begin{document}
+
+\include{titlepage}
+
+\tableofcontents
+\lstlistoflistings
+\listoffigures
+\newpage
+
+\section{Задание}
+
+\begin{itemize}
+	\item Для задания \code{lab6_2} осеннего семестра на языке Verilog создать описание тестов:
+		\begin{itemize}
+			\item Тест класса 1 -- \code{tb1_labs_13.v} (значения входов, выходов и время записывать в файл используя любую команду, данные должны быть отформатированы для удобного чтения, имя файла -- \code{tb1_.dat});
+			\item Тест класса 2 с вычислением результата -- \code{tb2_labs_13.v};
+			\item Тест класса 2 с чтением файлов -- \code{tb2f_labs_13.v} (файл с тестовыми воздействиями -- \code{input_labs_13.dat}, файл с ожидаемыми результатами -- \code{exp_labs_13.dat}.
+		\end{itemize}
+
+	\item Осуществить проверку модуля с использованием всех тестов; проверку тестов класса 2 на обработку ошибок.
+\end{itemize}
+
+\section{Описание устройства}
+
+В листинге \ref{code:lab6_2} приведено описание тестируемого устройства, включающего параметризированное описание $N$-разрядного последовательного умножителя, осуществляющего умножение младшими разрядами вперед со сдвигом множимого.
+\lstinputlisting[caption=\code{lab6_2.v}, label=code:lab6_2]{lab6_2.v}
+
+\section{Описание тестов}
+\label{sec:tests}
+
+\subsection{Тест первого класса}
+
+В листинге \ref{code:test1} приведено описание теста первого класса.
+\lstinputlisting[caption=\code{tb1_labs_13.v}, label=code:test1]{tb1_labs_13.v}
+
+В листинге \ref{code:test1_results} приведен вывод результатов теста в файл.
+\lstinputlisting[caption=\code{tb1_.dat}, label=code:test1_results, style=console, linerange={1-5, 10-14}]{tb1_.dat}
+
+На рис. \ref{fig:test1_results} изображена временная диаграмма теста.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{test1_results}
+		\caption{Результаты теста первого класса}
+		\label{fig:test1_results}
+	\end{center}
+\end{figure}
+
+\subsection{Тест второго класса с вычислением результата}
+
+В листинге \ref{code:test2} приведено описание теста второго класса с вычислением результата.
+\lstinputlisting[caption=\code{tb2_labs_13.v}, label=code:test2]{tb2_labs_13.v}
+
+На рис. \ref{fig:test2_results} изображена временная диаграмма теста.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{test2_results}
+		\caption{Результаты теста второго класса с вычислением результата}
+		\label{fig:test2_results}
+	\end{center}
+\end{figure}
+
+В листинге \ref{code:test2_error} приведен вывод результатов теста в консоль при внесении ошибки в вычисление ожидаемого значения.	
+\begin{lstlisting}[caption=Результаты ошибочного теста второго класса с вычислением результата, label=code:test2_error, style=console]
+run -all
+# Expected   1, got   0 ( 0  1)
+# Expected   1, got   0 ( 0  2)
+# Expected   1, got   0 ( 0  3)
+# Expected   1, got   0 ( 0  4)
+# Expected   1, got   0 ( 0  5)
+...
+# Expected 166, got 165 (15 11)
+# Expected 181, got 180 (15 12)
+# Expected 196, got 195 (15 13)
+# Expected 211, got 210 (15 14)
+# Expected 226, got 225 (15 15)
+#    Time: 25615 ns  Iteration: 1  Instance: /tb2_labs_13
+\end{lstlisting}
+
+\subsection{Тест второго класса с чтением файлов}
+
+В листинге \ref{code:test3} приведено описание теста второго класса с чтением файлов. В данном тесте на вход устройства из файла \code{input_labs_13.dat}, содержание которого приведено в листинге \ref{code:input}, подаются всевозможные значения, а ожидаемые считываются из файла \code{exp_labs_13.dat}, содержание которого приведено в листинге \ref{code:exp}. Для удобства значения в обоих файлах хранятся в шестнадцатиричном формате.
+\lstinputlisting[caption=\code{tb2f_labs_13.v}, label=code:test3]{tb2f_labs_13.v}
+\begin{multicols}{2}
+	\lstinputlisting[caption=\code{inp_labs_13.dat}, linerange={1-7}, label=code:input, style=dat]{input_labs_13.dat}	
+	\lstinputlisting[caption=\code{exp_labs_13.dat}, linerange={1-7}, label=code:exp, style=dat]{exp_labs_13.dat}
+\end{multicols}
+
+На рис. \ref{fig:test3_results} изображена временная диаграмма теста.
+\vspace{-0.5cm}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.85\textwidth]{test3_results}
+		\caption{Результаты теста второго класса с чтением файлов}
+		\label{fig:test3_results}
+	\end{center}
+\end{figure}
+\vspace{-0.5cm}
+
+В листинге \ref{code:test3_error} приведен вывод результатов теста в консоль при внесении ошибок в ожидаемые значения.
+\begin{lstlisting}[caption=Результаты ошибочного теста второго класса с чтением файлов, label=code:test3_error, style=console]
+run -all
+# Expected  16, got   9 ( 3  3)
+# Expected   9, got  64 ( 8  8)
+# Expected  64, got 225 (15 15)
+# Expected 225, got 100 (10 10)
+# Expected 100, got  30 ( 5  6)
+# Expected  30, got   0 ( 9  0)
+#    Time: 715 ns  Iteration: 1  Instance: /tb2f_labs_13
+\end{lstlisting}
+
+\section{Выводы}
+
+В ходе лабораторной работы на языке Verilog описаны тесты первого и второго классов для устройства, включающего параметризированное описание $N$-разрядного последовательного умножителя, осуществляющего умножение младшими разрядами вперед со сдвигом множимого. Тестирование разработанного устройства показало, что результаты совпадают с ожидаемыми и устройство работает верно.
+
+\end{document}

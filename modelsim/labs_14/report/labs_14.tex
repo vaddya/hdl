@@ -1,0 +1,123 @@
+\include{settings}
+
+\begin{document}
+
+\include{titlepage}
+
+\tableofcontents
+\lstlistoflistings
+\listoffigures
+\newpage
+
+\section{Задание}
+
+\begin{itemize}
+	\item Для задания \code{lab7_1} осеннего семестра на языке Verilog создать описание тестов:
+		\begin{itemize}
+			\item Тест класса 1 -- \code{tb1_labs_14.v} (значения входов, выходов и время записывать в файл используя любую команду, данные должны быть отформатированы для удобного чтения, имя файла -- \code{tb1_.dat});
+			\item Тест класса 2 с вычислением результата -- \code{tb2_labs_14.v};
+			\item Тест класса 2 с чтением файлов -- \code{tb2f_labs_14.v} (файл с тестовыми воздействиями -- \code{input_labs_14.dat}, файл с ожидаемыми результатами -- \code{exp_labs_14.dat}.
+		\end{itemize}
+
+	\item Осуществить проверку модуля с использованием всех тестов; проверку тестов класса 2 на обработку ошибок.
+\end{itemize}
+
+\section{Описание устройства}
+
+В листинге \ref{code:lab7_1} приведено описание тестируемого устройства, включающее комбинационную схему сортировки четырех $2$-разрядных чисел с использование задачи сортировки двух чисел.
+\lstinputlisting[caption=\code{lab7_1.v}, label=code:lab7_1]{lab7_1.v}
+
+\section{Описание тестов}
+\label{sec:tests}
+
+\subsection{Тест первого класса}
+
+В листинге \ref{code:test1} приведено описание теста первого класса.
+\lstinputlisting[caption=\code{tb1_labs_14.v}, label=code:test1]{tb1_labs_14.v}
+
+В листинге \ref{code:test1_results} приведен вывод результатов теста в файл.
+\lstinputlisting[caption=\code{tb1_.dat}, label=code:test1_results, style=console, linerange={1-6, 100-104, 251-256}]{tb1_.dat}
+
+На рис. \ref{fig:test1_results} изображена временная диаграмма теста.
+\vspace{-0.5cm}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.84\textwidth]{test1_results}
+		\caption{Результаты теста первого класса}
+		\label{fig:test1_results}
+	\end{center}
+\end{figure}
+\vspace{-0.5cm}
+
+\subsection{Тест второго класса с вычислением результата}
+
+В листинге \ref{code:test2} приведено описание теста второго класса с вычислением результата.
+\lstinputlisting[caption=\code{tb2_labs_14.v}, label=code:test2]{tb2_labs_14.v}
+
+На рис. \ref{fig:test2_results} изображена временная диаграмма теста.
+\vspace{-0.5cm}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.85\textwidth]{test2_results}
+		\caption{Результаты теста второго класса с вычислением результата}
+		\label{fig:test2_results}
+	\end{center}
+\end{figure}	
+\vspace{-0.5cm}
+
+В листинге \ref{code:test2_error} приведен вывод результатов теста в консоль при внесении ошибки в вычисление ожидаемого значения.
+\begin{lstlisting}[caption=Результаты ошибочного теста второго класса с вычислением результата, label=code:test2_error, style=console]
+run -all
+# Unsorted (1 0 0 0) for (0 0 0 1)
+# Unsorted (2 0 0 0) for (0 0 0 2)
+# Unsorted (3 0 0 0) for (0 0 0 3)
+# Unsorted (1 0 0 0) for (0 0 1 0)
+# Unsorted (1 1 0 0) for (0 0 1 1)
+...
+# Unsorted (3 3 2 2) for (3 3 2 2)
+# Unsorted (3 3 3 2) for (3 3 2 3)
+# Unsorted (3 3 3 0) for (3 3 3 0)
+# Unsorted (3 3 3 1) for (3 3 3 1)
+# Unsorted (3 3 3 2) for (3 3 3 2)
+#    Time: 1280 ns  Iteration: 0  Instance: /tb2_labs_14
+\end{lstlisting}
+\vspace{-0.5cm}
+
+\subsection{Тест второго класса с чтением файлов}
+
+В листинге \ref{code:test3} приведено описание теста второго класса с чтением файлов. В данном тесте на вход устройства из файла \code{input_labs_14.dat}, содержание которого приведено в листинге \ref{code:input}, подаются всевозможные значения, а ожидаемые считываются из файла \code{exp_labs_14.dat}, содержание которого приведено в листинге \ref{code:exp}. Для удобства значения в обоих файлах хранятся в шестнадцатиричном формате.
+\lstinputlisting[caption=\code{tb2f_labs_14.v}, label=code:test3]{tb2f_labs_14.v}
+\begin{multicols}{2}
+	\lstinputlisting[caption=\code{inp_labs_14.dat}, linerange={1-7}, label=code:input, style=dat]{input_labs_14.dat}	
+	\lstinputlisting[caption=\code{exp_labs_14.dat}, linerange={1-7}, label=code:exp, style=dat]{exp_labs_14.dat}
+\end{multicols}
+
+На рис. \ref{fig:test3_results} изображена временная диаграмма теста.
+\vspace{-0.5cm}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.84\textwidth]{test3_results}
+		\caption{Результаты теста второго класса с чтением файлов}
+		\label{fig:test3_results}
+	\end{center}
+\end{figure}
+\vspace{-0.5cm}
+
+В листинге \ref{code:test3_error} приведен вывод результатов теста в консоль при внесении ошибок в ожидаемые значения.
+\begin{lstlisting}[caption=Результаты ошибочного теста второго класса с чтением файлов, label=code:test3_error, style=console]
+run -all
+# Expected (2 1 1 0), got (0 0 0 0)
+# Expected (0 0 0 0), got (3 0 0 0)
+# Expected (3 0 0 0), got (2 2 1 0)
+# Expected (2 2 1 0), got (3 2 1 0)
+# Expected (3 2 1 0), got (2 2 2 0)
+# Expected (2 2 2 0), got (3 3 3 2)
+# Expected (3 3 3 2), got (2 1 1 0)
+#    Time: 50 ns  Iteration: 0  Instance: /tb2f_labs_14
+\end{lstlisting}
+
+\section{Выводы}
+
+В ходе лабораторной работы на языке Verilog описаны тесты первого и второго классов для устройства, включающее комбинационную схему сортировки четырех $2$-разрядных чисел с использование задачи сортировки двух чисел. Тестирование разработанного устройства показало, что результаты совпадают с ожидаемыми и устройство работает верно.
+
+\end{document}
