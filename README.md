@@ -10,4 +10,5 @@
 6. Contact Bounce Analysis `lab_cb`
 7. In-System Sources and Probe Editor `lab_isspe`
 8. In-System Memory Content Editor `lab_ismce`
-9. ModelSim Labs `modelsim`
+9. ModelSim Simulations `modelsim`
+10. Qsys & NIOS II `nios`
