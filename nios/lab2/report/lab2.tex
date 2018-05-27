@@ -1,0 +1,135 @@
+\include{settings}
+
+\begin{document}
+
+\include{titlepage}
+
+\tableofcontents
+\lstlistoflistings
+\listoffigures
+\newpage
+
+\section{Цель}
+
+\noindent Познакомиться с процедурой реализации проекта на базе процессора NIOSII.
+
+\section{Выполнение работы}
+
+\subsection{Создание аппаратной части проекта}
+
+Запустим в Qsys (Platform Designer) вкладку System Contents. Автоматически добавлен компонент source clock. Зададим ему частоту 25 МГц и переименуем в \code{clk}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{1}
+	\caption{System Contents}
+\end{figure}
+
+Создадим на основе встроенных модулей М9К память для команд и данных процессора. Переименуем компонент в \code{onchip_mem} и установим опцию Enable non-default initialization file.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{2}
+	\caption{Создание встроенных модулей памяти}
+\end{figure}
+
+Соединим выход \code{clk} компонента \code{clk} с входом \code{clk1} компонента \code{onchip_mem}, а выход \code{clk_reset} компонента \code{clk} с входом \code{reset1} компонента \code{onchip_mem}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{3}
+	\caption{Соединение компонентов}
+\end{figure}
+
+Сконфигурируем и подключим к системе ядра процессора NIOSII. Переименуем компонент в \code{nios2_qsys} и соединим вход \code{clk} компонента \code{nios2_qsys} с выходом \code{clk1} компонента \code{clk}, а выход \code{clk_reset} компонента \code{clk} с входом \code{reset_n} компонента \code{nios2_qsys}. Соединим вход \code{s1} компонента \code{onchip_mem} с выходами \code{data_master} и \code{instruction_master} компонента \code{nios2_qsys}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{4}
+	\caption{Соединение компонентов}
+\end{figure}
+
+Укажем память для вектора сброса и вектора Exception.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{5}
+	\caption{Память для NIOSII}
+\end{figure}
+
+Сконфигурируем и подключим к системе модуль PIO (параллельного ввода вывода). Переименуем компонент в \code{led}. Соединим вход \code{clk} компонента \code{led} с выходом \code{clk1} компонента \code{clk}, а выход \code{clk_reset} компонента \code{clk} с входом \code{reset} компонента \code{led}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{6}
+	\caption{Соединение компонентов}
+\end{figure}
+
+Сконфигурируем и подключим к системе еще один модуль PIO. Переименуем компонент в \code{buttons}. Соединим вход \code{clk} компонента \code{buttons} с выходом \code{clk1} компонента \code{clk}, а выход \code{clk_reset} компонента \code{clk} с входом \code{reset} компонента \code{buttons}. Соединим вход \code{s1} компонента \code{buttons} с выходами \code{data_master} и \code{instruction_master} компонента \code{nios2_qsys}. Итоговый вид таблицы System Contents:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{7}
+	\caption{System Contents}
+\end{figure}
+
+Итоговый вид Address Map:
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{8}
+	\caption{Address Map}
+\end{figure}
+
+Сгенерируем Verilog описание созданной системы:
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{9}
+	\caption{Generate}
+\end{figure}
+
+\subsection{Интеграция аппаратной части проекта}
+
+Введем проект, содержащий созданную систему, в графическом редакторе.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{10}
+	\caption{\code{lab2.bdf}}
+\end{figure}
+
+Подключим файл с описанием созданной в Qsys системы к проекту и выполним компиляцию проекта.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{11}
+	\caption{Результат компиляции}
+\end{figure}
+
+Назначим выводы проекта.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{12}
+	\caption{Назначение выводов проекта}
+\end{figure}
+
+Интеграция аппаратной части проекта и задание установок проекта завершено.
+
+\subsection{Создание программной части проекта}
+
+Откроем NiosII Software Build Tools for Eclipse и создадим проект с помощью шаблона.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{13}
+	\caption{Создание проекта в NiosII Software Build Tools}
+\end{figure}
+
+Создадим новый файл с исходным кодом. В листинге \ref{code:2} приведен код на языке C.
+\lstinputlisting[caption=\code{lab2_source.c}, label=code:2]{software/lab2_sw/lab2_source.c}
+
+Обновим настройки проекта и запустим Build.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{14}
+	\caption{Build}
+\end{figure}
+
+\subsection{Конфигурирование СБИС}
+
+Подключим плату к компьютеру и выполним загрузку программы на плату. Нажатие кнопки \code{pb_left} или \code{pb_right} запускает светодиоды в последовательности \code{0, 1, ..., 7, 1, ...}. Программа работает правильно.
+
+\section{Выводы}
+
+В ходе данной работы были изучены основы построения проекта на базе процессора NIOSII. Сначала был создан проект в QII и настроена аппаратная часть с помощью SOPC Builder, затем аппаратная часть была интегрирована в проект как объект symbol в файл .bdf. Программная часть проекта была создана с помощью NIOSII IDE на языке C. После подключения программной части была выполнена полная компиляция проекта и его проверка на плате. 
+
+\end{document}
