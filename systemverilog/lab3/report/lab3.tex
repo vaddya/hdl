@@ -1,0 +1,98 @@
+\include{settings}
+
+\begin{document}
+
+\include{titlepage}
+
+\tableofcontents
+\listoffigures
+\lstlistoflistings
+\newpage
+
+\section{Задание}
+
+На языке SystemVerilog опишите устройство, включающее:
+\begin{itemize}
+	\item Счетчик-делитель, обеспечивает счет по модулю \code{N} (базовое значение -- \code{3}) и формирование синхронного сигнала переноса (активный уровень сигнала -- \code{1}, длительность один такт тактовой частоты) по достижению счетчиком значения \code{N-1}.
+	\item Конечный автомат, граф переходов которого приведен на рис \ref{fig:lab5_2_0}.
+		\vspace{-0.5cm}
+		\begin{figure}[H]
+		\begin{center}
+			\includegraphics[scale=0.7]{lab5_2_0}
+			\caption{Конечный автомат}
+			\label{fig:lab5_2_0}
+		\end{center}
+		\end{figure}
+		\vspace{-1cm}
+		\begin{itemize}
+			\item В узлах автомата указано значение выходов автомата;
+			\item \code{in1}, \code{in2} – входные сигналы автомата;
+			\item Имена состояний автомата выбираются самостоятельно;
+			\item Автомат имеет вход асинхронного сброса (сигнал \code{rst}) в состояние, в котором выходные сигналы \code{000}: при \code{rst = 0} – асинхронный сброс;
+			\item Автомат имеет вход разрешения работы -- \code{ena} (при \code{ena = 1} – работа разрешена), подключенный к сигналу переноса счетчика-делителя.
+		\end{itemize}	
+	\item Входы:
+		\begin{itemize}
+			\item Переключатель \code{sw[1]} -- вход \code{in1};
+			\item Переключатель \code{sw[2]} – вход \code{in2};
+			\item Кнопка \code{pba} – вход асинхронного сброса (кнопка нажата -- сброс);
+			\item Тактовый сигнал (\code{clk}) подается от тактового генератора (см. описание стенда). Частота тактового сигнала – 25МГц.
+		\end{itemize}		
+	\item Выходы: светодиоды \code{led[2:0]} -- выходы автомата.
+\end{itemize}
+
+\section{Код на языке SystemVerilog}
+
+В листинге \ref{code:2} приведен код программы на языке SystemVerilog.
+
+\lstinputlisting[caption=lab5\_2.sv, label=code:2]{lab5_2.sv}
+\vspace{-0.5cm}
+
+\section{Результаты синтеза}
+
+На рис. \ref{fig:lab5_2_rtl} приведено изображение синтезированной схемы в RLT Viewer.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\textwidth]{lab5_2_rtl}
+	\caption{Результат синтеза в RLT Viewer}
+	\label{fig:lab5_2_rtl}
+\end{center}
+\end{figure}
+
+\newpage
+
+\section{Результаты моделирования}
+\label{sec:lab5_2_modeling}
+
+На рис. \ref{fig:lab5_2_modeling} изображена временная диаграмма работы синтезированного устройства.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\textwidth]{lab5_2_modeling}
+	\caption{Результаты моделирования}
+	\label{fig:lab5_2_modeling}
+\end{center}
+\end{figure}
+
+\section{Назначение выводов СБИС}
+
+На рис. \ref{fig:lab5_2_pins} приведены назначения выводов СБИС в Pin Planner.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics{lab5_2_pins}
+	\caption{Таблица назначений в Pin Planer}
+	\label{fig:lab5_2_pins}
+\end{center}
+\end{figure}
+
+\section{Результаты проверки на плате}
+
+Для тестирования проекта на плате были использованы тесты, описанные в пункте \ref{sec:lab5_2_modeling}. Результаты тестирования совпадают с ожидаемыми, следовательно, устройство работает верно.
+
+\section{Выводы}
+
+Реализовано устройство, содержащее счетчик-делитель и конечный автомат. Результаты моделирования и тестирования на плате показали, что разработанное устройство работает верно.
+
+\end{document}

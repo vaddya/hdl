@@ -1,0 +1,153 @@
+\include{settings}
+
+\begin{document}
+
+\include{titlepage}
+
+\tableofcontents
+\listoffigures
+\lstlistoflistings
+\newpage
+
+\section{Задание}
+
+На языке SystemVerilog создайте структурное описание параметризированного устройства (параметр \code{INV = 1} -- инверсия выходных данных), приведенного на рис. \ref{fig:elab7_1_0}.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=0.71\textwidth]{elab7_1_0}
+	\caption{Параметризированное устройство}
+	\label{fig:elab7_1_0}
+\end{center}
+\end{figure}
+\vspace{-0.5cm}
+
+В состав устройства входят:
+\begin{itemize}
+	\item \code{cnt_d} -- cчетчик делитель (параметр -- \code{DIV}), обеспечивающий счет по модулю \code{DIV} (базовое значение -- $3$) и формирование синхронного сигнала переноса (активный уровень сигнала -- $1$, длительность один такт тактовой частоты) по достижению счетчиком значения \code{DIV - 1}.
+	\item \code{data} -- формирователь данных для модуля памяти (реализован на базе параметризированного счетчика \code{cnt_N}).
+	\item \code{adr} -- формирователь адреса для модуля памяти (реализован на базе параметризированного счетчика \code{cnt_N}).
+	\item \code{RAM} -- модуль памяти (параметры: \code{word_num} -- число слов (базовое значение $16$), \code{data_W} -- разрядность данных (базовое значение $4$); простая одно портовая память с чтением новых данных в процессе записи):
+		\begin{itemize}
+			\item Для расчета разрядности шины адреса следует использовать функцию с постоянным значением для вычисления $\log_2($\code{word_num}$)$;
+			\item Вход \code{wre} – вход разрешения записи ($=1$ -- запись в память разрешена);
+			\item Модуль памяти должен быть инициализирован данными: \code{4'h0} -- четные адреса; \code{4'hf} -- нечетные адреса.
+		\end{itemize}
+	\item \code{cnt_N} -- двоичный счетчик на сложение с параметризированной разрядностью (параметр \code{N}, базовое значение -- $4$), имеющий вход тактовых сигналов (\code{clk}), вход разрешения работы (\code{ena}), вход асинхронного сброса (\code{rst}) и выход -- \code{q[N-1:0]}.
+	\item Входы:
+		\begin{itemize}
+			\item Кнопка \code{pbb} -- вход асинхронного сброса (кнопка нажата – сброс);
+			\item Кнопка \code{pba} -- вход разрешения записи в память (кнопка нажата – запись разрешена);
+			\item Тактовый сигнал (\code{clk}) подается от тактового генератора. Частота тактового сигнала -- 25МГц.
+		\end{itemize}
+	\item Выходы: светодиоды \code{led[3:0]} -- выходы устройства.
+\end{itemize}
+
+\section{Код на языке SystemVerilog}
+
+В листингах \ref{code:4} -- \ref{code:7} приведен код программы на языке SystemVerilog.
+
+\lstinputlisting[caption=elab7\_1.sv, label=code:4]{elab7_1.sv}
+
+\lstinputlisting[caption=cnt\_d.sv, label=code:5]{cnt_d.sv}
+
+\lstinputlisting[caption=cnt\_N.sv, label=code:6]{cnt_N.sv}
+
+\lstinputlisting[caption=RAM.sv, label=code:7]{RAM.sv}
+
+\section{Результаты синтеза}
+
+На рис. \ref{fig:elab7_1_rtl} -- \ref{fig:elab7_1_rtl_3} приведены изображения синтезированного устройства и каждого модуля по отдельности в RLT Viewer.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\textwidth]{elab7_1_rtl}
+	\caption{Результат синтеза устройства в RLT Viewer}
+	\label{fig:elab7_1_rtl}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=1\textwidth]{elab7_1_rtl_1}
+	\caption{Результат синтеза \code{cnt_div} в RLT Viewer}
+	\label{fig:elab7_1_rtl_1}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=0.7\textwidth]{elab7_1_rtl_2}
+	\caption{Результат синтеза \code{cnt_addr} в RLT Viewer}
+	\label{fig:elab7_1_rtl_2}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=0.7\textwidth]{elab7_1_rtl_3}
+	\caption{Результат синтеза \code{cnt_data} в RLT Viewer}
+	\label{fig:elab7_1_rtl_3}
+\end{center}
+\end{figure}
+
+\section{Результаты моделирования}
+\label{sec:elab7_1_modeling}
+
+На рис. \ref{fig:elab7_1_modeling_1} -- \ref{fig:elab7_1_modeling} изображены временные диаграммы работы каждого модуля по отдельности и всего синтезированного устройства при \code{DIV = 3},\\ \code{N = 4}, \code{word_num = 16}, \code{data_W = 4}, \code{INV = 0}.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\textwidth]{elab7_1_modeling_1}
+	\caption{Результаты моделирования модуля \code{cnt_d}}
+	\label{fig:elab7_1_modeling_1}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\textwidth]{elab7_1_modeling_2}
+	\caption{Результаты моделирования модуля \code{cnt_N}}
+	\label{fig:elab7_1_modeling_2}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\textwidth]{elab7_1_modeling_3}
+	\caption{Результаты моделирования модуля \code{RAM}}
+	\label{fig:elab7_1_modeling_3}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\textwidth]{elab7_1_modeling}
+	\caption{Результаты моделирования устройства}
+	\label{fig:elab7_1_modeling}
+\end{center}
+\end{figure}
+
+При моделировании устройства при активном уровне \code{pba} происходит запись в память, а при активном уровне \code{pbb} происходит асинхронный сброс. Сначала происходит чтение начальных данных, затем запись в память, после чего происходит асинхронный сброс и чтение записанных ранее данных.
+
+\section{Назначение выводов СБИС}
+
+На рис. \ref{fig:elab7_1_pins} приведены назначения выводов СБИС в Pin Planner.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics{elab7_1_pins}
+	\caption{Таблица назначений в Pin Planer}
+	\label{fig:elab7_1_pins}
+\end{center}
+\end{figure}
+
+\section{Результаты проверки на плате}
+
+Для тестирования проекта на плате были использованы тесты, описанные в пункте \ref{sec:elab7_1_modeling} при параметрах \code{DIV = 25_000_000}, \code{N = 4}, \code{word_num = 16}, \code{data_W = 4}, \code{INV = 1}. Результаты тестирования совпадают с ожидаемыми, следовательно, устройство работает верно.
+
+\section{Выводы}
+
+Реализовано описание параметризированного устройства, включающего счетчик-делитель, формирователи данных и адреса, модуль памяти и двоичный счетчик на сложение. Результаты моделирования и тестирования на плате показали, что разработанное устройство работает верно.
+
+\end{document}

@@ -1,0 +1,110 @@
+\include{settings}
+
+\begin{document}
+
+\include{titlepage}
+
+\tableofcontents
+\listoffigures
+\lstlistoflistings
+\newpage
+
+\section{Задание}
+
+На языке SystemVerilog опишите устройство, включающее:
+\begin{itemize}
+	\item Счетчик-делитель, обеспечивающий счет по модулю \code{25 000 000} и формирующий синхронный сигнал переноса (активный уровень сигнала \code{= 1}, длительность один такт тактовой частоты) по достижению счетчиком значения \code{25 000 000 - 1}.
+	\item Двоичный, 4-разрядный, счетчик, алгоритм работы, которого задан приведенной ниже таблицей.
+\vspace{-0.5cm}
+\begin{table}[H]
+\begin{center}
+	\def\tabcolsep{13pt}
+	\caption{Алгоритм работы счетчика}
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+	\hline	
+	\code{aset} & \code{ena} & \code{sclr} & \code{load} & \code{dir} & \code{din} & \code{q} \\ 
+	\hline
+	\code{0} & \code{X} & \code{X} & \code{X} & \code{X} & \code{X} & Асинхронная установка \\
+	\hline
+	\code{1} & \code{0} & \code{X} & \code{X} & \code{X} & \code{X} & Хранение \\
+	\hline
+	\code{1} & \code{1} & \code{0} & \code{X} & \code{X} & \code{X} & Синхронный сброс в \code{0} \\
+	\hline
+	\code{1} & \code{1} & \code{1} & \code{1} & \code{X} & \code{din} & Запись \code{din} \\
+	\hline
+	\code{1} & \code{1} & \code{1} & \code{0} & \code{1} & \code{X} & Счет \code{+} \\
+	\hline
+	\code{1} & \code{1} & \code{1} & \code{0} & \code{0} & \code{X} & Счет \code{-} \\
+	\hline
+	\end{tabular}
+\end{center}
+\end{table}	
+\vspace{-0.5cm}
+	\item Входы:
+		\begin{itemize}
+			\item Кнопка \code{pba} -- асинхронная установка (установка при нажатии на кнопку). Соединена с входом \code{aset} 4-разрядного счетчика.
+			\item Кнопка \code{pbb} -- синхронный сброс (сброс при нажатии на кнопку). Соединена с входом \code{sclr} 4-разрядного счетчика.
+			\item Переключатель \code{sw[1]} -- управление загрузкой счетчика. Соединен с входом \code{load} 4-разрядного счетчика.
+			\item Переключатель \code{sw[0]} -- управление направлением счета. Соединен с входом \code{dir} 4-разрядного счетчика.
+			\item Переключатели \code{sw[7:4]} -- загружаемые данные. Соединены с входом \code{din} 4-разрядного счетчика.
+			\item Тактовый сигнал (\code{clk}) подается от тактового генератора (см. описание стенда). Частота тактового сигнала – 25МГц.
+		\end{itemize}
+	\item Выходы: светодиоды \code{led[7:4]} (двоичного 4-разрядного счетчика).
+\end{itemize}
+
+\section{Код на языке SystemVerilog}
+
+В листинге \ref{code:1} приведен код программы на языке Verilog.
+
+\lstinputlisting[caption=lab4\_1.sv, label=code:1]{lab4_1.sv}
+
+\newpage
+
+\section{Результаты синтеза}
+
+На рис. \ref{fig:lab4_1_rtl} приведено изображение синтезированной схемы в RLT Viewer.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\textwidth]{lab4_1_rtl}
+	\caption{Результат синтеза в RLT Viewer}
+	\label{fig:lab4_1_rtl}
+\end{center}
+\end{figure}
+
+\section{Результаты моделирования}
+\label{sec:lab4_1_modeling}
+
+На рис. \ref{fig:lab4_1_modeling} изображена временная диаграмма работы синтезированного устройства.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\textwidth]{lab4_1_modeling}
+	\caption{Результаты моделирования}
+	\label{fig:lab4_1_modeling}
+\end{center}
+\end{figure}
+
+\newpage
+
+\section{Назначение выводов СБИС}
+
+На рис. \ref{fig:lab4_1_pins} приведены назначения выводов СБИС в Pin Planner.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics{lab4_1_pins}
+	\caption{Таблица назначений в Pin Planer}
+	\label{fig:lab4_1_pins}
+\end{center}
+\end{figure}
+
+\section{Результаты проверки на плате}
+
+Для тестирования проекта на плате были использованы тесты, описанные в пункте \ref{sec:lab4_1_modeling}. Результаты тестирования совпадают с ожидаемыми, следовательно, устройство работает верно.
+
+\section{Выводы}
+
+Реализовано устройство, содержащее счетчик-делитель и двоичный 4-разрядный счетчик с заданным алгоритмом работы. В описании использовались операторы Concatenate и case. Результаты моделирования и тестирования на плате показали, что разработанное устройство работает верно.
+
+\end{document}

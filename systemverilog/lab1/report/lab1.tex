@@ -1,0 +1,83 @@
+\include{settings}
+
+\begin{document}
+
+\include{titlepage}
+
+\tableofcontents
+\listoffigures
+\lstlistoflistings
+\newpage
+
+\section{Задание}
+
+На языке SystemVerilog опишите мажоритарное устройство с тремя 2-х разрядными входами:
+\begin{itemize}
+	\item Алгоритм: устройство анализирует три 2-х разрядных входа
+		\begin{itemize}
+			\item Если любые два (или все три) входа имеют одинаковое значение, то оно передается на информационный выход устройства, при этом формируется признак достоверности данных
+				\begin{itemize}
+					\item[$\circ$] \code{= 2}, если значения любых двух входов были одинаковыми;
+					\item[$\circ$] \code{= 3}, если значения трех входов были одинаковыми.
+				\end{itemize}
+			\item Если все входы имеют разное значение, то на информационном выходе устройства может формироваться произвольное значение, при этом формируется признак достоверности данных \code{= 0}.
+		\end{itemize}
+	\item Входы: переключатели \code{sw[5:4]}, \code{sw[3:2]}, \code{sw[1:0]} - для трех 2-х разрядных чисел.
+	\item Выходы:
+		\begin{itemize}
+			\item светодиоды \code{led[1:0]} -- информационные выходы;
+			\item светодиоды \code{led[3:2]} -- выходы признака достоверности данных.
+		\end{itemize}
+\end{itemize}
+
+\section{Код на языке SystemVerilog}
+
+В листинге \ref{code:4} приведен код программы на языке SystemVerilog.
+
+\lstinputlisting[caption=lab3\_4.sv, label=code:4]{lab3_4.sv}
+
+\section{Результаты синтеза}
+
+На рис. \ref{fig:lab3_4_rtl} приведено изображение синтезированной схемы в RLT Viewer.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\linewidth]{lab3_4_rtl}
+	\caption{Результат синтеза в RLT Viewer}
+	\label{fig:lab3_4_rtl}
+\end{center}
+\end{figure}
+
+\section{Результаты моделирования}
+\label{sec:lab3_4_modeling}
+
+На рис. \ref{fig:lab3_4_modeling} изображена временная диаграмма работы синтезированного устройства. На вход устройства поочередно подаются случайные значения \code{a[1:0]}, \code{b[1:0]} и \code{c[1:0]}, признаки достоверности записываются в \code{flags[1:0]}, а мажоритарное значение (если значения хотя бы двух входов одинаковы) в \code{major[1:0]}.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\linewidth]{lab3_4_modeling}
+	\caption{Результаты моделирования}
+	\label{fig:lab3_4_modeling}
+\end{center}
+\end{figure}
+
+\section{Назначение выводов СБИС}
+
+На рис. \ref{fig:lab3_4_pins} приведены назначения выводов СБИС в Pin Planner.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics{lab3_4_pins}
+	\caption{Таблица назначений в Pin Planer}
+	\label{fig:lab3_4_pins}
+\end{center}
+\end{figure}
+
+\section{Результаты проверки на плате}
+
+Для тестирования проекта на плате были использованы тесты, описанные в пункте \ref{sec:lab3_4_modeling}. Результаты тестирования совпадают с ожидаемыми, следовательно, устройство работает верно.
+
+\section{Выводы}
+
+Реализовано мажоритарное устройство с тремя 2-х разрядными входами. Результаты моделирования и тестирования на плате показали, что разработанное устройство работает верно.
+\end{document}

@@ -12,3 +12,4 @@
 8. In-System Memory Content Editor `lab_ismce`
 9. ModelSim Simulations `modelsim`
 10. Qsys & NIOS II `nios`
+11. Development of a data transmission device `transmittor`
