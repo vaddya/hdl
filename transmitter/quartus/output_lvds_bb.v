@@ -1,10 +1,10 @@
-// megafunction wizard: %ALTLVDS_TX%
+// megafunction wizard: %ALTLVDS_TX%VBB%
 // GENERATION: STANDARD
 // VERSION: WM1.0
 // MODULE: ALTLVDS_TX 
 
 // ============================================================
-// File Name: lvds_transmitter.v
+// File Name: output_lvds.v
 // Megafunction Name(s):
 // 			ALTLVDS_TX
 //
@@ -16,7 +16,6 @@
 //
 // 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 // ************************************************************
-
 
 //Copyright (C) 2017  Intel Corporation. All rights reserved.
 //Your use of Intel Corporation's design tools, logic functions 
@@ -32,70 +31,16 @@
 //Intel and sold by Intel or its authorized distributors.  Please
 //refer to the applicable agreement for further details.
 
-
-// synopsys translate_off
-`timescale 1 ps / 1 ps
-// synopsys translate_on
-module lvds_transmitter (
+module output_lvds (
 	tx_in,
 	tx_inclock,
+	tx_syncclock,
 	tx_out);
 
 	input	[7:0]  tx_in;
 	input	  tx_inclock;
+	input	  tx_syncclock;
 	output	[1:0]  tx_out;
-
-	wire [1:0] sub_wire0;
-	wire [1:0] tx_out = sub_wire0[1:0];
-
-	altlvds_tx	ALTLVDS_TX_component (
-				.tx_in (tx_in),
-				.tx_inclock (tx_inclock),
-				.tx_out (sub_wire0),
-				.pll_areset (1'b0),
-				.sync_inclock (1'b0),
-				.tx_coreclock (),
-				.tx_data_reset (1'b0),
-				.tx_enable (1'b1),
-				.tx_locked (),
-				.tx_outclock (),
-				.tx_pll_enable (1'b1),
-				.tx_syncclock (1'b0));
-	defparam
-		ALTLVDS_TX_component.center_align_msb = "UNUSED",
-		ALTLVDS_TX_component.common_rx_tx_pll = "OFF",
-		ALTLVDS_TX_component.coreclock_divide_by = 2,
-		ALTLVDS_TX_component.data_rate = "600.0 Mbps",
-		ALTLVDS_TX_component.deserialization_factor = 4,
-		ALTLVDS_TX_component.differential_drive = 0,
-		ALTLVDS_TX_component.enable_clock_pin_mode = "UNUSED",
-		ALTLVDS_TX_component.implement_in_les = "ON",
-		ALTLVDS_TX_component.inclock_boost = 0,
-		ALTLVDS_TX_component.inclock_data_alignment = "EDGE_ALIGNED",
-		ALTLVDS_TX_component.inclock_period = 100000,
-		ALTLVDS_TX_component.inclock_phase_shift = 0,
-		ALTLVDS_TX_component.intended_device_family = "Cyclone IV E",
-		ALTLVDS_TX_component.lpm_hint = "CBX_MODULE_PREFIX=lvds_transmitter",
-		ALTLVDS_TX_component.lpm_type = "altlvds_tx",
-		ALTLVDS_TX_component.multi_clock = "OFF",
-		ALTLVDS_TX_component.number_of_channels = 2,
-		ALTLVDS_TX_component.outclock_alignment = "EDGE_ALIGNED",
-		ALTLVDS_TX_component.outclock_divide_by = 1,
-		ALTLVDS_TX_component.outclock_duty_cycle = 50,
-		ALTLVDS_TX_component.outclock_multiply_by = 1,
-		ALTLVDS_TX_component.outclock_phase_shift = 0,
-		ALTLVDS_TX_component.outclock_resource = "AUTO",
-		ALTLVDS_TX_component.output_data_rate = 600,
-		ALTLVDS_TX_component.pll_compensation_mode = "AUTO",
-		ALTLVDS_TX_component.pll_self_reset_on_loss_lock = "OFF",
-		ALTLVDS_TX_component.preemphasis_setting = 0,
-		ALTLVDS_TX_component.refclk_frequency = "UNUSED",
-		ALTLVDS_TX_component.registered_input = "TX_CORECLK",
-		ALTLVDS_TX_component.use_external_pll = "OFF",
-		ALTLVDS_TX_component.use_no_phase_shift = "ON",
-		ALTLVDS_TX_component.vod_setting = 0,
-		ALTLVDS_TX_component.clk_src_is_pll = "off";
-
 
 endmodule
 
@@ -108,7 +53,7 @@ endmodule
 // Retrieval info: PRIVATE: CNX_COMMON_PLL NUMERIC "0"
 // Retrieval info: PRIVATE: CNX_DATA_RATE STRING "600.0"
 // Retrieval info: PRIVATE: CNX_DESER_FACTOR NUMERIC "4"
-// Retrieval info: PRIVATE: CNX_EXT_PLL STRING "OFF"
+// Retrieval info: PRIVATE: CNX_EXT_PLL STRING "ON"
 // Retrieval info: PRIVATE: CNX_LE_SERDES STRING "ON"
 // Retrieval info: PRIVATE: CNX_NUM_CHANNEL NUMERIC "2"
 // Retrieval info: PRIVATE: CNX_OUTCLOCK_DIVIDE_BY NUMERIC "1"
@@ -123,9 +68,9 @@ endmodule
 // Retrieval info: PRIVATE: CNX_USE_PLL_ENABLE NUMERIC "0"
 // Retrieval info: PRIVATE: CNX_USE_TX_OUT_PHASE NUMERIC "1"
 // Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone IV E"
-// Retrieval info: PRIVATE: pCNX_OUTCLK_ALIGN STRING "UNUSED"
+// Retrieval info: PRIVATE: pCNX_OUTCLK_ALIGN STRING "EDGE_ALIGNED"
 // Retrieval info: PRIVATE: pINCLOCK_PHASE_SHIFT STRING "0.00"
-// Retrieval info: PRIVATE: pOUTCLOCK_PHASE_SHIFT STRING "0.00"
+// Retrieval info: PRIVATE: pOUTCLOCK_PHASE_SHIFT NUMERIC "0"
 // Retrieval info: CONSTANT: CENTER_ALIGN_MSB STRING "UNUSED"
 // Retrieval info: CONSTANT: COMMON_RX_TX_PLL STRING "OFF"
 // Retrieval info: CONSTANT: CORECLOCK_DIVIDE_BY NUMERIC "2"
@@ -155,8 +100,8 @@ endmodule
 // Retrieval info: CONSTANT: PLL_SELF_RESET_ON_LOSS_LOCK STRING "OFF"
 // Retrieval info: CONSTANT: PREEMPHASIS_SETTING NUMERIC "0"
 // Retrieval info: CONSTANT: REFCLK_FREQUENCY STRING "UNUSED"
-// Retrieval info: CONSTANT: REGISTERED_INPUT STRING "TX_CORECLK"
-// Retrieval info: CONSTANT: USE_EXTERNAL_PLL STRING "OFF"
+// Retrieval info: CONSTANT: REGISTERED_INPUT STRING "OFF"
+// Retrieval info: CONSTANT: USE_EXTERNAL_PLL STRING "ON"
 // Retrieval info: CONSTANT: USE_NO_PHASE_SHIFT STRING "ON"
 // Retrieval info: CONSTANT: VOD_SETTING NUMERIC "0"
 // Retrieval info: USED_PORT: tx_in 0 0 8 0 INPUT NODEFVAL "tx_in[7..0]"
@@ -165,13 +110,15 @@ endmodule
 // Retrieval info: CONNECT: @tx_inclock 0 0 0 0 tx_inclock 0 0 0 0
 // Retrieval info: USED_PORT: tx_out 0 0 2 0 OUTPUT NODEFVAL "tx_out[1..0]"
 // Retrieval info: CONNECT: tx_out 0 0 2 0 @tx_out 0 0 2 0
-// Retrieval info: GEN_FILE: TYPE_NORMAL lvds_transmitter.v TRUE FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL lvds_transmitter.qip TRUE FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL lvds_transmitter.bsf TRUE TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL lvds_transmitter_inst.v TRUE TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL lvds_transmitter_bb.v TRUE TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL lvds_transmitter.inc TRUE TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL lvds_transmitter.cmp TRUE TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL lvds_transmitter.ppf TRUE FALSE
+// Retrieval info: USED_PORT: tx_syncclock 0 0 0 0 INPUT NODEFVAL "tx_syncclock"
+// Retrieval info: CONNECT: @tx_syncclock 0 0 0 0 tx_syncclock 0 0 0 0
+// Retrieval info: GEN_FILE: TYPE_NORMAL output_lvds.v TRUE FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL output_lvds.qip TRUE FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL output_lvds.bsf TRUE TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL output_lvds_inst.v TRUE TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL output_lvds_bb.v TRUE TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL output_lvds.inc TRUE TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL output_lvds.cmp TRUE TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL output_lvds.ppf TRUE FALSE
 // Retrieval info: LIB_FILE: altera_mf
 // Retrieval info: CBX_MODULE_PREFIX: ON

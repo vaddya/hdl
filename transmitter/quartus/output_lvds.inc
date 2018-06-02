@@ -13,11 +13,13 @@
 --refer to the applicable agreement for further details.
 
 
-component lvds_transmitter
-	PORT
-	(
-		tx_in		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-		tx_inclock		: IN STD_LOGIC ;
-		tx_out		: OUT STD_LOGIC_VECTOR (1 DOWNTO 0)
-	);
-end component;
+FUNCTION output_lvds 
+(
+	tx_in[7..0],
+	tx_inclock,
+	tx_syncclock
+)
+
+RETURNS (
+	tx_out[1..0]
+);
