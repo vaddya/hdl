@@ -31,7 +31,7 @@ end
 always @ (posedge clk, negedge arst) begin	
 	if (!arst) 
 		counter <= 2'd0;
-	else if (input_ready == 1 && sel == 2'd0)
+	else if (input_ready == 1 && sel == 2'b00)
 		counter <= counter + 2'd1;
 	else if (counter == LENGTH)
 		counter <= 2'd0;
@@ -45,7 +45,7 @@ always @ (posedge clk, negedge arst) begin
 	else case (sel)
 		2'b00: sel <= 2'b01;
 		2'b01: sel <= read_req ? 2'b10 : 2'b00;
-		2'b10: sel <= read_req ? sel : 2'b00;
+		2'b10: sel <= read_req ? 2'b10 : 2'b00;
 	endcase
 end
 

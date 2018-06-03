@@ -10,13 +10,11 @@ output [7:0] output_data;
 wire read_req_flag, output_ready;
 wire [3:0] channel_num;
 wire [1:0] sel;
-wire [2:0] input_ready_mem;
+wire [2:0] channel_one_bit;
 wire [7:0] data, header, length;
 
-assign read_req = input_ready_mem & {3 {read_req_flag}};
+assign read_req = channel_one_bit & {3 {read_req_flag}};
 assign length = channel_num == 4'hF ? 8'd0 : 8'd9;
-
-assign M = channel_num == 4'hF ? 8'd0 : 8'd9;
 assign header = {4'hF, channel_num};
 
 channel_encoder cd(
@@ -25,7 +23,7 @@ channel_encoder cd(
 	.ena(!output_ready),
 	.pos(input_ready),
 	.bin(channel_num),
-	.one_bit(input_ready_mem)
+	.one_bit(channel_one_bit)
 );
 
 input_muxer im(
@@ -39,7 +37,7 @@ input_muxer im(
 control_unit cu(
 	.clk(clk),
 	.arst(arst),
-	.input_ready(|input_ready_mem),
+	.input_ready(|channel_one_bit),
 	.output_ready(output_ready),
 	.read_req(read_req_flag),
 	.sel(sel)

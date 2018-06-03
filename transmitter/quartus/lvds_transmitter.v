@@ -9,12 +9,13 @@ output [1:0] output_data;
 
 wire slow_clk, fast_clk;
 
+assign data_clk = slow_clk;
+
 output_pll op(
 	.areset(!arst),
 	.inclk0(input_clk),
-	.c0(data_clk), // c0 = 100 MHz
-	.c1(slow_clk), // c1 = 150 MHz
-	.c2(fast_clk) // c2 = 300 MHz
+	.c0(slow_clk), // c0 = 150 MHz
+	.c1(fast_clk) // c1 = 300 MHz
 );
 	
 output_lvds ol(
