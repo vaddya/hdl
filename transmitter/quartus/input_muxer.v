@@ -8,12 +8,12 @@ output reg [7:0] output_data;
 
 always @ (posedge clk, negedge arst) begin
 	if (!arst)
-		output_data <= 8'h0000;
+		output_data <= 8'h00;
 	else case (channel)
 		4'h1: output_data <= input_data[7:0];
 		4'h2: output_data <= input_data[15:8];
 		4'h3: output_data <= input_data[23:16];
-		default: output_data <= 8'h0000;
+		default: output_data <= 8'hEE;
 	endcase
 end
 

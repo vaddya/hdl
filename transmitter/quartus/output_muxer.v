@@ -13,7 +13,7 @@ always @ (posedge clk, negedge arst) begin
 		2'b00: output_data <= header;
 		2'b01: output_data <= length;
 		2'b10: output_data <= data;
-		default: output_data <= 8'h00;
+		default: output_data <= 8'hEE;
 	endcase
 end
 
