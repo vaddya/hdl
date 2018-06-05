@@ -2,7 +2,7 @@ module commutator(clk, arst, input_ready, input_data, read_req, output_data);
 
 input clk, arst;
 input [2:0] input_ready;
-input [47:0] input_data;
+input [23:0] input_data;
 
 output [2:0] read_req;
 output [7:0] output_data;

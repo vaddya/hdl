@@ -12,7 +12,7 @@ wire [7:0] comm_output_data;
 wire [23:0] buffer_output_data;
 wire data_clk;
 
-input_buffer buffer1(
+input_buffer b1(
 	.read_clk(read_clk),
 	.arst(arst),
 	.write_clk(write_clk[0]),
@@ -23,7 +23,7 @@ input_buffer buffer1(
 	.input_ready(input_ready[0])
 );
 
-input_buffer buffer2(
+input_buffer b2(
 	.read_clk(read_clk),
 	.arst(arst),
 	.write_clk(write_clk[1]),
@@ -34,7 +34,7 @@ input_buffer buffer2(
 	.input_ready(input_ready[1])
 );
 
-input_buffer buffer3(
+input_buffer b3(
 	.read_clk(read_clk),
 	.arst(arst),
 	.write_clk(write_clk[2]),

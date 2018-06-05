@@ -23,7 +23,7 @@ always @(posedge read_clk, negedge arst) begin
 	if (!arst)
 		input_ready <= 1'd0;
 	else
-		input_ready <= read_used_w > 7'd9;
+		input_ready <= read_used_w > 8'd9;
 end
 		
 endmodule

@@ -22,6 +22,7 @@ run -all
 quit -f
 
 
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -40,6 +41,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 
 
 </modelsim_script_timing>
@@ -72,7 +74,7 @@ HEADER
 	VERSION = 1;
 	TIME_UNIT = ns;
 	DATA_OFFSET = 0.0;
-	DATA_DURATION = 1000.0;
+	DATA_DURATION = 640.0;
 	SIMULATION_TIME = 0.0;
 	GRID_PHASE = 0.0;
 	GRID_PERIOD = 10.0;
@@ -99,7 +101,7 @@ SIGNAL("data_clk")
 	PARENT = "";
 }
 
-SIGNAL("in_clk")
+SIGNAL("input_clk")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -109,7 +111,7 @@ SIGNAL("in_clk")
 	PARENT = "";
 }
 
-SIGNAL("in_data")
+SIGNAL("input_data")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = BUS;
@@ -119,87 +121,87 @@ SIGNAL("in_data")
 	PARENT = "";
 }
 
-SIGNAL("in_data[7]")
+SIGNAL("input_data[7]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "in_data";
+	PARENT = "input_data";
 }
 
-SIGNAL("in_data[6]")
+SIGNAL("input_data[6]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "in_data";
+	PARENT = "input_data";
 }
 
-SIGNAL("in_data[5]")
+SIGNAL("input_data[5]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "in_data";
+	PARENT = "input_data";
 }
 
-SIGNAL("in_data[4]")
+SIGNAL("input_data[4]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "in_data";
+	PARENT = "input_data";
 }
 
-SIGNAL("in_data[3]")
+SIGNAL("input_data[3]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "in_data";
+	PARENT = "input_data";
 }
 
-SIGNAL("in_data[2]")
+SIGNAL("input_data[2]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "in_data";
+	PARENT = "input_data";
 }
 
-SIGNAL("in_data[1]")
+SIGNAL("input_data[1]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "in_data";
+	PARENT = "input_data";
 }
 
-SIGNAL("in_data[0]")
+SIGNAL("input_data[0]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "in_data";
+	PARENT = "input_data";
 }
 
-SIGNAL("out_data")
+SIGNAL("output_data")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = BUS;
@@ -209,24 +211,24 @@ SIGNAL("out_data")
 	PARENT = "";
 }
 
-SIGNAL("out_data[1]")
+SIGNAL("output_data[1]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "out_data";
+	PARENT = "output_data";
 }
 
-SIGNAL("out_data[0]")
+SIGNAL("output_data[0]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "out_data";
+	PARENT = "output_data";
 }
 
 TRANSITION_LIST("arst")
@@ -234,10 +236,7 @@ TRANSITION_LIST("arst")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 40.0;
-		LEVEL 1 FOR 440.0;
-		LEVEL 0 FOR 20.0;
-		LEVEL 1 FOR 500.0;
+		LEVEL 1 FOR 640.0;
 	}
 }
 
@@ -246,140 +245,129 @@ TRANSITION_LIST("data_clk")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 640.0;
 	}
 }
 
-TRANSITION_LIST("in_clk")
+TRANSITION_LIST("input_clk")
 {
 	NODE
 	{
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 100;
+			REPEAT = 64;
 			LEVEL 0 FOR 5.0;
 			LEVEL 1 FOR 5.0;
 		}
 	}
 }
 
-TRANSITION_LIST("in_data[7]")
+TRANSITION_LIST("input_data[7]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 200.0;
-		LEVEL 1 FOR 600.0;
-		LEVEL 0 FOR 200.0;
+		LEVEL 0 FOR 480.0;
+		LEVEL 1 FOR 160.0;
 	}
 }
 
-TRANSITION_LIST("in_data[6]")
+TRANSITION_LIST("input_data[6]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 200.0;
-		LEVEL 0 FOR 400.0;
-		LEVEL 1 FOR 200.0;
-		LEVEL 0 FOR 200.0;
+		LEVEL 0 FOR 320.0;
+		LEVEL 1 FOR 320.0;
 	}
 }
 
-TRANSITION_LIST("in_data[5]")
+TRANSITION_LIST("input_data[5]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 200.0;
-		LEVEL 1 FOR 200.0;
-		LEVEL 0 FOR 200.0;
-		LEVEL 1 FOR 200.0;
-		LEVEL 0 FOR 200.0;
+		LEVEL 0 FOR 160.0;
+		LEVEL 1 FOR 160.0;
+		LEVEL 0 FOR 160.0;
+		LEVEL 1 FOR 160.0;
 	}
 }
 
-TRANSITION_LIST("in_data[4]")
+TRANSITION_LIST("input_data[4]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 200.0;
-		LEVEL 1 FOR 200.0;
-		LEVEL 0 FOR 200.0;
-		LEVEL 1 FOR 200.0;
-		LEVEL 0 FOR 200.0;
+		LEVEL 1 FOR 640.0;
 	}
 }
 
-TRANSITION_LIST("in_data[3]")
+TRANSITION_LIST("input_data[3]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 400.0;
-		LEVEL 1 FOR 200.0;
-		LEVEL 0 FOR 200.0;
-		LEVEL 1 FOR 200.0;
+		LEVEL 0 FOR 480.0;
+		LEVEL 1 FOR 160.0;
 	}
 }
 
-TRANSITION_LIST("in_data[2]")
+TRANSITION_LIST("input_data[2]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 200.0;
-		LEVEL 0 FOR 400.0;
-		LEVEL 1 FOR 200.0;
-		LEVEL 0 FOR 200.0;
+		LEVEL 0 FOR 320.0;
+		LEVEL 1 FOR 320.0;
 	}
 }
 
-TRANSITION_LIST("in_data[1]")
+TRANSITION_LIST("input_data[1]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 200.0;
-		LEVEL 1 FOR 200.0;
-		LEVEL 0 FOR 400.0;
-		LEVEL 1 FOR 200.0;
+		LEVEL 0 FOR 160.0;
+		LEVEL 1 FOR 160.0;
+		LEVEL 0 FOR 160.0;
+		LEVEL 1 FOR 160.0;
 	}
 }
 
-TRANSITION_LIST("in_data[0]")
+TRANSITION_LIST("input_data[0]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 600.0;
-		LEVEL 1 FOR 400.0;
+		LEVEL 1 FOR 160.0;
+		LEVEL 0 FOR 160.0;
+		LEVEL 1 FOR 320.0;
 	}
 }
 
-TRANSITION_LIST("out_data[1]")
+TRANSITION_LIST("output_data[1]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 640.0;
 	}
 }
 
-TRANSITION_LIST("out_data[0]")
+TRANSITION_LIST("output_data[0]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 640.0;
 	}
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "in_clk";
+	CHANNEL = "input_clk";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 0;
@@ -397,7 +385,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "in_data";
+	CHANNEL = "input_data";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 2;
@@ -407,7 +395,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "in_data[7]";
+	CHANNEL = "input_data[7]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 3;
@@ -417,7 +405,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "in_data[6]";
+	CHANNEL = "input_data[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 4;
@@ -427,7 +415,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "in_data[5]";
+	CHANNEL = "input_data[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 5;
@@ -437,7 +425,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "in_data[4]";
+	CHANNEL = "input_data[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 6;
@@ -447,7 +435,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "in_data[3]";
+	CHANNEL = "input_data[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 7;
@@ -457,7 +445,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "in_data[2]";
+	CHANNEL = "input_data[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 8;
@@ -467,7 +455,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "in_data[1]";
+	CHANNEL = "input_data[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 9;
@@ -477,7 +465,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "in_data[0]";
+	CHANNEL = "input_data[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 10;
@@ -496,7 +484,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "out_data";
+	CHANNEL = "output_data";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 12;
@@ -506,7 +494,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "out_data[1]";
+	CHANNEL = "output_data[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 13;
@@ -516,7 +504,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "out_data[0]";
+	CHANNEL = "output_data[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 14;

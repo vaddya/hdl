@@ -24,6 +24,7 @@ quit -f
 
 
 
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -42,6 +43,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 
 
 
@@ -76,7 +78,7 @@ HEADER
 	VERSION = 1;
 	TIME_UNIT = ns;
 	DATA_OFFSET = 0.0;
-	DATA_DURATION = 1000.0;
+	DATA_DURATION = 640.0;
 	SIMULATION_TIME = 0.0;
 	GRID_PHASE = 0.0;
 	GRID_PERIOD = 10.0;
@@ -170,7 +172,7 @@ TRANSITION_LIST("clk")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 50;
+			REPEAT = 32;
 			LEVEL 0 FOR 10.0;
 			LEVEL 1 FOR 10.0;
 		}
@@ -184,8 +186,7 @@ TRANSITION_LIST("input_ready")
 		REPEAT = 1;
 		LEVEL 0 FOR 120.0;
 		LEVEL 1 FOR 340.0;
-		LEVEL 0 FOR 280.0;
-		LEVEL 1 FOR 260.0;
+		LEVEL 0 FOR 180.0;
 	}
 }
 
@@ -194,7 +195,7 @@ TRANSITION_LIST("output_ready")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 640.0;
 	}
 }
 
@@ -203,7 +204,7 @@ TRANSITION_LIST("read_req")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 640.0;
 	}
 }
 
@@ -212,7 +213,7 @@ TRANSITION_LIST("sel[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 640.0;
 	}
 }
 
@@ -221,7 +222,7 @@ TRANSITION_LIST("sel[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 640.0;
 	}
 }
 
@@ -230,9 +231,9 @@ TRANSITION_LIST("arst")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 840.0;
-		LEVEL 0 FOR 20.0;
-		LEVEL 1 FOR 140.0;
+		LEVEL 1 FOR 520.0;
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 80.0;
 	}
 }
 
