@@ -28,9 +28,9 @@ assign arst = pba;
 assign led[1:0] = output_data;
 
 dilab_pll pll(
-	.inclk0(clk), // 25 MHz
-	.c0(write_clk), // 1 MHz
-	.c1(read_clk) // 10 MHz
+	.inclk0(clk),
+	.c0(write_clk),
+	.c1(read_clk)
 );
 
 transmitter t(
