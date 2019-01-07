@@ -1,7 +1,5 @@
 # Hardware Description Languages
 
-![СПбПУ](http://www.spbstu.ru/university/organizational-documents/corporate-identity/identity-files/logo_main_en.png)
-
 1. Timing Analyzer `lab_ta`
 2. Design Rules `lab_dr`
 3. Verilog Hardware Description Language `verilog`
